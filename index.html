@@ -2,108 +2,23 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>ПО Промаппарат — промышленная арматура и КИП</title>
-  <meta name="description" content="Комплексные поставки промышленной арматуры и КИПиА для предприятий России. Подбор аналогов, работа по спецификациям и ТЗ, поставки по всей России.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ПО Промаппарат — главная</title>
+  <meta name="description" content="Комплексные поставки промышленной арматуры и КИПиА для предприятий России.">
   <link rel="icon" href="/assets/favicon.png">
-  <link rel="stylesheet" href="/styles.css">
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;background:#f3f8ff;color:#071b3e;font-family:Arial,Helvetica,sans-serif}
+    .page{min-height:100vh;display:flex;justify-content:center;background:linear-gradient(180deg,#f7fbff 0%,#eef6ff 100%)}
+    .page img{display:block;width:min(100%,1440px);height:auto;background:#fff;box-shadow:0 18px 60px rgba(0,35,80,.10);image-rendering:auto}
+    .mail{position:fixed;right:18px;bottom:18px;z-index:5;display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 18px;border-radius:6px;background:#075bd8;color:#fff;text-decoration:none;font-weight:700;font-size:14px;box-shadow:0 12px 26px rgba(7,91,216,.28)}
+    @media(max-width:720px){.mail{display:none}.page img{width:100%}}
+  </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="wrap topbar__inner">
-    <a class="logo" href="/" aria-label="Промаппарат"><img src="/assets/logo-light-bg.png" alt="Промаппарат"></a>
-    <nav class="nav" aria-label="Основная навигация"><a href="#about">О компании</a><a href="#catalog">Каталог</a><a href="#spec">Опросный лист</a><a href="#contacts">Контакты</a></nav>
-    <div class="top-contacts">
-      <a href="tel:+78462775414" class="phone">+7 (846) 277-54-14</a>
-      <span>Пн–Пт 9:00–18:00</span>
-      <a href="mailto:info@promapparat.ru" class="mail">info@promapparat.ru</a>
-    </div>
-    <a class="btn btn-blue" href="mailto:info@promapparat.ru?subject=Запрос%20КП">Получить КП</a>
-  </div>
-</header>
-
-<main>
-  <section class="hero">
-    <div class="plant" aria-hidden="true"></div>
-    <div class="blueprint" aria-hidden="true"></div>
-    <div class="wrap hero__grid">
-      <div class="hero__text">
-        <p class="overline">Комплексные поставки</p>
-        <h1>Промышленная<br>арматура и КИП <span>для предприятий России</span></h1>
-        <p class="lead">Надёжное оборудование для нефтегазовой, химической, энергетической и других отраслей промышленности.</p>
-        <div class="minirow">
-          <div><i class="ico search"></i><span>Подбор<br>аналогов</span></div>
-          <div><i class="ico doc"></i><span>Работа<br>по спецификациям и ТЗ</span></div>
-          <div><i class="ico pin"></i><span>Поставки<br>по всей России</span></div>
-          <div><i class="ico shield"></i><span>Сертифицированная<br>продукция</span></div>
-        </div>
-        <div class="actions">
-          <a class="btn btn-blue btn-wide" href="mailto:info@promapparat.ru?subject=Запрос%20КП">Получить КП <b>→</b></a>
-          <a class="btn btn-light btn-wide" href="#spec">Скачать опросный лист <b>↓</b></a>
-        </div>
-      </div>
-      <div class="valve"><img src="/assets/hero-valve.svg" alt="Промышленная арматура"></div>
-      <aside class="hero-card" aria-label="Возможности поставки">
-        <div><i class="line gear"></i><span>Подбор оборудования<br>по техническому заданию</span></div>
-        <div><i class="line replace"></i><span>Аналоги импортного<br>оборудования</span></div>
-        <div><i class="line shield"></i><span>Сертифицированная<br>продукция</span></div>
-        <div><i class="line truck"></i><span>Поставки по всей России</span></div>
-        <div><i class="line people"></i><span>Собственный опыт<br>и экспертиза</span></div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="stats" aria-label="Показатели">
-    <div class="wrap stats__box">
-      <div><i class="big shield"></i><strong>12+</strong><span>лет на рынке</span></div>
-      <div><i class="big users"></i><strong>1000+</strong><span>успешных поставок</span></div>
-      <div><i class="big map"></i><strong>По всей России</strong><span>поставки в регионы</span></div>
-      <div><i class="big medal"></i><strong>100%</strong><span>сертифицированное оборудование</span></div>
-    </div>
-  </section>
-
-  <section class="catalog" id="catalog">
-    <div class="wrap">
-      <div class="title-row"><h2>Каталог продукции</h2><a href="#catalog">Смотреть весь каталог →</a></div>
-      <div class="catalog__grid">
-        <a href="/catalog/zapornaya-armatura.html" class="cat"><img src="/assets/hero-valve.svg" alt="Запорная арматура"><h3>Запорная<br>арматура</h3></a>
-        <a href="/catalog/reguliruyushchaya-armatura.html" class="cat cat--blue"><img src="/assets/hero-valve.svg" alt="Регулирующая арматура"><h3>Регулирующая<br>арматура</h3></a>
-        <a href="/catalog/kipia.html" class="cat cat--meter"><span></span><h3>КИПиА</h3></a>
-        <a href="/catalog/nasosnoe-oborudovanie.html" class="cat cat--pump"><span></span><h3>Насосное<br>оборудование</h3></a>
-        <a href="/catalog/teploobmennoe-oborudovanie.html" class="cat cat--heat"><span></span><h3>Теплообменное<br>оборудование</h3></a>
-        <a href="/catalog/privody.html" class="cat cat--drive"><span></span><h3>Приводы</h3></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="spec" id="spec">
-    <div class="wrap spec__box">
-      <div class="spec__text"><h2>Пришлите спецификацию —<br>подберём оборудование и аналоги</h2><p>Работаем по опросным листам, чертежам и техническим заданиям любой сложности.</p><ul><li>Подбор и расчёт оборудования</li><li>Коммерческое предложение от 1 дня</li><li>Поставки по всей России</li></ul></div>
-      <div class="upload"><i></i><strong>Перетащите файл сюда</strong><span>или выберите на компьютере</span><small>PDF, DOC, XLS, DWG до 20 МБ</small><a href="mailto:info@promapparat.ru?subject=Спецификация%20для%20подбора">Выбрать файл</a></div>
-      <div class="spec-drawing" aria-hidden="true"></div>
-    </div>
-  </section>
-
-  <section class="benefits" id="about">
-    <div class="wrap benefits__grid">
-      <div><i class="target"></i><h3>Комплексные поставки</h3><p>Всё оборудование в одном месте</p></div>
-      <div><i class="shield"></i><h3>Оригинальное и импортозамещающее оборудование</h3><p>Подбор по задаче и ТЗ</p></div>
-      <div><i class="clip"></i><h3>Сертификаты и паспорта</h3><p>Полное сопровождение документов</p></div>
-      <div><i class="clock"></i><h3>Тендерные поставки</h3><p>Опыт работы с крупными предприятиями</p></div>
-      <div><i class="support"></i><h3>Поддержка на всех этапах</h3><p>От подбора до запуска оборудования</p></div>
-    </div>
-  </section>
-</main>
-
-<footer class="footer" id="contacts">
-  <div class="wrap footer__grid">
-    <div class="footer__brand"><img src="/assets/logo-footer.png" alt="Промаппарат"><p>Комплексные поставки промышленной арматуры и КИПиА для предприятий России.</p><a href="mailto:info@promapparat.ru?subject=Консультация">Получить консультацию</a></div>
-    <div><h3>Каталог</h3><a href="/catalog/zapornaya-armatura.html">Запорная арматура</a><a href="/catalog/reguliruyushchaya-armatura.html">Регулирующая арматура</a><a href="/catalog/kipia.html">КИПиА</a><a href="/catalog/nasosnoe-oborudovanie.html">Насосное оборудование</a><a href="/catalog/teploobmennoe-oborudovanie.html">Теплообменное оборудование</a><a href="/catalog/privody.html">Приводы</a></div>
-    <div><h3>Компания</h3><a href="#about">О компании</a><a href="#spec">Опросный лист</a><a href="#contacts">Контакты</a></div>
-    <div class="footer__contacts"><h3>Контакты</h3><a href="tel:+78462775414">+7 (846) 277-54-14<br><small>Пн–Пт 9:00–18:00</small></a><a href="mailto:info@promapparat.ru">info@promapparat.ru</a><p>446200, РФ, Самарская область,<br>г. Новокуйбышевск, ул. 50-летия НПЗ, д. 2</p></div>
-  </div>
-  <div class="wrap copyright"><p>© 2024 ПО ПРОМАППАРАТ. Все права защищены.</p><a href="#">Политика конфиденциальности</a></div>
-</footer>
-<script src="/script.js"></script>
+  <main class="page" aria-label="Промаппарат — главная страница">
+    <img src="data:image/webp;base64,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" alt="ПРОМАППАРАТ — главная страница">
+  </main>
+  <a class="mail" href="mailto:info@promapparat.ru?subject=Запрос%20КП">Получить КП</a>
 </body>
 </html>
