@@ -4,341 +4,103 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>ПО Промаппарат — промышленная арматура и КИП</title>
-  <meta name="description" content="Комплексные поставки промышленной арматуры и КИПиА для предприятий России. Подбор аналогов, работа по спецификациям и ТЗ, сертифицированная продукция.">
+  <meta name="description" content="Комплексные поставки промышленной арматуры и КИПиА для предприятий России. Подбор оборудования, импортозамещение, тендерные поставки.">
   <link rel="icon" href="/assets/favicon.png">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-grid">
-      <a class="brand" href="/" aria-label="Промаппарат">
-        <img src="/assets/logo-light-bg.png" alt="Промаппарат">
-      </a>
-
-      <nav class="main-nav" aria-label="Основная навигация">
-        <a href="#about">О компании</a>
-        <a href="#catalog">Каталог</a>
-        <a href="#specification">Опросный лист</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-
-      <div class="header-contacts" aria-label="Контакты">
-        <a class="phone" href="tel:+78462775414">+7 (846) 277-54-14</a>
-        <span>Пн–Пт 9:00–18:00</span>
-        <a class="email" href="mailto:info@promapparat.ru">info@promapparat.ru</a>
-      </div>
-
-      <a class="btn btn-primary header-btn" href="mailto:info@promapparat.ru?subject=Запрос%20КП">Получить КП</a>
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="logo" href="/" aria-label="Промаппарат"><img src="/assets/logo-light-bg.png" alt="Промаппарат"></a>
+    <nav class="nav"><a href="#about">О компании</a><a href="#catalog">Каталог</a><a href="#spec">Опросный лист</a><a href="#contacts">Контакты</a></nav>
+    <div class="top-contacts">
+      <a href="tel:+78462775414" class="phone">+7 (846) 277-54-14</a>
+      <span>Пн–Пт 9:00–18:00</span>
+      <a href="mailto:info@promapparat.ru" class="mail">info@promapparat.ru</a>
     </div>
-  </header>
+    <a class="btn btn-blue" href="mailto:info@promapparat.ru?subject=Запрос%20КП">Получить КП</a>
+  </div>
+</header>
 
-  <main>
-    <section class="hero" id="top">
-      <div class="hero-blueprint" aria-hidden="true"></div>
-      <div class="hero-plant" aria-hidden="true">
-        <svg viewBox="0 0 760 410" role="img" aria-label="">
-          <defs>
-            <linearGradient id="tower" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0" stop-color="#8d9fb6"/>
-              <stop offset=".55" stop-color="#ced8e4"/>
-              <stop offset="1" stop-color="#6f8198"/>
-            </linearGradient>
-            <linearGradient id="steel" x1="0" x2="1">
-              <stop offset="0" stop-color="#9caec3"/>
-              <stop offset=".5" stop-color="#edf3f8"/>
-              <stop offset="1" stop-color="#758aa3"/>
-            </linearGradient>
-          </defs>
-          <g opacity=".70">
-            <path d="M54 318h600" stroke="#9fb1c8" stroke-width="6" stroke-linecap="round"/>
-            <g fill="none" stroke="#7d90a8" stroke-width="4">
-              <path d="M95 316V168h96v148M220 316V138h112v178M365 316V202h132v114M530 316V162h70v154"/>
-              <path d="M95 206h96M95 244h96M95 282h96M220 176h112M220 215h112M220 254h112M220 292h112M530 198h70M530 238h70M530 278h70"/>
-            </g>
-            <g fill="url(#tower)" stroke="#6f829b" stroke-width="3">
-              <rect x="116" y="62" width="44" height="256" rx="17"/>
-              <rect x="245" y="22" width="56" height="296" rx="20"/>
-              <rect x="552" y="74" width="34" height="244" rx="15"/>
-            </g>
-            <g stroke="#6f829b" stroke-width="3" fill="url(#steel)">
-              <ellipse cx="138" cy="64" rx="34" ry="12"/>
-              <ellipse cx="273" cy="24" rx="42" ry="14"/>
-              <ellipse cx="569" cy="76" rx="28" ry="10"/>
-              <rect x="54" y="250" width="154" height="66" rx="12"/>
-              <rect x="346" y="238" width="192" height="78" rx="12"/>
-            </g>
-            <g fill="none" stroke="#9fb1c8" stroke-width="4" stroke-linecap="round">
-              <path d="M160 112h112v74h78M302 88h104v132h94M586 188h82v128"/>
-              <path d="M60 288h90M180 288h105M318 288h92M450 288h122"/>
-            </g>
-          </g>
-        </svg>
+<main>
+  <section class="hero">
+    <div class="plant" aria-hidden="true"></div>
+    <div class="blueprint" aria-hidden="true"></div>
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <p class="overline">Комплексные поставки</p>
+        <h1>Промышленная<br>арматура и КИП <span>для предприятий России</span></h1>
+        <p class="lead">Надёжное оборудование для нефтегазовой, химической, энергетической и других отраслей промышленности.</p>
+        <div class="minirow">
+          <div><i class="ico search"></i><span>Подбор<br>аналогов</span></div>
+          <div><i class="ico doc"></i><span>Работа<br>по спецификациям и ТЗ</span></div>
+          <div><i class="ico pin"></i><span>Поставки<br>по всей России</span></div>
+          <div><i class="ico shield"></i><span>Сертифицированная<br>продукция</span></div>
+        </div>
+        <div class="actions"><a class="btn btn-blue btn-wide" href="mailto:info@promapparat.ru?subject=Запрос%20КП">Получить КП <b>→</b></a><a class="btn btn-light btn-wide" href="#spec">Скачать опросный лист <b>↓</b></a></div>
       </div>
+      <div class="valve"><img src="/assets/hero-valve.svg" alt="Промышленная арматура"></div>
+      <aside class="hero-card">
+        <div><i class="line gear"></i><span>Подбор оборудования<br>по техническому заданию</span></div>
+        <div><i class="line replace"></i><span>Аналоги импортного<br>оборудования</span></div>
+        <div><i class="line shield"></i><span>Сертифицированная<br>продукция</span></div>
+        <div><i class="line truck"></i><span>Поставки по всей России</span></div>
+        <div><i class="line people"></i><span>Собственный опыт<br>и экспертиза</span></div>
+      </aside>
+    </div>
+  </section>
 
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Комплексные поставки</p>
-          <h1>Промышленная <br>арматура и КИП <span>для предприятий России</span></h1>
-          <p class="hero-lead">Надёжное оборудование для нефтегазовой, химической, энергетической и других отраслей промышленности.</p>
+  <section class="stats">
+    <div class="wrap stats__box">
+      <div><i class="big shield"></i><strong>12+</strong><span>лет на рынке</span></div>
+      <div><i class="big users"></i><strong>1000+</strong><span>успешных поставок</span></div>
+      <div><i class="big map"></i><strong>По всей России</strong><span>поставки в регионы</span></div>
+      <div><i class="big medal"></i><strong>100%</strong><span>сертифицированное оборудование</span></div>
+    </div>
+  </section>
 
-          <div class="hero-features" aria-label="Преимущества">
-            <div class="mini-feature">
-              <span class="mini-ico search-ico"></span>
-              <p>Подбор<br>аналогов</p>
-            </div>
-            <div class="mini-feature">
-              <span class="mini-ico doc-ico"></span>
-              <p>Работа<br>по спецификациям и ТЗ</p>
-            </div>
-            <div class="mini-feature">
-              <span class="mini-ico pin-ico"></span>
-              <p>Поставки<br>по всей России</p>
-            </div>
-            <div class="mini-feature">
-              <span class="mini-ico shield-ico"></span>
-              <p>Сертифицированная<br>продукция</p>
-            </div>
-          </div>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:info@promapparat.ru?subject=Запрос%20коммерческого%20предложения">Получить КП <span class="arr">→</span></a>
-            <a class="btn btn-secondary" href="#specification">Скачать опросный лист <span class="download">↓</span></a>
-          </div>
-        </div>
-
-        <div class="hero-equipment" aria-hidden="true">
-          <img src="/assets/industrial-valve.svg" alt="">
-        </div>
-
-        <aside class="hero-card" aria-label="Услуги">
-          <div><span class="line-ico gear-ico"></span><p>Подбор оборудования<br>по техническому заданию</p></div>
-          <div><span class="line-ico replace-ico"></span><p>Аналоги импортного<br>оборудования</p></div>
-          <div><span class="line-ico certify-ico"></span><p>Сертифицированная<br>продукция</p></div>
-          <div><span class="line-ico truck-ico"></span><p>Поставки по всей России</p></div>
-          <div><span class="line-ico team-ico"></span><p>Собственный опыт<br>и экспертиза</p></div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="stats-block" aria-label="Показатели">
-      <div class="container">
-        <div class="stats-panel">
-          <div class="stat-item">
-            <span class="stat-ico stat-shield"></span>
-            <strong>12+</strong>
-            <p>лет на рынке</p>
-          </div>
-          <div class="stat-item">
-            <span class="stat-ico stat-users"></span>
-            <strong>1000+</strong>
-            <p>успешных поставок</p>
-          </div>
-          <div class="stat-item">
-            <span class="stat-ico stat-map"></span>
-            <strong>По всей России</strong>
-            <p>поставки в регионы</p>
-          </div>
-          <div class="stat-item">
-            <span class="stat-ico stat-medal"></span>
-            <strong>100%</strong>
-            <p>сертифицированное оборудование</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="catalog-section" id="catalog">
-      <div class="container">
-        <div class="section-title-row">
-          <h2>Каталог продукции</h2>
-          <a href="#catalog">Смотреть весь каталог <span>→</span></a>
-        </div>
-
-        <div class="catalog-grid">
-          <a class="catalog-card" href="/catalog/zapornaya-armatura.html">
-            <svg class="product-svg" viewBox="0 0 180 98" aria-hidden="true">
-              <defs><linearGradient id="p1" x1="0" x2="1"><stop stop-color="#fff"/><stop offset=".45" stop-color="#9eb2ca"/><stop offset="1" stop-color="#eef4fb"/></linearGradient></defs>
-              <path d="M14 60h152" stroke="#7d8ea4" stroke-width="12" stroke-linecap="round"/>
-              <rect x="51" y="38" width="78" height="46" rx="20" fill="url(#p1)" stroke="#607893" stroke-width="3"/>
-              <circle cx="34" cy="60" r="20" fill="none" stroke="#8397ad" stroke-width="7"/>
-              <circle cx="146" cy="60" r="20" fill="none" stroke="#8397ad" stroke-width="7"/>
-              <path d="M88 38V16" stroke="#607893" stroke-width="8" stroke-linecap="round"/>
-              <ellipse cx="88" cy="15" rx="38" ry="8" fill="none" stroke="#0a56d6" stroke-width="6"/>
-            </svg>
-            <h3>Запорная<br>арматура</h3>
-          </a>
-
-          <a class="catalog-card" href="/catalog/reguliruyushchaya-armatura.html">
-            <svg class="product-svg" viewBox="0 0 180 98" aria-hidden="true">
-              <defs><linearGradient id="p2" x1="0" x2="1"><stop stop-color="#eaf4ff"/><stop offset=".55" stop-color="#126bff"/><stop offset="1" stop-color="#0a2e66"/></linearGradient></defs>
-              <path d="M16 64h148" stroke="#7d8ea4" stroke-width="11" stroke-linecap="round"/>
-              <rect x="47" y="36" width="86" height="50" rx="21" fill="#f7fbff" stroke="#7890aa" stroke-width="3"/>
-              <rect x="68" y="9" width="44" height="30" rx="10" fill="url(#p2)" stroke="#083a8f" stroke-width="3"/>
-              <path d="M90 39V18" stroke="#083a8f" stroke-width="7" stroke-linecap="round"/>
-              <circle cx="90" cy="62" r="17" fill="#126bff" opacity=".9"/>
-            </svg>
-            <h3>Регулирующая<br>арматура</h3>
-          </a>
-
-          <a class="catalog-card" href="/catalog/kipia.html">
-            <svg class="product-svg" viewBox="0 0 180 98" aria-hidden="true">
-              <defs><linearGradient id="p3" x1="0" x2="1"><stop stop-color="#fff"/><stop offset=".55" stop-color="#c6d4e5"/><stop offset="1" stop-color="#7d8ea4"/></linearGradient></defs>
-              <circle cx="90" cy="35" r="30" fill="url(#p3)" stroke="#5d7189" stroke-width="4"/>
-              <path d="M90 35l16-12M90 35l-8-17" stroke="#0b1b3b" stroke-width="3" stroke-linecap="round"/>
-              <path d="M90 66v19M58 85h64" stroke="#607893" stroke-width="8" stroke-linecap="round"/>
-              <path d="M45 86h90" stroke="#96a8bd" stroke-width="10" stroke-linecap="round"/>
-            </svg>
-            <h3>КИПиА</h3>
-          </a>
-
-          <a class="catalog-card" href="/catalog/nasosnoe-oborudovanie.html">
-            <svg class="product-svg" viewBox="0 0 180 98" aria-hidden="true">
-              <defs><linearGradient id="p4" x1="0" x2="1"><stop stop-color="#edf7ff"/><stop offset=".55" stop-color="#4992e9"/><stop offset="1" stop-color="#0a397b"/></linearGradient></defs>
-              <rect x="47" y="48" width="96" height="34" rx="17" fill="url(#p4)" stroke="#113b79" stroke-width="3"/>
-              <circle cx="62" cy="65" r="24" fill="#eaf4ff" stroke="#0a56d6" stroke-width="6"/>
-              <circle cx="62" cy="65" r="8" fill="#0a56d6"/>
-              <rect x="133" y="35" width="16" height="46" rx="6" fill="#0a397b"/>
-              <path d="M34 86h122" stroke="#607893" stroke-width="8" stroke-linecap="round"/>
-            </svg>
-            <h3>Насосное<br>оборудование</h3>
-          </a>
-
-          <a class="catalog-card" href="/catalog/teploobmennoe-oborudovanie.html">
-            <svg class="product-svg" viewBox="0 0 180 98" aria-hidden="true">
-              <defs><linearGradient id="p5" x1="0" x2="1"><stop stop-color="#f8fbff"/><stop offset=".5" stop-color="#b8c9dd"/><stop offset="1" stop-color="#eaf4ff"/></linearGradient></defs>
-              <rect x="44" y="25" width="92" height="56" rx="10" fill="url(#p5)" stroke="#607893" stroke-width="4"/>
-              <path d="M58 25v56M74 25v56M90 25v56M106 25v56M122 25v56" stroke="#0a56d6" stroke-width="3" opacity=".75"/>
-              <path d="M29 39h15M136 39h15M29 68h15M136 68h15" stroke="#607893" stroke-width="8" stroke-linecap="round"/>
-              <path d="M38 20v66M142 20v66" stroke="#607893" stroke-width="5" stroke-linecap="round"/>
-            </svg>
-            <h3>Теплообменное<br>оборудование</h3>
-          </a>
-
-          <a class="catalog-card" href="/catalog/privody.html">
-            <svg class="product-svg" viewBox="0 0 180 98" aria-hidden="true">
-              <defs><linearGradient id="p6" x1="0" x2="1"><stop stop-color="#fff"/><stop offset=".5" stop-color="#9cadae"/><stop offset="1" stop-color="#eaf4ff"/></linearGradient></defs>
-              <rect x="46" y="42" width="78" height="40" rx="17" fill="url(#p6)" stroke="#607893" stroke-width="4"/>
-              <rect x="108" y="29" width="38" height="35" rx="12" fill="url(#p6)" stroke="#607893" stroke-width="4"/>
-              <circle cx="59" cy="62" r="18" fill="none" stroke="#0a56d6" stroke-width="5"/>
-              <path d="M35 82h118" stroke="#7d8ea4" stroke-width="8" stroke-linecap="round"/>
-              <path d="M127 29V16h24" stroke="#607893" stroke-width="6" stroke-linecap="round"/>
-            </svg>
-            <h3>Приводы</h3>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="specification" id="specification">
-      <div class="container">
-        <div class="spec-panel">
-          <div class="spec-copy">
-            <h2>Пришлите спецификацию —<br>подберём оборудование и аналоги</h2>
-            <p>Работаем по опросным листам, чертежам и техническим заданиям любой сложности.</p>
-            <ul>
-              <li>Подбор и расчёт оборудования</li>
-              <li>Коммерческое предложение от 1 дня</li>
-              <li>Поставки по всей России</li>
-            </ul>
-          </div>
-
-          <form class="upload-card" action="mailto:info@promapparat.ru" method="post" enctype="text/plain">
-            <label for="spec-file">
-              <span class="cloud-ico"></span>
-              <strong>Перетащите файл сюда</strong>
-              <em>или выберите на компьютере</em>
-              <small>PDF, DOC, XLS, DWG до 20 МБ</small>
-            </label>
-            <input id="spec-file" name="file" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.dwg">
-            <a class="file-btn" href="mailto:info@promapparat.ru?subject=Спецификация%20для%20подбора%20оборудования">Выбрать файл</a>
-          </form>
-
-          <svg class="spec-blueprint" viewBox="0 0 270 200" aria-hidden="true">
-            <g fill="none" stroke="#0d65e8" opacity=".24">
-              <path d="M20 35h220M20 70h220M20 105h220M20 140h220M55 10v170M95 10v170M135 10v170M175 10v170M215 10v170"/>
-              <path d="M55 116h160" stroke-width="7" stroke-linecap="round"/>
-              <rect x="81" y="91" width="108" height="50" rx="18" stroke-width="3"/>
-              <circle cx="67" cy="116" r="22" stroke-width="4"/>
-              <circle cx="203" cy="116" r="22" stroke-width="4"/>
-              <path d="M135 91V54" stroke-width="6" stroke-linecap="round"/>
-              <ellipse cx="135" cy="52" rx="50" ry="10" stroke-width="4"/>
-              <path d="M51 168h168M65 160v16M205 160v16" stroke-width="2"/>
-            </g>
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <section class="service-strip" id="about">
-      <div class="container service-grid">
-        <div class="service-item">
-          <span class="service-ico target-ico"></span>
-          <h3>Комплексные поставки</h3>
-          <p>Всё оборудование в одном месте</p>
-        </div>
-        <div class="service-item">
-          <span class="service-ico shield2-ico"></span>
-          <h3>Оригинальное и импортозамещающее оборудование</h3>
-          <p>Подбор по задаче и ТЗ</p>
-        </div>
-        <div class="service-item">
-          <span class="service-ico clipboard-ico"></span>
-          <h3>Сертификаты и паспорта</h3>
-          <p>Полное сопровождение документов</p>
-        </div>
-        <div class="service-item">
-          <span class="service-ico clock-ico"></span>
-          <h3>Тендерные поставки</h3>
-          <p>Опыт работы с крупными предприятиями</p>
-        </div>
-        <div class="service-item">
-          <span class="service-ico support-ico"></span>
-          <h3>Поддержка на всех этапах</h3>
-          <p>От подбора до запуска оборудования</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" id="contacts">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img src="/assets/logo-footer.png" alt="Промаппарат">
-        <p>Комплексные поставки промышленной арматуры и КИПиА для предприятий России.</p>
-        <a class="footer-cta" href="mailto:info@promapparat.ru?subject=Консультация%20по%20оборудованию">Получить консультацию</a>
-      </div>
-
-      <div class="footer-col">
-        <h3>Каталог</h3>
-        <a href="/catalog/zapornaya-armatura.html">Запорная арматура</a>
-        <a href="/catalog/reguliruyushchaya-armatura.html">Регулирующая арматура</a>
-        <a href="/catalog/kipia.html">КИПиА</a>
-        <a href="/catalog/nasosnoe-oborudovanie.html">Насосное оборудование</a>
-        <a href="/catalog/teploobmennoe-oborudovanie.html">Теплообменное оборудование</a>
-        <a href="/catalog/privody.html">Приводы</a>
-      </div>
-
-      <div class="footer-col">
-        <h3>Компания</h3>
-        <a href="#about">О компании</a>
-        <a href="#specification">Опросный лист</a>
-        <a href="#contacts">Контакты</a>
-      </div>
-
-      <div class="footer-col footer-contacts">
-        <h3>Контакты</h3>
-        <a class="footer-phone" href="tel:+78462775414">+7 (846) 277-54-14<br><span>Пн–Пт 9:00–18:00</span></a>
-        <a class="footer-mail" href="mailto:info@promapparat.ru">info@promapparat.ru</a>
-        <p class="footer-address">446200, РФ, Самарская область,<br>г. Новокуйбышевск, ул. 50-летия НПЗ, д. 2</p>
+  <section class="catalog" id="catalog">
+    <div class="wrap">
+      <div class="title-row"><h2>Каталог продукции</h2><a href="#catalog">Смотреть весь каталог →</a></div>
+      <div class="catalog__grid">
+        <a href="/catalog/zapornaya-armatura.html" class="cat"><img src="/assets/hero-valve.svg" alt=""><h3>Запорная<br>арматура</h3></a>
+        <a href="/catalog/reguliruyushchaya-armatura.html" class="cat cat--blue"><img src="/assets/hero-valve.svg" alt=""><h3>Регулирующая<br>арматура</h3></a>
+        <a href="/catalog/kipia.html" class="cat cat--meter"><span></span><h3>КИПиА</h3></a>
+        <a href="/catalog/nasosnoe-oborudovanie.html" class="cat cat--pump"><span></span><h3>Насосное<br>оборудование</h3></a>
+        <a href="/catalog/teploobmennoe-oborudovanie.html" class="cat cat--heat"><span></span><h3>Теплообменное<br>оборудование</h3></a>
+        <a href="/catalog/privody.html" class="cat cat--drive"><span></span><h3>Приводы</h3></a>
       </div>
     </div>
+  </section>
 
-    <div class="container footer-bottom">
-      <p>© 2024 ПО ПРОМАППАРАТ. Все права защищены.</p>
-      <a href="#">Политика конфиденциальности</a>
+  <section class="spec" id="spec">
+    <div class="wrap spec__box">
+      <div class="spec__text"><h2>Пришлите спецификацию —<br>подберём оборудование и аналоги</h2><p>Работаем по опросным листам, чертежам и техническим заданиям любой сложности.</p><ul><li>Подбор и расчёт оборудования</li><li>Коммерческое предложение от 1 дня</li><li>Поставки по всей России</li></ul></div>
+      <div class="upload"><i></i><strong>Перетащите файл сюда</strong><span>или выберите на компьютере</span><small>PDF, DOC, XLS, DWG до 20 МБ</small><a href="mailto:info@promapparat.ru?subject=Спецификация%20для%20подбора">Выбрать файл</a></div>
+      <div class="spec-drawing" aria-hidden="true"></div>
     </div>
-  </footer>
+  </section>
 
-  <script src="/script.js"></script>
+  <section class="benefits" id="about">
+    <div class="wrap benefits__grid">
+      <div><i class="target"></i><h3>Комплексные поставки</h3><p>Всё оборудование в одном месте</p></div>
+      <div><i class="shield"></i><h3>Оригинальное и импортозамещающее оборудование</h3><p>Подбор по задаче и ТЗ</p></div>
+      <div><i class="clip"></i><h3>Сертификаты и паспорта</h3><p>Полное сопровождение документов</p></div>
+      <div><i class="clock"></i><h3>Тендерные поставки</h3><p>Опыт работы с крупными предприятиями</p></div>
+      <div><i class="support"></i><h3>Поддержка на всех этапах</h3><p>От подбора до запуска оборудования</p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="contacts">
+  <div class="wrap footer__grid">
+    <div class="footer__brand"><img src="/assets/logo-footer.png" alt="Промаппарат"><p>Комплексные поставки промышленной арматуры и КИПиА для предприятий России.</p><a href="mailto:info@promapparat.ru?subject=Консультация">Получить консультацию</a></div>
+    <div><h3>Каталог</h3><a href="/catalog/zapornaya-armatura.html">Запорная арматура</a><a href="/catalog/reguliruyushchaya-armatura.html">Регулирующая арматура</a><a href="/catalog/kipia.html">КИПиА</a><a href="/catalog/nasosnoe-oborudovanie.html">Насосное оборудование</a><a href="/catalog/teploobmennoe-oborudovanie.html">Теплообменное оборудование</a><a href="/catalog/privody.html">Приводы</a></div>
+    <div><h3>Компания</h3><a href="#about">О компании</a><a href="#spec">Опросный лист</a><a href="#contacts">Контакты</a></div>
+    <div class="footer__contacts"><h3>Контакты</h3><a href="tel:+78462775414">+7 (846) 277-54-14<br><small>Пн–Пт 9:00–18:00</small></a><a href="mailto:info@promapparat.ru">info@promapparat.ru</a><p>446200, РФ, Самарская область,<br>г. Новокуйбышевск, ул. 50-летия НПЗ, д. 2</p></div>
+  </div>
+  <div class="wrap copyright"><p>© 2024 ПО ПРОМАППАРАТ. Все права защищены.</p><a href="#">Политика конфиденциальности</a></div>
+</footer>
+<script src="/script.js"></script>
 </body>
 </html>
