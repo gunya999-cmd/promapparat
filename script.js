@@ -1,0 +1,3 @@
+
+const form=document.querySelector('[data-lead-form]');
+if(form){const status=document.querySelector('[data-form-status]');form.addEventListener('submit',async e=>{e.preventDefault();status.textContent='Отправляем заявку...';const data=Object.fromEntries(new FormData(form).entries());try{const r=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(!r.ok)throw new Error();form.reset();status.textContent='Заявка отправлена.'}catch(err){status.textContent='Форма пока не подключена к email/Telegram. Обработчик: functions/api/lead.js'}})}
