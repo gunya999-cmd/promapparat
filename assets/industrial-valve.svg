@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="Промышленная трубопроводная арматура">
+  <defs>
+    <linearGradient id="metal" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.18" stop-color="#d9e2ec"/>
+      <stop offset="0.48" stop-color="#7b8797"/>
+      <stop offset="0.7" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#8a96a8"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2bb7dc"/>
+      <stop offset="0.55" stop-color="#126bff"/>
+      <stop offset="1" stop-color="#08459b"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="#000" flood-opacity="0.38"/>
+    </filter>
+  </defs>
+  <rect width="900" height="620" fill="none"/>
+  <g opacity="0.22" stroke="#8ecfff" stroke-width="1">
+    <path d="M120 90h640M120 150h640M120 210h640M120 270h640M120 330h640M120 390h640M120 450h640"/>
+    <path d="M150 70v430M230 70v430M310 70v430M390 70v430M470 70v430M550 70v430M630 70v430M710 70v430"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="70" y="287" width="760" height="92" rx="46" fill="url(#metal)" stroke="#cbd5e1" stroke-width="3"/>
+    <rect x="112" y="245" width="132" height="176" rx="34" fill="url(#metal)" stroke="#cbd5e1" stroke-width="3"/>
+    <rect x="656" y="245" width="132" height="176" rx="34" fill="url(#metal)" stroke="#cbd5e1" stroke-width="3"/>
+    <rect x="305" y="206" width="290" height="260" rx="72" fill="url(#metal)" stroke="#cbd5e1" stroke-width="4"/>
+    <rect x="414" y="122" width="72" height="126" rx="16" fill="url(#metal)" stroke="#cbd5e1" stroke-width="3"/>
+    <circle cx="450" cy="92" r="78" fill="none" stroke="url(#blue)" stroke-width="28"/>
+    <circle cx="450" cy="92" r="16" fill="#dbeafe" stroke="#126bff" stroke-width="8"/>
+    <path d="M450 14v156M372 92h156M395 37l110 110M505 37L395 147" stroke="#126bff" stroke-width="14" stroke-linecap="round" opacity="0.9"/>
+    <circle cx="178" cy="333" r="54" fill="none" stroke="#64748b" stroke-width="10" opacity="0.6"/>
+    <circle cx="722" cy="333" r="54" fill="none" stroke="#64748b" stroke-width="10" opacity="0.6"/>
+    <path d="M306 332h288" stroke="#475569" stroke-width="10" opacity="0.26"/>
+  </g>
+  <g transform="translate(72 486)">
+    <rect width="260" height="74" rx="18" fill="rgba(7,17,29,0.78)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="24" y="32" fill="#ffffff" font-family="Arial" font-size="18" font-weight="700">Арматура и КИПиА</text>
+    <text x="24" y="56" fill="#9fb0c6" font-family="Arial" font-size="14">подбор под параметры объекта</text>
+  </g>
+  <g transform="translate(360 486)">
+    <rect width="300" height="74" rx="18" fill="rgba(7,17,29,0.78)" stroke="rgba(255,255,255,0.16)"/>
+    <text x="24" y="32" fill="#ffffff" font-family="Arial" font-size="18" font-weight="700">Комплексная поставка</text>
+    <text x="24" y="56" fill="#9fb0c6" font-family="Arial" font-size="14">сроки, документы, логистика</text>
+  </g>
+</svg>
