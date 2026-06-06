@@ -8,178 +8,24 @@
   <link rel="icon" href="/assets/favicon.png">
   <style>
     :root{--blue:#075bd8;--navy:#071b3e;--muted:#4a5f7c;--line:#dbe7f6;--bg:#f5f9ff}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--navy);background:#fff}
-    a{text-decoration:none;color:inherit}
-    img{display:block;max-width:100%}
-    .wrap{width:min(100% - 56px,1180px);margin:auto}
-    .top{height:84px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.96);position:sticky;top:0;z-index:30;backdrop-filter:blur(10px)}
-    .top .wrap{height:84px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-    .brand img{width:220px;height:auto}
-    .nav{display:flex;gap:38px;font-size:14px;color:#152b4f}.nav a:hover{color:var(--blue)}
-    .top-right{display:flex;align-items:center;gap:18px}.phone{font-size:14px;font-weight:700}
-    .btn{height:46px;padding:0 22px;border-radius:6px;border:1px solid var(--blue);display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-weight:700;font-size:14px;white-space:nowrap;box-shadow:0 12px 28px rgba(7,91,216,.18)}
-    .btn.white{background:#fff;color:var(--blue);border-color:#c8d9ef;box-shadow:none}
-
-    .hero{position:relative;overflow:hidden;background:linear-gradient(90deg,#fbfdff 0%,#edf7ff 52%,#f9fcff 100%);border-bottom:1px solid var(--line)}
-    .hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(7,91,216,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(7,91,216,.07) 1px,transparent 1px);background-size:38px 38px;opacity:.8}
-    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.7) 38%,rgba(255,255,255,.12) 62%,rgba(255,255,255,.82) 100%)}
-    .plant{position:absolute;left:4%;bottom:54px;width:700px;height:345px;background:url('/assets/renders/hero-bg.webp') center/contain no-repeat;opacity:.58;z-index:1;filter:saturate(.95)}
-    .blueprint{position:absolute;right:-8px;top:38px;width:410px;height:455px;background:url('/assets/renders/blueprint-valve.webp') center/contain no-repeat;opacity:.42;z-index:1;mix-blend-mode:multiply}
-    .hero-grid{position:relative;z-index:2;min-height:570px;display:grid;grid-template-columns:470px 1fr 286px;align-items:center;gap:0}
-    .kicker{margin:0 0 16px;color:var(--blue);text-transform:uppercase;letter-spacing:.17em;font-size:15px}
-    .hero h1{margin:0;text-transform:uppercase;font-size:42px;line-height:1.08;letter-spacing:.02em}
-    .hero h1 span{display:block;color:var(--blue);font-size:30px;margin-top:8px}
-    .lead{margin:22px 0 0;max-width:430px;color:#173258;font-size:16px;line-height:1.65}
-    .features{margin:34px 0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:560px}
-    .feature{font-size:12px;line-height:1.35;font-weight:700;color:#14294e;border-right:1px solid #d4e2f2;padding-right:12px}
-    .feature:last-child{border-right:0}
-    .actions{display:flex;gap:12px}
-    .visual{position:relative;justify-self:center;width:540px;margin-left:-122px;margin-top:8px;z-index:3;filter:drop-shadow(0 38px 30px rgba(35,48,66,.28))}
-    .visual:before{content:"";position:absolute;left:8%;right:8%;bottom:5%;height:44px;background:radial-gradient(ellipse at center,rgba(7,28,62,.22),rgba(7,28,62,0) 70%);filter:blur(4px);z-index:0}
-    .visual img{position:relative;z-index:1;width:100%;height:auto}
-    .badge{position:absolute;z-index:2;left:8%;top:7%;padding:9px 13px;border:1px solid #d7e5f5;border-radius:999px;background:rgba(255,255,255,.9);box-shadow:0 12px 28px rgba(28,62,104,.08);font-size:12px;font-weight:700;color:#173258}
-    .card{justify-self:end;width:282px;padding:24px;background:rgba(255,255,255,.95);border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 48px rgba(24,58,103,.12);display:grid;gap:16px}
-    .card h3{margin:0 0 2px;font-size:15px;line-height:1.25}
-    .card p{margin:0;padding-left:22px;position:relative;font-size:14px;line-height:1.45;color:#10284f}
-    .card p:before{content:"";position:absolute;left:0;top:5px;width:10px;height:6px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg)}
-
-    .stats{position:relative;z-index:4;margin-top:-34px}
-    .stats-box{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 45px rgba(20,55,100,.1);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
-    .stat{padding:24px 28px;border-right:1px solid #e1ebf7}
-    .stat:last-child{border-right:0}.stat strong{display:block;font-size:24px;margin-bottom:5px}.stat span{font-size:14px;color:#4a5f7c}
-
-    .section{padding:54px 0}
-    .title{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px}
-    .title h2{margin:0;text-transform:uppercase;font-size:22px}
-    .title h2:after{content:"";display:block;width:34px;height:2px;background:var(--blue);margin-top:9px}
-    .title a{color:var(--blue);font-size:14px;font-weight:700}
-
-    .cats{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
-    .cat{min-height:190px;padding:18px 14px;text-align:center;border:1px solid var(--line);border-radius:9px;background:#fff;box-shadow:0 10px 24px rgba(31,69,117,.05);display:flex;flex-direction:column;align-items:center;justify-content:space-between}
-    .cat img{width:132px;height:88px;object-fit:contain}.cat h3{margin:10px 0 0;font-size:15px;line-height:1.25}
-
-    .spec{background:#f5f9ff;border-top:1px solid #e5eef9;border-bottom:1px solid #e5eef9}
-    .spec-box{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
-    .spec h2{margin:0 0 14px;font-size:28px;line-height:1.18}.spec p{margin:0 0 18px;color:#415675;line-height:1.6}
-    .upload{min-height:180px;border:1.5px dashed var(--blue);border-radius:12px;background:#fff;display:grid;place-items:center;text-align:center;padding:24px}
-    .upload strong{font-size:18px}.upload span{color:#60718a}
-
-    .why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-    .why{min-height:108px;border:1px solid var(--line);border-radius:9px;background:#fff;box-shadow:0 10px 24px rgba(31,69,117,.04);padding:18px}
-    .why h3{margin:0 0 8px;font-size:14px;line-height:1.35}.why p{margin:0;font-size:12px;line-height:1.45;color:#4a5f7c}
-
-    .foot{padding:36px 0;background:#001f4a;color:#fff}.foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
-    .foot p,.foot a{color:#dbe8ff;font-size:14px;line-height:1.6}.foot h3{margin:0 0 12px}.copyright{padding-top:18px;margin-top:24px;border-top:1px solid rgba(255,255,255,.14);color:#b9c9e6;font-size:13px}
-
-    @media(max-width:980px){
-      .top{height:auto}.top .wrap{height:auto;min-height:78px;flex-wrap:wrap}.nav{order:3;width:100%;overflow:auto;padding-bottom:10px}.phone{display:none}
-      .hero-grid{grid-template-columns:1fr;padding:45px 0}.features{grid-template-columns:repeat(2,1fr)}.visual{width:min(560px,88vw);margin:20px 0}.card{width:min(100%,560px);justify-self:start}
-      .stats-box{grid-template-columns:repeat(2,1fr)}.cats{grid-template-columns:repeat(3,1fr)}.spec-box{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr 1fr}.blueprint{right:-60px}
-    }
-    @media(max-width:640px){
-      .wrap{width:min(100% - 32px,100%)}.hero h1{font-size:30px}.hero h1 span{font-size:22px}.features,.stats-box,.cats,.foot-grid,.why-grid{grid-template-columns:1fr}.feature,.stat{border-right:0}.actions{flex-direction:column}.actions .btn{width:100%}.plant,.blueprint{opacity:.24}.badge{display:none}
-    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--navy);background:#fff}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}.wrap{width:min(100% - 56px,1220px);margin:auto}
+    .top{height:88px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.96);position:sticky;top:0;z-index:30;backdrop-filter:blur(10px)}.top .wrap{height:88px;display:flex;align-items:center;justify-content:space-between;gap:30px}.brand img{width:226px;height:auto}.nav{display:flex;gap:38px;font-size:14px;color:#152b4f}.nav a:hover{color:var(--blue)}.top-right{display:flex;align-items:center;gap:22px}.contacts{display:grid;gap:5px;font-size:13px;color:#0c2144}.contacts strong{font-size:15px}.contacts span{color:#4a5f7c}.btn{height:48px;padding:0 24px;border-radius:6px;border:1px solid var(--blue);display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-weight:700;font-size:14px;white-space:nowrap;box-shadow:0 12px 28px rgba(7,91,216,.18)}.btn.white{background:#fff;color:var(--blue);border-color:#c8d9ef;box-shadow:none}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(90deg,#fbfdff 0%,#edf7ff 54%,#f9fcff 100%);border-bottom:1px solid var(--line)}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(7,91,216,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(7,91,216,.07) 1px,transparent 1px);background-size:38px 38px;opacity:.82}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.62) 39%,rgba(255,255,255,.18) 60%,rgba(255,255,255,.86) 100%)}
+    .plant{position:absolute;left:150px;bottom:82px;width:560px;height:330px;background:url('/assets/renders/hero-bg.webp') center/contain no-repeat;opacity:.74;z-index:1;filter:saturate(.98)}.blueprint{position:absolute;right:92px;top:44px;width:470px;height:395px;background:url('/assets/renders/blueprint-valve.webp') center/contain no-repeat;opacity:.34;z-index:1;mix-blend-mode:multiply}.hero-grid{position:relative;z-index:2;min-height:520px;display:grid;grid-template-columns:470px 430px 282px;align-items:center;gap:14px}
+    .kicker{margin:0 0 16px;color:var(--blue);text-transform:uppercase;letter-spacing:.17em;font-size:15px}.hero h1{margin:0;text-transform:uppercase;font-size:43px;line-height:1.08;letter-spacing:.02em}.hero h1 span{display:block;color:var(--blue);font-size:30px;margin-top:8px}.lead{margin:22px 0 0;max-width:430px;color:#173258;font-size:16px;line-height:1.65}.features{margin:34px 0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:13px;max-width:575px}.feature{min-height:42px;font-size:12px;line-height:1.35;font-weight:700;color:#14294e;border-right:1px solid #d4e2f2;padding:0 13px 0 34px;position:relative}.feature:before{content:"";position:absolute;left:0;top:2px;width:22px;height:22px;border:2px solid var(--blue);border-radius:6px;opacity:.9}.feature:nth-child(1):before{border-radius:50%}.feature:last-child{border-right:0}.actions{display:flex;gap:16px}
+    .visual{position:relative;justify-self:center;width:430px;margin-left:-18px;margin-top:0;z-index:3;filter:drop-shadow(0 34px 28px rgba(35,48,66,.3))}.visual:before{content:"";position:absolute;left:9%;right:9%;bottom:7%;height:38px;background:radial-gradient(ellipse at center,rgba(7,28,62,.24),rgba(7,28,62,0) 72%);filter:blur(5px);z-index:0}.visual img{position:relative;z-index:1;width:100%;height:auto}.badge{display:none}.card{justify-self:end;width:275px;padding:25px 23px;background:rgba(255,255,255,.95);border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 48px rgba(24,58,103,.13);display:grid;gap:18px}.card h3{display:none}.card p{margin:0;padding-left:34px;position:relative;font-size:14px;line-height:1.45;color:#10284f}.card p:before{content:"";position:absolute;left:0;top:0;width:23px;height:23px;border:2px solid var(--blue);border-radius:6px;opacity:.9}
+    .stats{position:relative;z-index:4;margin-top:-24px}.stats-box{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 45px rgba(20,55,100,.1);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}.stat{padding:26px 32px;border-right:1px solid #e1ebf7;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center}.stat:before{content:"";width:36px;height:36px;border:2px solid var(--blue);border-radius:10px}.stat:last-child{border-right:0}.stat strong{display:block;font-size:25px;margin-bottom:5px}.stat span{font-size:14px;color:#4a5f7c}
+    .section{padding:46px 0}.title{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px}.title h2{margin:0;text-transform:uppercase;font-size:22px;letter-spacing:.02em}.title h2:after{content:"";display:block;width:34px;height:2px;background:var(--blue);margin-top:9px}.title a{color:var(--blue);font-size:14px;font-weight:700}.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.cat{height:180px;padding:19px 14px;text-align:center;border:1px solid var(--line);border-radius:9px;background:#fff;box-shadow:0 10px 24px rgba(31,69,117,.05);display:flex;flex-direction:column;align-items:center;justify-content:space-between}.cat img{width:132px;height:88px;object-fit:contain}.cat h3{margin:10px 0 0;font-size:15px;line-height:1.25}
+    .spec{background:#f5f9ff;border-top:1px solid #e5eef9;border-bottom:1px solid #e5eef9}.spec-box{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}.spec h2{margin:0 0 14px;font-size:28px;line-height:1.18}.spec p{margin:0 0 18px;color:#415675;line-height:1.6}.upload{min-height:180px;border:1.5px dashed var(--blue);border-radius:12px;background:#fff;display:grid;place-items:center;text-align:center;padding:24px}.upload strong{font-size:18px}.upload span{color:#60718a}.why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.why{min-height:108px;border:1px solid var(--line);border-radius:9px;background:#fff;box-shadow:0 10px 24px rgba(31,69,117,.04);padding:18px}.why h3{margin:0 0 8px;font-size:14px;line-height:1.35}.why p{margin:0;font-size:12px;line-height:1.45;color:#4a5f7c}.foot{padding:36px 0;background:#001f4a;color:#fff}.foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}.foot p,.foot a{color:#dbe8ff;font-size:14px;line-height:1.6}.foot h3{margin:0 0 12px}.copyright{padding-top:18px;margin-top:24px;border-top:1px solid rgba(255,255,255,.14);color:#b9c9e6;font-size:13px}
+    @media(max-width:980px){.top{height:auto}.top .wrap{height:auto;min-height:78px;flex-wrap:wrap}.nav{order:3;width:100%;overflow:auto;padding-bottom:10px}.contacts{display:none}.hero-grid{grid-template-columns:1fr;padding:45px 0}.features{grid-template-columns:repeat(2,1fr)}.visual{width:min(460px,88vw);margin:20px 0}.card{width:min(100%,560px);justify-self:start}.stats-box{grid-template-columns:repeat(2,1fr)}.cats{grid-template-columns:repeat(3,1fr)}.spec-box{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr 1fr}.blueprint{right:-60px}.plant{left:0}}
+    @media(max-width:640px){.wrap{width:min(100% - 32px,100%)}.hero h1{font-size:30px}.hero h1 span{font-size:22px}.features,.stats-box,.cats,.foot-grid,.why-grid{grid-template-columns:1fr}.feature,.stat{border-right:0}.actions{flex-direction:column}.actions .btn{width:100%}.plant,.blueprint{opacity:.22}.top-right{width:100%;justify-content:space-between}.cat{height:auto}.stats{margin-top:0}}
   </style>
 </head>
 <body>
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/logo-light-bg.png" alt="Промаппарат"></a>
-    <nav class="nav"><a href="#about">О компании</a><a href="#catalog">Каталог</a><a href="#spec">Опросный лист</a><a href="#contacts">Контакты</a></nav>
-    <div class="top-right"><a class="phone" href="tel:+78462775414">+7 (846) 277-54-14</a><a class="btn" href="mailto:info@promapparat.ru?subject=Запрос%20КП">Получить КП</a></div>
-  </div>
-</header>
-
-<main>
-  <section class="hero">
-    <div class="plant"></div>
-    <div class="blueprint"></div>
-    <div class="wrap hero-grid">
-      <div>
-        <p class="kicker">Комплексные поставки</p>
-        <h1>Промышленная<br>арматура и КИП <span>для предприятий России</span></h1>
-        <p class="lead">Надёжное оборудование для нефтегазовой, химической, энергетической и других отраслей промышленности.</p>
-        <div class="features">
-          <div class="feature">Подбор<br>аналогов</div>
-          <div class="feature">Работа по<br>спецификациям и ТЗ</div>
-          <div class="feature">Поставки<br>по всей России</div>
-          <div class="feature">Сертифицированная<br>продукция</div>
-        </div>
-        <div class="actions"><a class="btn" href="mailto:info@promapparat.ru?subject=Запрос%20КП">Получить КП →</a><a class="btn white" href="#spec">Скачать опросный лист ↓</a></div>
-      </div>
-      <div class="visual">
-        <div class="badge">Арматура · КИП · насосы</div>
-        <img src="/assets/renders/hero-valve.webp" alt="Промышленная арматура">
-      </div>
-      <aside class="card">
-        <h3>Подбор под задачу</h3>
-        <p>Оборудование по техническому заданию</p>
-        <p>Аналоги импортного оборудования</p>
-        <p>Сертифицированная продукция</p>
-        <p>Поставки по всей России</p>
-        <p>Собственный опыт и экспертиза</p>
-      </aside>
-    </div>
-  </section>
-
-  <section class="stats">
-    <div class="wrap stats-box">
-      <div class="stat"><strong>12+</strong><span>лет на рынке</span></div>
-      <div class="stat"><strong>1000+</strong><span>успешных поставок</span></div>
-      <div class="stat"><strong>По всей России</strong><span>поставки в регионы</span></div>
-      <div class="stat"><strong>100%</strong><span>сертифицированное оборудование</span></div>
-    </div>
-  </section>
-
-  <section class="section" id="catalog">
-    <div class="wrap">
-      <div class="title"><h2>Каталог продукции</h2><a href="#catalog">Смотреть весь каталог →</a></div>
-      <div class="cats">
-        <a class="cat" href="/catalog/zapornaya-armatura.html"><img src="/assets/renders/catalog-valve.webp" alt="Запорная арматура"><h3>Запорная<br>арматура</h3></a>
-        <a class="cat" href="/catalog/reguliruyushchaya-armatura.html"><img src="/assets/renders/catalog-control-valve.webp" alt="Регулирующая арматура"><h3>Регулирующая<br>арматура</h3></a>
-        <a class="cat" href="/catalog/kipia.html"><img src="/assets/renders/catalog-kip.webp" alt="КИПиА"><h3>КИПиА</h3></a>
-        <a class="cat" href="/catalog/nasosnoe-oborudovanie.html"><img src="/assets/renders/catalog-pump.webp" alt="Насосное оборудование"><h3>Насосное<br>оборудование</h3></a>
-        <a class="cat" href="/catalog/teploobmennoe-oborudovanie.html"><img src="/assets/renders/catalog-heat-exchanger.webp" alt="Теплообменное оборудование"><h3>Теплообменное<br>оборудование</h3></a>
-        <a class="cat" href="/catalog/privody.html"><img src="/assets/renders/catalog-drive.webp" alt="Приводы"><h3>Приводы</h3></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section spec" id="spec">
-    <div class="wrap spec-box">
-      <div>
-        <h2>Пришлите спецификацию —<br>подберём оборудование и аналоги</h2>
-        <p>Работаем по опросным листам, чертежам и техническим заданиям. Подберём оборудование, аналоги и подготовим коммерческое предложение.</p>
-        <a class="btn" href="mailto:info@promapparat.ru?subject=Спецификация%20для%20подбора">Отправить спецификацию</a>
-      </div>
-      <div class="upload"><strong>Загрузка файла будет добавлена следующим шагом</strong><span>Сейчас кнопка ведёт на email</span></div>
-    </div>
-  </section>
-
-  <section class="section" id="about">
-    <div class="wrap">
-      <div class="title"><h2>Почему Промаппарат</h2></div>
-      <div class="why-grid">
-        <div class="why"><h3>Комплексные поставки</h3><p>Подбираем и поставляем оборудование в одном проекте.</p></div>
-        <div class="why"><h3>Подбор аналогов</h3><p>Предлагаем решения под требования предприятия и ТЗ.</p></div>
-        <div class="why"><h3>Документы и сертификаты</h3><p>Передаём паспорта, сертификаты и сопроводительные документы.</p></div>
-        <div class="why"><h3>Тендерные поставки</h3><p>Есть опыт работы с крупными промышленными заказчиками.</p></div>
-        <div class="why"><h3>Поддержка на этапах</h3><p>Сопровождаем проект от запроса до поставки.</p></div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="foot" id="contacts">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div><h3>ПО Промаппарат</h3><p>Комплексные поставки промышленной арматуры и КИПиА для предприятий России.</p></div>
-      <div><h3>Контакты</h3><p><a href="tel:+78462775414">+7 (846) 277-54-14</a><br><a href="mailto:info@promapparat.ru">info@promapparat.ru</a><br>446200, РФ, Самарская область,<br>г. Новокуйбышевск, ул. 50-летия НПЗ, д. 2</p></div>
-    </div>
-    <div class="copyright">© 2024 ПО ПРОМАППАРАТ. Все права защищены.</div>
-  </div>
-</footer>
-</body>
-</html>
+<header class="top"><div class="wrap"><a class="brand" href="/"><img src="/assets/logo-light-bg.png" alt="Промаппарат"></a><nav class="nav"><a href="#about">О компании</a><a href="#catalog">Каталог</a><a href="#spec">Опросный лист</a><a href="#contacts">Контакты</a></nav><div class="top-right"><div class="contacts"><strong>+7 (846) 277-54-14</strong><span>Пн–Пт 9:00–18:00</span><span>info@promapparat.ru</span></div><a class="btn" href="mailto:info@promapparat.ru?subject=Запрос%20КП">Получить КП</a></div></div></header>
+<main><section class="hero"><div class="plant"></div><div class="blueprint"></div><div class="wrap hero-grid"><div><p class="kicker">Комплексные поставки</p><h1>Промышленная<br>арматура и КИП <span>для предприятий России</span></h1><p class="lead">Надёжное оборудование для нефтегазовой, химической, энергетической и других отраслей промышленности.</p><div class="features"><div class="feature">Подбор<br>аналогов</div><div class="feature">Работа по<br>спецификациям и ТЗ</div><div class="feature">Поставки<br>по всей России</div><div class="feature">Сертифицированная<br>продукция</div></div><div class="actions"><a class="btn" href="mailto:info@promapparat.ru?subject=Запрос%20КП">Получить КП →</a><a class="btn white" href="#spec">Скачать опросный лист ↓</a></div></div><div class="visual"><img src="/assets/renders/hero-valve.webp" alt="Промышленная арматура"></div><aside class="card"><h3>Подбор под задачу</h3><p>Подбор оборудования по техническому заданию</p><p>Аналоги импортного оборудования</p><p>Сертифицированная продукция</p><p>Поставки по всей России</p><p>Собственный опыт и экспертиза</p></aside></div></section>
+<section class="stats"><div class="wrap stats-box"><div class="stat"><div><strong>12+</strong><span>лет на рынке</span></div></div><div class="stat"><div><strong>1000+</strong><span>успешных поставок</span></div></div><div class="stat"><div><strong>По всей России</strong><span>поставки в регионы</span></div></div><div class="stat"><div><strong>100%</strong><span>сертифицированное оборудование</span></div></div></div></section>
+<section class="section" id="catalog"><div class="wrap"><div class="title"><h2>Каталог продукции</h2><a href="#catalog">Смотреть весь каталог →</a></div><div class="cats"><a class="cat" href="/catalog/zapornaya-armatura.html"><img src="/assets/renders/catalog-valve.webp" alt="Запорная арматура"><h3>Запорная<br>арматура</h3></a><a class="cat" href="/catalog/reguliruyushchaya-armatura.html"><img src="/assets/renders/catalog-control-valve.webp" alt="Регулирующая арматура"><h3>Регулирующая<br>арматура</h3></a><a class="cat" href="/catalog/kipia.html"><img src="/assets/renders/catalog-kip.webp" alt="КИПиА"><h3>КИПиА</h3></a><a class="cat" href="/catalog/nasosnoe-oborudovanie.html"><img src="/assets/renders/catalog-pump.webp" alt="Насосное оборудование"><h3>Насосное<br>оборудование</h3></a><a class="cat" href="/catalog/teploobmennoe-oborudovanie.html"><img src="/assets/renders/catalog-heat-exchanger.webp" alt="Теплообменное оборудование"><h3>Теплообменное<br>оборудование</h3></a><a class="cat" href="/catalog/privody.html"><img src="/assets/renders/catalog-drive.webp" alt="Приводы"><h3>Приводы</h3></a></div></div></section>
+<section class="section spec" id="spec"><div class="wrap spec-box"><div><h2>Пришлите спецификацию —<br>подберём оборудование и аналоги</h2><p>Работаем по опросным листам, чертежам и техническим заданиям. Подберём оборудование, аналоги и подготовим коммерческое предложение.</p><a class="btn" href="mailto:info@promapparat.ru?subject=Спецификация%20для%20подбора">Отправить спецификацию</a></div><div class="upload"><strong>Загрузка файла будет добавлена следующим шагом</strong><span>Сейчас кнопка ведёт на email</span></div></div></section>
+<section class="section" id="about"><div class="wrap"><div class="title"><h2>Почему Промаппарат</h2></div><div class="why-grid"><div class="why"><h3>Комплексные поставки</h3><p>Подбираем и поставляем оборудование в одном проекте.</p></div><div class="why"><h3>Подбор аналогов</h3><p>Предлагаем решения под требования предприятия и ТЗ.</p></div><div class="why"><h3>Документы и сертификаты</h3><p>Передаём паспорта, сертификаты и сопроводительные документы.</p></div><div class="why"><h3>Тендерные поставки</h3><p>Есть опыт работы с крупными промышленными заказчиками.</p></div><div class="why"><h3>Поддержка на этапах</h3><p>Сопровождаем проект от запроса до поставки.</p></div></div></div></section></main>
+<footer class="foot" id="contacts"><div class="wrap"><div class="foot-grid"><div><h3>ПО Промаппарат</h3><p>Комплексные поставки промышленной арматуры и КИПиА для предприятий России.</p></div><div><h3>Контакты</h3><p><a href="tel:+78462775414">+7 (846) 277-54-14</a><br><a href="mailto:info@promapparat.ru">info@promapparat.ru</a><br>446200, РФ, Самарская область,<br>г. Новокуйбышевск, ул. 50-летия НПЗ, д. 2</p></div></div><div class="copyright">© 2024 ПО ПРОМАППАРАТ. Все права защищены.</div></div></footer></body></html>
