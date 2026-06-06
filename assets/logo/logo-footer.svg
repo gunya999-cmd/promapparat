@@ -1,11 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="286" height="72" viewBox="0 0 286 72" fill="none">
-  <g stroke="#075bd8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M10 18l22-12 22 12-22 12z"/>
-    <path d="M10 18v24l22 12 22-12V18"/>
-    <path d="M32 30v24"/>
-    <path d="M18 25v13l14 8"/>
-    <path d="M46 25v13l-14 8"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="330" height="78" viewBox="0 0 330 78" fill="none">
+  <title>ПРОМАППАРАТ — производственное объединение</title>
+  <g transform="translate(5 6)">
+    <path d="M33 0L66 33L33 66L0 33L33 0Z" fill="#09AEEA"/>
+    <path d="M18 35L29 24L43 38L50 31" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M16 31L30 45L38 37L49 48" stroke="#0B223F" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
-  <text x="72" y="29" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800" fill="#ffffff" letter-spacing="1">ПРОМАППАРАТ</text>
-  <text x="74" y="50" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#ffffff">промышленное оборудование</text>
+  <text x="84" y="36" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="25" font-weight="900" fill="#ffffff" letter-spacing="1.2">ПРОМАППАРАТ</text>
+  <text x="86" y="57" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="500" fill="#CFE4FF" letter-spacing="2.2">производственное объединение</text>
 </svg>
