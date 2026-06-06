@@ -1,1 +1,8 @@
 .hero-bg{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;background:url('/assets/hero/hero-refinery-bg.webp') center center/cover no-repeat!important;opacity:.34!important;z-index:1!important;filter:saturate(.95)!important}.hero:after{background:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.70) 30%,rgba(255,255,255,.34) 55%,rgba(255,255,255,.82) 100%)!important}@media(max-width:640px){.hero-bg{inset:0!important;width:100%!important;height:100%!important;opacity:.25!important;background-size:cover!important}}
+
+/* Visual editor saved overrides */
+.hero-bg{transform:translate(-261px,0px) scale(1)!important;opacity:0.34!important;filter:brightness(1) contrast(1) saturate(0.95) hue-rotate(0deg)!important;}
+.hero-product{transform:translate(27px,40px) scale(1.11)!important;opacity:1!important;filter:brightness(1) contrast(1) saturate(1) hue-rotate(0deg)!important;}
+.hero-blueprint{transform:translate(-229px,0px) scale(1.23)!important;opacity:0.11!important;filter:brightness(1) contrast(1.44) saturate(3) hue-rotate(-7deg)!important;}
+.hero-card{transform:translate(0px,0px) scale(1)!important;opacity:1!important;filter:brightness(1) contrast(1) saturate(1) hue-rotate(0deg)!important;}
+.stats{transform:translate(0px,0px) scale(1)!important;opacity:1!important;filter:brightness(1) contrast(1) saturate(1) hue-rotate(0deg)!important;}
