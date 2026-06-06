@@ -1,0 +1,48 @@
+path,format,size_kb,usage
+assets/catalog/catalog-actuator.webp,webp,8.6,catalog
+assets/catalog/catalog-control-valve.webp,webp,28.2,catalog
+assets/catalog/catalog-gauge.webp,webp,11.3,catalog
+assets/catalog/catalog-heat-exchanger.webp,webp,14.8,catalog
+assets/catalog/catalog-pump.webp,webp,10.3,catalog
+assets/catalog/catalog-shutoff-valve.webp,webp,12.8,catalog
+assets/css/components.css,css,0.7,editable CSS components
+assets/hero/hero-blueprint-valve.svg,svg,0.8,hero
+assets/hero/hero-grid.svg,svg,0.3,hero
+assets/hero/hero-main-valve.webp,webp,45.3,hero
+assets/hero/hero-refinery-bg.webp,webp,21.3,hero
+assets/icons/benefit-docs.svg,svg,0.3,icon
+assets/icons/benefit-original.svg,svg,0.3,icon
+assets/icons/benefit-supply.svg,svg,0.3,icon
+assets/icons/benefit-support.svg,svg,0.4,icon
+assets/icons/benefit-tender.svg,svg,0.3,icon
+assets/icons/certificate.svg,svg,0.3,icon
+assets/icons/delivery.svg,svg,0.3,icon
+assets/icons/expertise.svg,svg,0.4,icon
+assets/icons/footer-location.svg,svg,0.3,icon
+assets/icons/footer-mail.svg,svg,0.3,icon
+assets/icons/footer-phone.svg,svg,0.3,icon
+assets/icons/import-analog.svg,svg,0.3,icon
+assets/icons/mail.svg,svg,0.3,icon
+assets/icons/phone.svg,svg,0.3,icon
+assets/icons/russia-delivery.svg,svg,0.3,icon
+assets/icons/search-analog.svg,svg,0.3,icon
+assets/icons/selection-by-tz.svg,svg,0.3,icon
+assets/icons/shield-cert.svg,svg,0.3,icon
+assets/icons/specification.svg,svg,0.3,icon
+assets/icons/stats-clients.svg,svg,0.4,icon
+assets/icons/stats-market.svg,svg,0.3,icon
+assets/icons/stats-quality.svg,svg,0.3,icon
+assets/icons/stats-russia.svg,svg,0.3,icon
+assets/icons/upload-cloud.svg,svg,0.3,icon
+assets/logo/logo-footer.svg,svg,0.7,logo
+assets/logo/logo-main.svg,svg,0.7,logo
+assets/renders/blueprint-valve.svg,svg,0.8,legacy/current compatibility
+assets/renders/catalog-control-valve.webp,webp,28.2,legacy/current compatibility
+assets/renders/catalog-drive.webp,webp,8.6,legacy/current compatibility
+assets/renders/catalog-heat-exchanger.webp,webp,14.8,legacy/current compatibility
+assets/renders/catalog-kip.webp,webp,11.3,legacy/current compatibility
+assets/renders/catalog-pump.webp,webp,10.3,legacy/current compatibility
+assets/renders/catalog-valve.webp,webp,12.8,legacy/current compatibility
+assets/renders/hero-bg.webp,webp,21.3,legacy/current compatibility
+assets/renders/hero-valve.webp,webp,45.3,legacy/current compatibility
+assets/spec/spec-blueprint-valve.svg,svg,0.8,spec
