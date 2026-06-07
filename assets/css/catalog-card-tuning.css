@@ -106,3 +106,55 @@
     transform:none;
   }
 }
+
+/* Full image catalog cards */
+.catalog-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+}
+
+.catalog-grid .cat{
+  display:block;
+  min-height:0;
+  height:auto;
+  padding:0;
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  overflow:visible;
+}
+
+.catalog-grid .cat::before,
+.catalog-grid .cat::after{
+  display:none;
+}
+
+.catalog-grid .cat img{
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:auto !important;
+  object-fit:contain !important;
+  border-radius:14px;
+  filter:none;
+}
+
+.catalog-grid .cat-body{
+  display:none;
+}
+
+.catalog-grid .cat:hover{
+  transform:translateY(-4px);
+  box-shadow:none;
+}
+
+@media(max-width:900px){
+  .catalog-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:560px){
+  .catalog-grid{
+    grid-template-columns:1fr;
+  }
+}
