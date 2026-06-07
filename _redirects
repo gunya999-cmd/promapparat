@@ -1,0 +1,29 @@
+# Canonical host
+https://www.promapparat.ru/* https://promapparat.ru/:splat 301
+
+# New test catalog URLs -> preserved SEO URLs
+/catalog/zapornaya-armatura /truboprovodnaya-i-zapornaya-armatura/ 301
+/catalog/zapornaya-armatura.html /truboprovodnaya-i-zapornaya-armatura/ 301
+/catalog/kipia /kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya/ 301
+/catalog/kipia.html /kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya/ 301
+/catalog/reguliruyushchaya-armatura /reguliruyushchaya-armatura/ 301
+/catalog/reguliruyushchaya-armatura.html /reguliruyushchaya-armatura/ 301
+/catalog/rashodomery /rashodomery/ 301
+/catalog/rashodomery.html /rashodomery/ 301
+/catalog/urovnemery /urovnemery/ 301
+/catalog/urovnemery.html /urovnemery/ 301
+/catalog/vspomogatelnoe-oborudovanie /vspomogatelnoe-oborudovanie/ 301
+/catalog/vspomogatelnoe-oborudovanie.html /vspomogatelnoe-oborudovanie/ 301
+/catalog/privody /privody/ 301
+/catalog/privody.html /privody/ 301
+/catalog/nasosnoe-oborudovanie /nasosnoe-oborudovanie/ 301
+/catalog/nasosnoe-oborudovanie.html /nasosnoe-oborudovanie/ 301
+/catalog/teploobmennoe-oborudovanie /teploobmennoe-oborudovanie/ 301
+/catalog/teploobmennoe-oborudovanie.html /teploobmennoe-oborudovanie/ 301
+/catalog/truboprovodnye-detali /truboprovodnye-detali/ 301
+/catalog/truboprovodnye-detali.html /truboprovodnye-detali/ 301
+
+# Common legacy variants
+/katalog.html /katalog/ 301
+/kontakty.html /kontakty/ 301
+/oprosnye-listy.html /oprosnye-listy/ 301
