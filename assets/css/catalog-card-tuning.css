@@ -158,3 +158,195 @@
     grid-template-columns:1fr;
   }
 }
+
+/* === Safe catalog hover overlay: CSS only, no image swap === */
+
+#catalog .catalog-grid .cat{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  border-radius:18px;
+  transform:translateY(0);
+  transition:
+    transform .26s ease,
+    box-shadow .26s ease;
+}
+
+#catalog .catalog-grid .cat img{
+  display:block;
+  width:100% !important;
+  height:auto !important;
+  border-radius:18px;
+  transform:scale(1);
+  transition:
+    transform .32s ease,
+    filter .32s ease;
+}
+
+/* Blueprint / glow layer — only over the dark technical top area */
+#catalog .catalog-grid .cat::before{
+  content:"";
+  display:block !important;
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  opacity:0;
+  border-radius:18px;
+  background:
+    linear-gradient(115deg, transparent 0%, transparent 38%, rgba(255,255,255,.28) 48%, rgba(40,150,255,.14) 56%, transparent 68%),
+    repeating-linear-gradient(0deg, rgba(105,180,255,.13) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(90deg, rgba(105,180,255,.10) 0 1px, transparent 1px 42px),
+    radial-gradient(circle at 72% 25%, rgba(0,145,255,.22), transparent 36%);
+  background-size:
+    220% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  background-position:
+    -140% 0,
+    0 0,
+    0 0,
+    0 0;
+  -webkit-mask-image:linear-gradient(to bottom, #000 0%, #000 61%, transparent 62%);
+  mask-image:linear-gradient(to bottom, #000 0%, #000 61%, transparent 62%);
+  transition:
+    opacity .26s ease,
+    background-position .72s ease;
+}
+
+/* Subtle arrow-zone glow, without drawing a second arrow */
+#catalog .catalog-grid .cat::after{
+  content:"";
+  display:block !important;
+  position:absolute;
+  inset:0;
+  z-index:3;
+  pointer-events:none;
+  opacity:0;
+  border-radius:18px;
+  background:
+    radial-gradient(circle at calc(100% - 42px) calc(100% - 42px), rgba(7,91,216,.28), transparent 48px);
+  transform:translateX(-8px);
+  transition:
+    opacity .24s ease,
+    transform .24s ease;
+}
+
+#catalog .catalog-grid .cat:hover{
+  transform:translateY(-7px);
+  box-shadow:
+    0 22px 48px rgba(7,27,62,.16),
+    0 0 0 1px rgba(7,91,216,.18),
+    0 0 28px rgba(7,91,216,.12);
+}
+
+#catalog .catalog-grid .cat:hover img{
+  transform:scale(1.014);
+  filter:contrast(1.06) saturate(1.08) brightness(1.02);
+}
+
+#catalog .catalog-grid .cat:hover::before{
+  opacity:1;
+  background-position:
+    135% 0,
+    0 0,
+    0 0,
+    0 0;
+}
+
+#catalog .catalog-grid .cat:hover::after{
+  opacity:1;
+  transform:translateX(0);
+}
+
+/* Расходомеры: Flow Effect */
+#catalog .catalog-grid .cat[href*="rashodomery"]::before{
+  background:
+    linear-gradient(100deg, transparent 0%, transparent 30%, rgba(0,205,255,.50) 45%, rgba(255,255,255,.30) 51%, rgba(0,135,255,.28) 58%, transparent 72%),
+    radial-gradient(circle at 50% 34%, rgba(0,180,255,.26), transparent 32%),
+    repeating-linear-gradient(0deg, rgba(105,180,255,.12) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(90deg, rgba(105,180,255,.10) 0 1px, transparent 1px 40px);
+  background-size:
+    260% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+}
+
+#catalog .catalog-grid .cat[href*="rashodomery"]:hover::before{
+  opacity:1;
+  animation:catalogFlowSoft 1.15s linear infinite;
+}
+
+/* Уровнемеры: Radar Pulse */
+#catalog .catalog-grid .cat[href*="urovnemery"]::before{
+  background:
+    radial-gradient(circle at 33% 30%, rgba(0,210,255,.32) 0%, rgba(0,155,255,.16) 22%, transparent 44%),
+    repeating-radial-gradient(circle at 33% 30%, rgba(95,190,255,.22) 0 1px, transparent 1px 18px),
+    linear-gradient(115deg, transparent 0%, rgba(255,255,255,.20) 48%, transparent 68%);
+  background-size:100% 100%;
+}
+
+#catalog .catalog-grid .cat[href*="urovnemery"]:hover::before{
+  opacity:1;
+  animation:catalogRadarSoft 1.25s ease-in-out infinite;
+}
+
+/* КИПиА: Signal Scan */
+#catalog .catalog-grid .cat[href*="kipia"]::before{
+  background:
+    linear-gradient(0deg, transparent 0%, transparent 46%, rgba(0,205,255,.28) 50%, transparent 54%, transparent 100%),
+    radial-gradient(circle at 28% 30%, rgba(0,175,255,.20), transparent 22%),
+    radial-gradient(circle at 58% 30%, rgba(0,175,255,.16), transparent 18%),
+    repeating-linear-gradient(90deg, rgba(105,180,255,.10) 0 1px, transparent 1px 40px);
+  background-size:100% 180%, 100% 100%, 100% 100%, 100% 100%;
+}
+
+#catalog .catalog-grid .cat[href*="kipia"]:hover::before{
+  opacity:1;
+  animation:catalogSignalScan 1.35s ease-in-out infinite;
+}
+
+@keyframes catalogFlowSoft{
+  0%{background-position:170% 0, 0 0, 0 0, 0 0}
+  100%{background-position:-120% 0, 0 0, 0 0, 0 0}
+}
+
+@keyframes catalogRadarSoft{
+  0%,100%{opacity:.55;filter:brightness(1)}
+  50%{opacity:1;filter:brightness(1.22)}
+}
+
+@keyframes catalogSignalScan{
+  0%{background-position:0 145%, 0 0, 0 0, 0 0}
+  50%{background-position:0 50%, 0 0, 0 0, 0 0}
+  100%{background-position:0 -45%, 0 0, 0 0, 0 0}
+}
+
+/* Mobile: stable cards */
+@media(max-width:560px){
+  #catalog .catalog-grid .cat:hover{
+    transform:none;
+  }
+
+  #catalog .catalog-grid .cat:hover img{
+    transform:none;
+    filter:none;
+  }
+
+  #catalog .catalog-grid .cat::before,
+  #catalog .catalog-grid .cat::after{
+    display:none !important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  #catalog .catalog-grid .cat,
+  #catalog .catalog-grid .cat img,
+  #catalog .catalog-grid .cat::before,
+  #catalog .catalog-grid .cat::after{
+    transition:none !important;
+    animation:none !important;
+  }
+}
