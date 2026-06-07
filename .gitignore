@@ -1,0 +1,10 @@
+/Для сайта/
+*.zip
+*.bak
+*.tmp
+*.psd
+*.ai
+*.sketch
+*.fig
+Thumbs.db
+.DS_Store
