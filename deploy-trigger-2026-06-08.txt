@@ -1,0 +1,4 @@
+Cloudflare Pages deploy trigger
+Date: 2026-06-08
+Purpose: force rebuild after SEO and B2B site completion package
+Latest expected redirect commit before trigger: b579a2cfe361a6f79034c8c3d825790484fccc12
