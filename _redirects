@@ -23,7 +23,41 @@ https://www.promapparat.ru/* https://promapparat.ru/:splat 301
 /catalog/truboprovodnye-detali /truboprovodnye-detali/ 301
 /catalog/truboprovodnye-detali.html /truboprovodnye-detali/ 301
 
+# Second-level legacy catalog variants
+/catalog/sharovye-krany /sharovye-krany/ 301
+/catalog/sharovye-krany.html /sharovye-krany/ 301
+/catalog/zadvizhki /zadvizhki/ 301
+/catalog/zadvizhki.html /zadvizhki/ 301
+/catalog/zatvory-diskovye /zatvory-diskovye/ 301
+/catalog/zatvory-diskovye.html /zatvory-diskovye/ 301
+/catalog/klapany-obratnye /klapany-obratnye/ 301
+/catalog/klapany-obratnye.html /klapany-obratnye/ 301
+/catalog/klapany-zapornye /klapany-zapornye/ 301
+/catalog/klapany-zapornye.html /klapany-zapornye/ 301
+/catalog/ventili /ventili/ 301
+/catalog/ventili.html /ventili/ 301
+/catalog/reguliruyushchie-klapany /reguliruyushchie-klapany/ 301
+/catalog/reguliruyushchie-klapany.html /reguliruyushchie-klapany/ 301
+/catalog/regulyatory-davleniya /regulyatory-davleniya/ 301
+/catalog/regulyatory-davleniya.html /regulyatory-davleniya/ 301
+/catalog/elektroprivody /elektroprivody/ 301
+/catalog/elektroprivody.html /elektroprivody/ 301
+/catalog/pnevmoprivody /pnevmoprivody/ 301
+/catalog/pnevmoprivody.html /pnevmoprivody/ 301
+/catalog/pozitsionery /pozitsionery/ 301
+/catalog/pozitsionery.html /pozitsionery/ 301
+/catalog/rele-davleniya /rele-davleniya/ 301
+/catalog/rele-davleniya.html /rele-davleniya/ 301
+/catalog/signalizatory-urovnya /signalizatory-urovnya/ 301
+/catalog/signalizatory-urovnya.html /signalizatory-urovnya/ 301
+/catalog/kamery-sod /kamery-sod/ 301
+/catalog/kamery-sod.html /kamery-sod/ 301
+/catalog/struyevypryamiteli /struyevypryamiteli/ 301
+/catalog/struyevypryamiteli.html /struyevypryamiteli/ 301
+
 # Common legacy variants
 /katalog.html /katalog/ 301
 /kontakty.html /kontakty/ 301
 /oprosnye-listy.html /oprosnye-listy/ 301
+/o-kompanii.html /o-kompanii/ 301
+/dokumentatsiya.html /dokumentatsiya/ 301
