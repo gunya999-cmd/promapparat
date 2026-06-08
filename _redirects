@@ -1,5 +1,5 @@
-# Canonical host
-https://www.promapparat.ru/* https://promapparat.ru/:splat 301
+# Canonical host redirect for www.promapparat.ru must be configured as a Cloudflare Redirect Rule after domain connection.
+# Cloudflare Pages _redirects supports relative source paths only.
 
 # New test catalog URLs -> preserved SEO URLs
 /catalog/zapornaya-armatura /truboprovodnaya-i-zapornaya-armatura/ 301
