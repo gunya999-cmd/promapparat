@@ -36,6 +36,8 @@
 /catalog/rezervuarnoe-oborudovanie.html /rezervuarnoe-oborudovanie/ 301
 /catalog/filtry-i-kompensatory /filtry-i-kompensatory/ 301
 /catalog/filtry-i-kompensatory.html /filtry-i-kompensatory/ 301
+/catalog/metallokonstruktsii-i-dymovye-truby /metallokonstruktsii-i-dymovye-truby/ 301
+/catalog/metallokonstruktsii-i-dymovye-truby.html /metallokonstruktsii-i-dymovye-truby/ 301
 
 # Russian transliteration legacy variants
 /catalog/emkostnoe_oborudovanie /emkostnoe-oborudovanie/ 301
@@ -43,6 +45,11 @@
 /catalog/rezervuarnoe_oborudovanie /rezervuarnoe-oborudovanie/ 301
 /catalog/nasosnoe_oborudovanie /nasosnoe-oborudovanie/ 301
 /catalog/filtry_i_kompensatory /filtry-i-kompensatory/ 301
+/catalog/metallokonstruktsii_i_dymovye_truby /metallokonstruktsii-i-dymovye-truby/ 301
+/catalog/dymovye_truby /metallokonstruktsii-i-dymovye-truby/ 301
+/catalog/dymovye-truby /metallokonstruktsii-i-dymovye-truby/ 301
+/catalog/stroitelnye_metallokonstruktsii /metallokonstruktsii-i-dymovye-truby/ 301
+/catalog/stroitelnye-metallokonstruktsii /metallokonstruktsii-i-dymovye-truby/ 301
 
 # Second-level legacy catalog variants
 /catalog/sharovye-krany /sharovye-krany/ 301
