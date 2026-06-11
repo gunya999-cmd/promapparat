@@ -1,19 +1,51 @@
 # Canonical host redirect for www.promapparat.ru must be configured as a Cloudflare Redirect Rule after domain connection.
 # Cloudflare Pages _redirects supports relative source paths only.
 
+# Homepage and common legacy variants
+/index.html / 301
+/home / 301
+/home.html / 301
+/main / 301
+/main.html / 301
+/katalog.html /katalog/ 301
+/catalog.html /katalog/ 301
+/kontakty.html /kontakty/ 301
+/contacts /kontakty/ 301
+/contacts.html /kontakty/ 301
+/oprosnye-listy.html /oprosnye-listy/ 301
+/o-kompanii.html /o-kompanii/ 301
+/about /o-kompanii/ 301
+/about.html /o-kompanii/ 301
+/dokumentatsiya.html /dokumentatsiya/ 301
+/docs /dokumentatsiya/ 301
+/docs.html /dokumentatsiya/ 301
+
 # New test catalog URLs -> preserved SEO URLs
 /catalog/zapornaya-armatura /truboprovodnaya-i-zapornaya-armatura/ 301
 /catalog/zapornaya-armatura.html /truboprovodnaya-i-zapornaya-armatura/ 301
+/catalog/truboprovodnaya-i-zapornaya-armatura /truboprovodnaya-i-zapornaya-armatura/ 301
+/catalog/truboprovodnaya-i-zapornaya-armatura.html /truboprovodnaya-i-zapornaya-armatura/ 301
+/catalog/truboprovodnaya_armatura /truboprovodnaya-i-zapornaya-armatura/ 301
+/catalog/zapornaya_armatura /truboprovodnaya-i-zapornaya-armatura/ 301
+/catalog/armatura /truboprovodnaya-i-zapornaya-armatura/ 301
+/catalog/armatura.html /truboprovodnaya-i-zapornaya-armatura/ 301
 /catalog/kipia /kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya/ 301
 /catalog/kipia.html /kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya/ 301
+/catalog/kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya /kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya/ 301
+/catalog/kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya.html /kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya/ 301
+/catalog/kontrolno_izmeritelnye_pribory /kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya/ 301
 /catalog/reguliruyushchaya-armatura /reguliruyushchaya-armatura/ 301
 /catalog/reguliruyushchaya-armatura.html /reguliruyushchaya-armatura/ 301
+/catalog/reguliruyushchaya_armatura /reguliruyushchaya-armatura/ 301
 /catalog/rashodomery /rashodomery/ 301
 /catalog/rashodomery.html /rashodomery/ 301
+/catalog/raskhodomery /rashodomery/ 301
+/catalog/raskhodomery.html /rashodomery/ 301
 /catalog/urovnemery /urovnemery/ 301
 /catalog/urovnemery.html /urovnemery/ 301
 /catalog/vspomogatelnoe-oborudovanie /vspomogatelnoe-oborudovanie/ 301
 /catalog/vspomogatelnoe-oborudovanie.html /vspomogatelnoe-oborudovanie/ 301
+/catalog/vspomogatelnoe_oborudovanie /vspomogatelnoe-oborudovanie/ 301
 /catalog/privody /privody/ 301
 /catalog/privody.html /privody/ 301
 /catalog/nasosnoe-oborudovanie /nasosnoe-oborudovanie/ 301
@@ -38,6 +70,41 @@
 /catalog/filtry-i-kompensatory.html /filtry-i-kompensatory/ 301
 /catalog/metallokonstruktsii-i-dymovye-truby /metallokonstruktsii-i-dymovye-truby/ 301
 /catalog/metallokonstruktsii-i-dymovye-truby.html /metallokonstruktsii-i-dymovye-truby/ 301
+
+# Direct old section variants
+/tekhnologicheskoe-oborudovanie.html /tekhnologicheskoe-oborudovanie/ 301
+/tehnologicheskoe-oborudovanie /tekhnologicheskoe-oborudovanie/ 301
+/tehnologicheskoe-oborudovanie.html /tekhnologicheskoe-oborudovanie/ 301
+/tekhnologicheskoe_oborudovanie /tekhnologicheskoe-oborudovanie/ 301
+/tehnologicheskoe_oborudovanie /tekhnologicheskoe-oborudovanie/ 301
+/rezervuary.html /rezervuary-rvs-rgs/ 301
+/rezervuary-rvs-rgs.html /rezervuary-rvs-rgs/ 301
+/rezervuary_rvs_rgs /rezervuary-rvs-rgs/ 301
+/rezervuary-rvs /rezervuary-rvs-rgs/ 301
+/rezervuary-rvs.html /rezervuary-rvs-rgs/ 301
+/rezervuary-rgs /rezervuary-rvs-rgs/ 301
+/rezervuary-rgs.html /rezervuary-rvs-rgs/ 301
+/emkostnoe-oborudovanie.html /emkostnoe-oborudovanie/ 301
+/emkostnoe_oborudovanie /emkostnoe-oborudovanie/ 301
+/teploobmennoe-oborudovanie.html /teploobmennoe-oborudovanie/ 301
+/teploobmennoe_oborudovanie /teploobmennoe-oborudovanie/ 301
+/filtry-i-kompensatory.html /filtry-i-kompensatory/ 301
+/filtry_i_kompensatory /filtry-i-kompensatory/ 301
+/rezervuarnoe-oborudovanie.html /rezervuarnoe-oborudovanie/ 301
+/rezervuarnoe_oborudovanie /rezervuarnoe-oborudovanie/ 301
+/nasosnoe-oborudovanie.html /nasosnoe-oborudovanie/ 301
+/nasosnoe_oborudovanie /nasosnoe-oborudovanie/ 301
+/separatsionnoe-i-kolonnoe-oborudovanie.html /separatsionnoe-i-kolonnoe-oborudovanie/ 301
+/separatsionnoe_i_kolonnoe_oborudovanie /separatsionnoe-i-kolonnoe-oborudovanie/ 301
+/oborudovanie-dlya-sliva-naliva-nefteproduktov.html /oborudovanie-dlya-sliva-naliva-nefteproduktov/ 301
+/oborudovanie_dlya_sliva_naliva_nefteproduktov /oborudovanie-dlya-sliva-naliva-nefteproduktov/ 301
+/sliv-naliv /oborudovanie-dlya-sliva-naliva-nefteproduktov/ 301
+/sliv-naliv.html /oborudovanie-dlya-sliva-naliva-nefteproduktov/ 301
+/sliv_naliv /oborudovanie-dlya-sliva-naliva-nefteproduktov/ 301
+/metallokonstruktsii-i-dymovye-truby.html /metallokonstruktsii-i-dymovye-truby/ 301
+/metallokonstruktsii_i_dymovye_truby /metallokonstruktsii-i-dymovye-truby/ 301
+/dymovye-truby /metallokonstruktsii-i-dymovye-truby/ 301
+/dymovye-truby.html /metallokonstruktsii-i-dymovye-truby/ 301
 
 # Russian transliteration legacy variants
 /catalog/emkostnoe_oborudovanie /emkostnoe-oborudovanie/ 301
@@ -82,10 +149,3 @@
 /catalog/kamery-sod.html /kamery-sod/ 301
 /catalog/struyevypryamiteli /struyevypryamiteli/ 301
 /catalog/struyevypryamiteli.html /struyevypryamiteli/ 301
-
-# Common legacy variants
-/katalog.html /katalog/ 301
-/kontakty.html /kontakty/ 301
-/oprosnye-listy.html /oprosnye-listy/ 301
-/o-kompanii.html /o-kompanii/ 301
-/dokumentatsiya.html /dokumentatsiya/ 301
