@@ -1,0 +1,62 @@
+/* Final Promapparat tuning: one drawing layer, lower brightness, weak premium glow */
+:root{
+  --pa-card-drawing-opacity:.24;
+  --pa-card-drawing-scale:1.00;
+  --pa-card-drawing-x:69%;
+  --pa-card-drawing-y:44%;
+}
+
+.pa-card-drawing{
+  right:-1.2% !important;
+  top:-35% !important;
+  width:55% !important;
+  height:89% !important;
+  opacity:.24 !important;
+  transform:scale(1.00) !important;
+  filter:
+    brightness(1.22)
+    contrast(1.16)
+    saturate(1.08)
+    drop-shadow(0 0 4px rgba(0,120,255,.16))
+    drop-shadow(0 0 10px rgba(0,120,255,.08)) !important;
+}
+
+/* No duplicated drawing layer: glow only, not another blueprint */
+.pa-card-drawing:before{
+  content:"";
+  position:absolute;
+  inset:-8%;
+  background:radial-gradient(circle at 54% 43%,rgba(0,115,255,.10),rgba(0,115,255,.045) 36%,rgba(0,115,255,0) 70%);
+  pointer-events:none;
+}
+
+.pa-card-drawing:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:38%;
+  background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.94) 76%);
+  pointer-events:none;
+}
+
+/* Fade tables into background; keep the main valve contour visible */
+.pa-info-card:after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:0;
+  width:31%;
+  height:100%;
+  background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.50) 58%,rgba(255,255,255,.86));
+  z-index:4;
+  pointer-events:none;
+}
+
+.pa-card-drawing{z-index:3 !important;}
+.pa-info-card__content,
+.pa-cats{
+  position:relative;
+  z-index:5 !important;
+}
