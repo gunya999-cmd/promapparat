@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://promapparat.ru/</loc><lastmod>2026-06-08</lastmod><priority>1.0</priority></url>
-  <url><loc>https://promapparat.ru/katalog/</loc><lastmod>2026-06-08</lastmod><priority>0.95</priority></url>
+  <url><loc>https://promapparat.ru/</loc><lastmod>2026-06-11</lastmod><priority>1.0</priority></url>
+  <url><loc>https://promapparat.ru/katalog/</loc><lastmod>2026-06-11</lastmod><priority>0.95</priority></url>
   <url><loc>https://promapparat.ru/o-kompanii/</loc><lastmod>2026-06-08</lastmod><priority>0.7</priority></url>
   <url><loc>https://promapparat.ru/dokumentatsiya/</loc><lastmod>2026-06-08</lastmod><priority>0.7</priority></url>
   <url><loc>https://promapparat.ru/oprosnye-listy/</loc><lastmod>2026-06-08</lastmod><priority>0.75</priority></url>
@@ -40,12 +40,17 @@
   <url><loc>https://promapparat.ru/podbor-analogov-importnogo-oborudovaniya/</loc><lastmod>2026-06-08</lastmod><priority>0.85</priority></url>
   <url><loc>https://promapparat.ru/importozameshchenie-armatury-i-kipia/</loc><lastmod>2026-06-08</lastmod><priority>0.85</priority></url>
 
-  <url><loc>https://promapparat.ru/vspomogatelnoe-oborudovanie/</loc><lastmod>2026-06-08</lastmod><priority>0.75</priority></url>
+  <url><loc>https://promapparat.ru/vspomogatelnoe-oborudovanie/</loc><lastmod>2026-06-11</lastmod><priority>0.78</priority></url>
   <url><loc>https://promapparat.ru/kamery-sod/</loc><lastmod>2026-06-08</lastmod><priority>0.7</priority></url>
-  <url><loc>https://promapparat.ru/nasosnoe-oborudovanie/</loc><lastmod>2026-06-08</lastmod><priority>0.6</priority></url>
-  <url><loc>https://promapparat.ru/teploobmennoe-oborudovanie/</loc><lastmod>2026-06-08</lastmod><priority>0.6</priority></url>
   <url><loc>https://promapparat.ru/truboprovodnye-detali/</loc><lastmod>2026-06-08</lastmod><priority>0.65</priority></url>
-  <url><loc>https://promapparat.ru/emkostnoe-oborudovanie/</loc><lastmod>2026-06-08</lastmod><priority>0.55</priority></url>
-  <url><loc>https://promapparat.ru/rezervuarnoe-oborudovanie/</loc><lastmod>2026-06-08</lastmod><priority>0.55</priority></url>
-  <url><loc>https://promapparat.ru/filtry-i-kompensatory/</loc><lastmod>2026-06-08</lastmod><priority>0.55</priority></url>
+
+  <url><loc>https://promapparat.ru/tekhnologicheskoe-oborudovanie/</loc><lastmod>2026-06-11</lastmod><priority>0.78</priority></url>
+  <url><loc>https://promapparat.ru/rezervuary-rvs-rgs/</loc><lastmod>2026-06-11</lastmod><priority>0.72</priority></url>
+  <url><loc>https://promapparat.ru/emkostnoe-oborudovanie/</loc><lastmod>2026-06-11</lastmod><priority>0.68</priority></url>
+  <url><loc>https://promapparat.ru/teploobmennoe-oborudovanie/</loc><lastmod>2026-06-11</lastmod><priority>0.68</priority></url>
+  <url><loc>https://promapparat.ru/filtry-i-kompensatory/</loc><lastmod>2026-06-11</lastmod><priority>0.66</priority></url>
+  <url><loc>https://promapparat.ru/oborudovanie-dlya-sliva-naliva-nefteproduktov/</loc><lastmod>2026-06-11</lastmod><priority>0.66</priority></url>
+  <url><loc>https://promapparat.ru/rezervuarnoe-oborudovanie/</loc><lastmod>2026-06-11</lastmod><priority>0.66</priority></url>
+  <url><loc>https://promapparat.ru/separatsionnoe-i-kolonnoe-oborudovanie/</loc><lastmod>2026-06-11</lastmod><priority>0.62</priority></url>
+  <url><loc>https://promapparat.ru/nasosnoe-oborudovanie/</loc><lastmod>2026-06-11</lastmod><priority>0.62</priority></url>
 </urlset>
