@@ -22,6 +22,27 @@
 /catalog/teploobmennoe-oborudovanie.html /teploobmennoe-oborudovanie/ 301
 /catalog/truboprovodnye-detali /truboprovodnye-detali/ 301
 /catalog/truboprovodnye-detali.html /truboprovodnye-detali/ 301
+/catalog/tekhnologicheskoe-oborudovanie /tekhnologicheskoe-oborudovanie/ 301
+/catalog/tekhnologicheskoe-oborudovanie.html /tekhnologicheskoe-oborudovanie/ 301
+/catalog/rezervuary-rvs-rgs /rezervuary-rvs-rgs/ 301
+/catalog/rezervuary-rvs-rgs.html /rezervuary-rvs-rgs/ 301
+/catalog/oborudovanie-dlya-sliva-naliva-nefteproduktov /oborudovanie-dlya-sliva-naliva-nefteproduktov/ 301
+/catalog/oborudovanie-dlya-sliva-naliva-nefteproduktov.html /oborudovanie-dlya-sliva-naliva-nefteproduktov/ 301
+/catalog/separatsionnoe-i-kolonnoe-oborudovanie /separatsionnoe-i-kolonnoe-oborudovanie/ 301
+/catalog/separatsionnoe-i-kolonnoe-oborudovanie.html /separatsionnoe-i-kolonnoe-oborudovanie/ 301
+/catalog/emkostnoe-oborudovanie /emkostnoe-oborudovanie/ 301
+/catalog/emkostnoe-oborudovanie.html /emkostnoe-oborudovanie/ 301
+/catalog/rezervuarnoe-oborudovanie /rezervuarnoe-oborudovanie/ 301
+/catalog/rezervuarnoe-oborudovanie.html /rezervuarnoe-oborudovanie/ 301
+/catalog/filtry-i-kompensatory /filtry-i-kompensatory/ 301
+/catalog/filtry-i-kompensatory.html /filtry-i-kompensatory/ 301
+
+# Russian transliteration legacy variants
+/catalog/emkostnoe_oborudovanie /emkostnoe-oborudovanie/ 301
+/catalog/teploobmennoe_oborudovanie /teploobmennoe-oborudovanie/ 301
+/catalog/rezervuarnoe_oborudovanie /rezervuarnoe-oborudovanie/ 301
+/catalog/nasosnoe_oborudovanie /nasosnoe-oborudovanie/ 301
+/catalog/filtry_i_kompensatory /filtry-i-kompensatory/ 301
 
 # Second-level legacy catalog variants
 /catalog/sharovye-krany /sharovye-krany/ 301
