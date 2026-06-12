@@ -46,14 +46,14 @@ body.pa-layered-home .pa-card-drawing{position:absolute;right:-1%;top:-19%;width
 body.pa-layered-home .pa-info-card:before{content:"";position:absolute;right:0;top:0;width:35%;height:100%;z-index:3;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.62) 50%,rgba(255,255,255,.95) 100%);pointer-events:none}
 body.pa-layered-home .pa-info-card:after{content:"";position:absolute;left:47%;right:0;bottom:42px;height:70px;z-index:3;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.94) 74%);pointer-events:none}
 body.pa-layered-home .pa-cats{position:relative;z-index:5;margin:0 -28px;padding:13px 28px 14px;border-top:1px solid #e6eef8;background:rgba(255,255,255,.98);display:flex;gap:16px;flex-wrap:wrap;color:#075bd8;font-size:13.5px;font-weight:700}
-body.pa-layered-home .pa-cats span:not(:first-child):before{content:"•";margin-right:16px;color:#075bd8}
+body.pa-layered-home .pa-cats span:not(:first-child):before{content:"РІР‚Сћ";margin-right:16px;color:#075bd8}
 
 body.pa-layered-home .pa-workflow{padding:6px 0 40px;background:linear-gradient(180deg,#f9fbff,#fff)}
 body.pa-layered-home .pa-workflow h2{display:flex;align-items:center;justify-content:center;gap:24px;margin:0 0 22px;text-align:center;text-transform:uppercase;color:#071b3e;font-size:22px;letter-spacing:.02em}
 body.pa-layered-home .pa-workflow h2:before,body.pa-layered-home .pa-workflow h2:after{content:"";width:90px;height:1px;background:#cbdced}
 body.pa-layered-home .pa-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
 body.pa-layered-home .pa-step{position:relative;display:grid;grid-template-columns:52px 1fr;gap:13px;color:#071b3e;background:#fff;border:1px solid #dbe7f6;border-radius:8px;padding:14px 16px;box-shadow:0 8px 22px rgba(30,70,120,.05)}
-body.pa-layered-home .pa-step:not(:last-child):after{content:"›";position:absolute;right:-22px;top:19px;font-size:38px;color:#0b4aa5;font-weight:300}
+body.pa-layered-home .pa-step:not(:last-child):after{content:"РІР‚С”";position:absolute;right:-22px;top:19px;font-size:38px;color:#0b4aa5;font-weight:300}
 body.pa-layered-home .pa-step__num{width:42px;height:42px;border:1.5px solid #075bd8;border-radius:7px;display:grid;place-items:center;color:#075bd8;font-size:24px;font-weight:900;background:#fff}
 body.pa-layered-home .pa-step svg{width:30px;height:30px;stroke:#075bd8;stroke-width:1.75;fill:none;margin-bottom:7px}
 body.pa-layered-home .pa-step h3{margin:0 0 5px;font-size:15.5px}
@@ -61,3 +61,16 @@ body.pa-layered-home .pa-step p{margin:0;color:#233a5e;font-size:13px;line-heigh
 
 @media(max-width:1100px){:root{--pa-hero-height:700px}body.pa-layered-home .pa-hero__inner{grid-template-columns:1fr}body.pa-layered-home .pa-hero__copy{max-width:720px;padding:44px 0 145px}body.pa-layered-home .pa-hero__workshop{width:76%;opacity:.72}body.pa-layered-home .pa-hero__blue{width:64%}body.pa-layered-home .pa-hero__glow{left:58%}body.pa-layered-home .pa-docs{grid-template-columns:repeat(3,1fr);max-width:650px}body.pa-layered-home .pa-info{margin-top:-85px}body.pa-layered-home .pa-card-drawing{opacity:.15;width:66%}body.pa-layered-home .pa-steps{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:680px){:root{--pa-hero-height:auto}body.pa-layered-home .pa-hero__workshop{display:none}body.pa-layered-home .pa-hero__blue{width:100%}body.pa-layered-home .pa-hero__drawing{left:60%;width:80%;opacity:.10}body.pa-layered-home .pa-hero__glow{display:none}body.pa-layered-home .pa-hero__copy{padding:34px 0 38px}body.pa-layered-home .pa-hero h1{font-size:34px}body.pa-layered-home .pa-hero__sub{font-size:22px}body.pa-layered-home .pa-hero__lead{font-size:15px}body.pa-layered-home .pa-docs{grid-template-columns:repeat(2,1fr)}body.pa-layered-home .pa-doc{border-right:0;border-bottom:1px solid rgba(255,255,255,.18)}body.pa-layered-home .pa-btn{width:100%;min-width:0}body.pa-layered-home .pa-info{margin-top:0;padding-top:18px}body.pa-layered-home .pa-info-card{padding:20px 18px 0}body.pa-layered-home .pa-info-card__content{max-width:none}body.pa-layered-home .pa-card-drawing{display:none}body.pa-layered-home .pa-cats{margin:0 -18px;padding:12px 18px;font-size:13px;gap:10px}body.pa-layered-home .pa-cats span:not(:first-child):before{margin-right:10px}body.pa-layered-home .pa-steps{grid-template-columns:1fr;gap:18px}body.pa-layered-home .pa-step:not(:last-child):after{display:none}}
+
+/* FINAL-HERO-BG-START */
+body.pa-layered-home .pa-hero{
+  background:url('/assets/hero/promapparat-hero-final-bg.webp') center center/cover no-repeat !important;
+}
+
+body.pa-layered-home .pa-hero__workshop,
+body.pa-layered-home .pa-hero__blue,
+body.pa-layered-home .pa-hero__drawing,
+body.pa-layered-home .pa-hero__glow{
+  display:none !important;
+}
+/* FINAL-HERO-BG-END */
