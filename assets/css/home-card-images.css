@@ -1,14 +1,19 @@
 .home-stage-directions__grid{
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:18px;
+  align-items:start;
 }
 .home-stage-direction--image{
-  display:block;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  aspect-ratio:1/1;
+  width:100%;
   min-height:0;
   padding:0;
   border:0;
   border-radius:18px;
-  background:transparent;
+  background:#eef4fb;
   box-shadow:0 18px 44px rgba(31,69,117,.10);
   overflow:hidden;
   transform:none;
@@ -24,7 +29,9 @@
 .home-stage-direction--image img{
   display:block;
   width:100%;
-  height:auto;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
   border-radius:18px;
 }
 @media(max-width:1080px){
