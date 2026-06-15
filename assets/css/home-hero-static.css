@@ -6,7 +6,11 @@
   margin:0;
   padding:0;
   overflow:hidden;
-  background:#e8f7ff url("/assets/hero/hero-bg.webp") center center/cover no-repeat;
+  background-color:#e8f7ff;
+  background-image:url("/assets/hero/hero-bg.webp?v=20260615-hero-bg-2");
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
   border-bottom:1px solid #dbe7f6;
   isolation:isolate;
 }
@@ -18,7 +22,10 @@
   z-index:1;
   pointer-events:none;
   opacity:.10;
-  background:url("/assets/hero/hero-blueprint-hover.webp") center center/cover no-repeat;
+  background-image:url("/assets/hero/hero-blueprint-hover.webp?v=20260615-blueprint-2");
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
   filter:contrast(1.08) brightness(1.03);
   mix-blend-mode:screen;
   transition:opacity .42s ease,filter .42s ease;
