@@ -1,4 +1,5 @@
-﻿.home-hero-static{
+.home-hero-static{
+  position:relative;
   display:block;
   width:100%;
   height:clamp(420px,48vw,690px);
@@ -7,18 +8,79 @@
   overflow:hidden;
   background:#e8f7ff url("/assets/hero/hero-bg.webp") center center/cover no-repeat;
   border-bottom:1px solid #dbe7f6;
+  isolation:isolate;
+}
+
+.home-hero-static::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  opacity:.10;
+  background:url("/assets/hero/hero-blueprint-hover.webp") center center/cover no-repeat;
+  filter:contrast(1.08) brightness(1.03);
+  mix-blend-mode:screen;
+  transition:opacity .42s ease,filter .42s ease;
+}
+
+.home-hero-static__hover-zone{
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  width:64%;
+  z-index:2;
+  background:transparent;
+}
+
+@supports selector(:has(*)){
+  @media(hover:hover){
+    .home-hero-static:has(.home-hero-static__hover-zone:hover)::after{
+      opacity:.56;
+      filter:contrast(1.42) brightness(1.16) drop-shadow(0 0 8px rgba(125,200,255,.28));
+    }
+  }
+}
+
+@supports not selector(:has(*)){
+  @media(hover:hover){
+    .home-hero-static:hover::after{
+      opacity:.46;
+      filter:contrast(1.34) brightness(1.12) drop-shadow(0 0 8px rgba(125,200,255,.22));
+    }
+  }
 }
 
 @media(max-width:980px){
   .home-hero-static{
-    height:clamp(320px,54vw,520px);
-    background-position:60% center;
+    height:clamp(280px,44vw,440px);
+    background-position:62% center;
+  }
+  .home-hero-static__hover-zone{
+    display:none;
   }
 }
 
 @media(max-width:640px){
   .home-hero-static{
-    height:300px;
-    background-position:66% center;
+    height:230px;
+    background-position:68% center;
+  }
+}
+
+@media(hover:none){
+  .home-hero-static::after{
+    opacity:.09;
+    transition:none;
+  }
+  .home-hero-static__hover-zone{
+    display:none;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .home-hero-static::after{
+    transition:none;
   }
 }
