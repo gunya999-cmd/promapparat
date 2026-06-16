@@ -8,6 +8,15 @@
   <link rel="canonical" href="https://promapparat.ru/katalog/">
   <link rel="icon" href="/assets/favicon.png">
   <link rel="stylesheet" href="/assets/css/seo-pages.css">
+  <style>
+    .catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
+    .catalog-grid .card{display:block;min-height:152px;background:#fff;border:1px solid #dbe7f6;border-radius:12px;padding:22px;box-shadow:0 12px 28px rgba(31,69,117,.05);transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+    .catalog-grid .card:hover{border-color:#9bbce8;box-shadow:0 18px 38px rgba(31,69,117,.09);transform:translateY(-2px)}
+    .catalog-grid .card h3{margin:0 0 10px;font-size:19px;line-height:1.25;color:#071b3e}
+    .catalog-grid .card p{margin:0;color:#4a5f7c;font-size:14px;line-height:1.6}
+    @media(max-width:900px){.catalog-grid{grid-template-columns:1fr 1fr}.catalog-grid .card{min-height:auto}}
+    @media(max-width:560px){.catalog-grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
 <header class="top">
@@ -47,7 +56,7 @@
         <h2>Основные направления</h2>
         <p>Главный коммерческий фокус сайта: эти разделы получают основной вес в навигации, на главной странице и во внутренней перелинковке.</p>
       </div>
-      <div class="cards">
+      <div class="cards catalog-grid">
         <a class="card" href="/truboprovodnaya-i-zapornaya-armatura/"><h3>Запорная арматура</h3><p>Шаровые краны, задвижки, затворы, обратные клапаны, приводы и трубопроводные детали.</p></a>
         <a class="card" href="/reguliruyushchaya-armatura/"><h3>Регулирующая арматура</h3><p>Регулирующие клапаны, регуляторы давления, позиционеры и исполнительные механизмы.</p></a>
         <a class="card" href="/kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya/"><h3>КИПиА</h3><p>Датчики давления и температуры, манометры, расходомеры, уровнемеры, газоанализаторы и автоматизация.</p></a>
@@ -64,7 +73,7 @@
         <h2>Старая продукция — отдельное место на сайте</h2>
         <p>Старую продукцию сохраняем для SEO и заявок, но убираем из неё дубли основных направлений. Поэтому здесь нет отдельной «арматуры» и «КИПиА»: они уже вынесены выше. В этом блоке остаются технологические категории из старого каталога, которые не конфликтуют с новой структурой.</p>
       </div>
-      <div class="cards">
+      <div class="cards catalog-grid">
         <a class="card" href="/tekhnologicheskoe-oborudovanie/"><h3>Технологическое оборудование</h3><p>Общий хаб старой продукции без дублей основных разделов.</p></a>
         <a class="card" href="/rezervuary-rvs-rgs/"><h3>Резервуары РВС, РВСП, РГС, РГСП</h3><p>Вертикальные и горизонтальные стальные резервуары, подземные емкости, СУГ и комплектующие.</p></a>
         <a class="card" href="/emkostnoe-oborudovanie/"><h3>Емкостное оборудование</h3><p>Емкости, аппараты с перемешивающими устройствами, воздухосборники, ресиверы, отстойники.</p></a>
