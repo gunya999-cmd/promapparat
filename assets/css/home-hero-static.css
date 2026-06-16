@@ -8,7 +8,7 @@
   margin:0;
   padding:var(--hero-frame-y) 0;
   overflow:hidden;
-  background:linear-gradient(180deg,#f5f9ff 0%,#e9f3ff 100%);
+  background:linear-gradient(180deg,#f8fbff 0%,#eef7ff 100%);
   border-bottom:1px solid #dbe7f6;
 }
 
@@ -23,7 +23,7 @@
   transform:translateX(-50%);
   border-radius:clamp(16px,1.25vw,26px);
   overflow:hidden;
-  background-color:#dbeeff;
+  background-color:#e8f7ff;
   background-image:url('/assets/hero/hero-bg-final.webp?v=20260616-final-3');
   background-image:image-set(
     url('/assets/hero/hero-bg-final.avif?v=20260616-final-3') type('image/avif'),
@@ -32,8 +32,7 @@
   background-position:center center;
   background-size:cover;
   background-repeat:no-repeat;
-  filter:saturate(1.08) contrast(1.08) brightness(.94);
-  box-shadow:0 22px 62px rgba(21,54,96,.18),0 0 0 1px rgba(7,91,216,.10);
+  box-shadow:0 22px 62px rgba(21,54,96,.12),0 0 0 1px rgba(7,91,216,.08);
 }
 
 .home-hero-static:after{
@@ -48,11 +47,11 @@
   border-radius:clamp(16px,1.25vw,26px);
   pointer-events:none;
   background:
-    linear-gradient(90deg,rgba(226,243,255,.24) 0%,rgba(226,243,255,.12) 32%,rgba(255,255,255,.02) 64%,rgba(255,255,255,0) 100%),
-    linear-gradient(rgba(7,91,216,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(7,91,216,.025) 1px,transparent 1px);
+    linear-gradient(90deg,rgba(232,247,255,.58) 0%,rgba(232,247,255,.30) 32%,rgba(255,255,255,.04) 64%,rgba(255,255,255,0) 100%),
+    linear-gradient(rgba(7,91,216,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(7,91,216,.035) 1px,transparent 1px);
   background-size:auto,52px 52px,52px 52px;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.26),inset 0 -42px 80px rgba(3,31,74,.08);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.45);
 }
 
 @media(min-width:1800px){
@@ -100,14 +99,12 @@
   }
   .home-hero-static:before{
     background-position:66% center;
-    filter:saturate(1.08) contrast(1.08) brightness(.94);
   }
   .home-hero-static:after{
     background:
-      linear-gradient(180deg,rgba(238,249,255,.22) 0%,rgba(238,249,255,.10) 100%),
-      linear-gradient(rgba(7,91,216,.022) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(7,91,216,.022) 1px,transparent 1px);
+      linear-gradient(180deg,rgba(238,249,255,.56) 0%,rgba(238,249,255,.25) 100%),
+      linear-gradient(rgba(7,91,216,.032) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(7,91,216,.032) 1px,transparent 1px);
     background-size:auto,38px 38px,38px 38px;
-    box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),inset 0 -32px 58px rgba(3,31,74,.07);
   }
 }
