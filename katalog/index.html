@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Каталог промышленного оборудования | ПО ПРОМАППАРАТ</title>
-  <meta name="description" content="Каталог ПО ПРОМАППАРАТ: запорная и регулирующая арматура, КИПиА, расходомеры, уровнемеры и вспомогательное оборудование из производственных каталогов Сплав-Привод и ГК УЛЬТРА.">
+  <meta name="description" content="Каталог ПО ПРОМАППАРАТ: основные направления, арматура, КИПиА, расходомеры, уровнемеры, вспомогательное оборудование, емкостное, теплообменное, фильтровальное, резервуарное, насосное и сепарационное оборудование.">
   <link rel="canonical" href="https://promapparat.ru/katalog/">
   <link rel="icon" href="/assets/favicon.png">
   <link rel="stylesheet" href="/assets/css/seo-pages.css">
@@ -14,8 +14,17 @@
     .catalog-grid .card:hover{border-color:#9bbce8;box-shadow:0 18px 38px rgba(31,69,117,.09);transform:translateY(-2px)}
     .catalog-grid .card h3{margin:0 0 10px;font-size:19px;line-height:1.25;color:#071b3e}
     .catalog-grid .card p{margin:0;color:#4a5f7c;font-size:14px;line-height:1.6}
-    @media(max-width:900px){.catalog-grid{grid-template-columns:1fr 1fr}.catalog-grid .card{min-height:auto}}
-    @media(max-width:560px){.catalog-grid{grid-template-columns:1fr}}
+    .catalog-group{margin-top:34px}
+    .catalog-group__head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #dbe7f6}
+    .catalog-group__head h3{margin:0;font-size:24px;line-height:1.2;color:#071b3e}
+    .catalog-group__head p{margin:0;max-width:640px;color:#4a5f7c;font-size:14px;line-height:1.55}
+    .catalog-grid--compact{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:0}
+    .catalog-grid--compact .card{min-height:130px;padding:18px}
+    .catalog-grid--compact .card h3{font-size:16px;margin-bottom:8px}
+    .catalog-note{margin-top:24px;background:#f8fbff;border:1px solid #dbe7f6;border-radius:12px;padding:18px;color:#4a5f7c;font-size:14px;line-height:1.6}
+    @media(max-width:1100px){.catalog-grid--compact{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:900px){.catalog-grid,.catalog-grid--compact{grid-template-columns:1fr 1fr}.catalog-grid .card{min-height:auto}.catalog-group__head{display:block}.catalog-group__head p{margin-top:8px}}
+    @media(max-width:560px){.catalog-grid,.catalog-grid--compact{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -41,7 +50,7 @@
       <div class="breadcrumbs"><a href="/">Главная</a> / Каталог</div>
       <p class="kicker">Инженерный каталог</p>
       <h1>Каталог промышленного оборудования</h1>
-      <p class="lead">В основных направлениях оставлена только номенклатура из производственных каталогов: приводная трубопроводная арматура Сплав‑Привод и измерительное оборудование ГК «УЛЬТРА». Старые SEO-разделы не смешиваются с основным каталогом.</p>
+      <p class="lead">Каталог объединяет основные направления и дополнительную номенклатуру ПО «Промаппарат». Дубли не выводятся повторно: трубопроводная и запорная арматура, а также КИПиА уже находятся в основных разделах.</p>
       <div class="actions">
         <a class="btn" href="mailto:info@promapparat.ru?subject=Запрос%20КП%20по%20каталогу">Запросить КП</a>
         <a class="btn btn--white" href="/oprosnye-listy/">Опросные листы</a>
@@ -53,16 +62,121 @@
     <div class="wrap">
       <div class="title">
         <h2>Основные направления</h2>
-        <p>Шесть разделов ведут к карточкам оборудования из утверждённых каталогов. На этом уровне не выводятся позиции, которых нет в каталогах Сплав‑Привод и ГК «УЛЬТРА».</p>
+        <p>Шесть базовых разделов каталога. Они не дублируются ниже в дополнительной продукции.</p>
       </div>
       <div class="cards catalog-grid">
         <a class="card" href="/truboprovodnaya-i-zapornaya-armatura/"><h3>Запорная арматура</h3><p>Краны шаровые КПЛВ‑КШ / КПЛВ‑КШС и отсечные исполнения дисковых затворов КПЛВ‑Д.</p></a>
         <a class="card" href="/reguliruyushchaya-armatura/"><h3>Регулирующая арматура</h3><p>Клапаны подъёмные КПЛВ‑С / КПЛВ‑СС, дисковые затворы КПЛВ‑Д и сегментные клапаны КПЛВ‑ПС.</p></a>
-        <a class="card" href="/kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya/"><h3>КИПиА</h3><p>Измерительное оборудование ГК «УЛЬТРА»: расходомеры, уровнемеры, сигнализаторы уровня и поверка СИ.</p></a>
-        <a class="card" href="/rashodomery/"><h3>Расходомеры</h3><p>Ультразвуковые, вихревые, электромагнитные и массовые расходомеры из каталога ГК «УЛЬТРА».</p></a>
+        <a class="card" href="/kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya/"><h3>КИПиА</h3><p>Измерительное оборудование: расходомеры, уровнемеры, сигнализаторы уровня и поверка СИ.</p></a>
+        <a class="card" href="/rashodomery/"><h3>Расходомеры</h3><p>Ультразвуковые, вихревые, электромагнитные и массовые расходомеры.</p></a>
         <a class="card" href="/urovnemery/"><h3>Уровнемеры</h3><p>Радарные, рефлекс‑радарные, байпасные, буйковые, магнитострикционные уровнемеры и FPS.</p></a>
         <a class="card" href="/vspomogatelnoe-oborudovanie/"><h3>Вспомогательное оборудование</h3><p>Камеры СОД, струевыпрямители, мерники, прямые участки, фланцы, выносные камеры и трубы Вентури.</p></a>
       </div>
+    </div>
+  </section>
+
+  <section class="section section--light">
+    <div class="wrap">
+      <div class="title">
+        <h2>Дополнительная продукция из каталога ПО «Промаппарат»</h2>
+        <p>Добавлены позиции из загруженного каталога оборудования. Повторяющиеся направления не включены: «Трубопроводная и запорная арматура» и «Контрольно‑измерительные приборы и автоматика КИПиА» уже представлены выше.</p>
+      </div>
+
+      <div class="catalog-group">
+        <div class="catalog-group__head"><h3>Емкостное оборудование</h3><p>Резервуары, емкости и аппараты для хранения и технологических процессов.</p></div>
+        <div class="cards catalog-grid catalog-grid--compact">
+          <div class="card"><h3>РВС, РВСП</h3><p>Резервуары вертикальные стальные.</p></div>
+          <div class="card"><h3>РГС, РГСП</h3><p>Резервуары горизонтальные стальные.</p></div>
+          <div class="card"><h3>ЕП, ЕПП</h3><p>Емкости подземные, в том числе с подогревом.</p></div>
+          <div class="card"><h3>Емкости СУГ</h3><p>Емкости для сжиженных углеводородных газов.</p></div>
+          <div class="card"><h3>Аппараты с перемешивающими устройствами</h3><p>Емкостные аппараты с мешалками и приводами.</p></div>
+          <div class="card"><h3>Воздухосборники и ресиверы</h3><p>Сосуды для сжатого воздуха и газов.</p></div>
+          <div class="card"><h3>Отстойники</h3><p>Вертикальные и горизонтальные аппараты разделения фаз.</p></div>
+          <div class="card"><h3>Емкости из стеклопластика</h3><p>Емкости для воды, пищевых и агрессивных сред.</p></div>
+        </div>
+      </div>
+
+      <div class="catalog-group">
+        <div class="catalog-group__head"><h3>Теплообменное оборудование</h3><p>Кожухотрубные аппараты и аппараты воздушного охлаждения.</p></div>
+        <div class="cards catalog-grid catalog-grid--compact">
+          <div class="card"><h3>Аппараты с неподвижными трубными решетками</h3><p>Теплообменники, холодильники, конденсаторы и испарители.</p></div>
+          <div class="card"><h3>Аппараты «труба в трубе»</h3><p>Однопоточные и многопоточные теплообменники.</p></div>
+          <div class="card"><h3>Аппараты с U‑образными трубами</h3><p>Теплообменники со свободным удлинением труб.</p></div>
+          <div class="card"><h3>Кожухотрубные аппараты с плавающей головкой</h3><p>Теплообменные аппараты для жидких охлаждающих сред.</p></div>
+          <div class="card"><h3>Аппараты воздушного охлаждения</h3><p>АВО с секциями теплообмена и осевыми вентиляторами.</p></div>
+        </div>
+      </div>
+
+      <div class="catalog-group">
+        <div class="catalog-group__head"><h3>Фильтровальное оборудование и компенсаторы</h3><p>Фильтры, грязевики и компенсаторы для трубопроводных систем.</p></div>
+        <div class="cards catalog-grid catalog-grid--compact">
+          <div class="card"><h3>ФЖУ</h3><p>Фильтры жидкостные универсальные.</p></div>
+          <div class="card"><h3>СДЖ</h3><p>Фильтры жидкостные сетчатые дренажные.</p></div>
+          <div class="card"><h3>Фильтры газовые</h3><p>Очистка природного газа, азота, воздуха и других газов.</p></div>
+          <div class="card"><h3>Грязевики</h3><p>Узлы фильтрации для трубопроводов и теплообменных систем.</p></div>
+          <div class="card"><h3>Компенсаторы</h3><p>Компенсация температурных перемещений в теплосетях и трубопроводах.</p></div>
+        </div>
+      </div>
+
+      <div class="catalog-group">
+        <div class="catalog-group__head"><h3>Слив‑налив и учет нефтепродуктов</h3><p>Оборудование для нижнего слива, верхнего слива, налива и контейнерных АЗС.</p></div>
+        <div class="cards catalog-grid catalog-grid--compact">
+          <div class="card"><h3>УСН</h3><p>Устройство для нижнего слива нефтепродуктов.</p></div>
+          <div class="card"><h3>УПВС</h3><p>Устройство переносное верхнего слива.</p></div>
+          <div class="card"><h3>УНЖ</h3><p>Устройство верхнего налива в железнодорожные цистерны.</p></div>
+          <div class="card"><h3>АСН</h3><p>Устройства верхнего налива в автомобильные цистерны.</p></div>
+          <div class="card"><h3>КАЗС</h3><p>Модульные и контейнерные автозаправочные станции.</p></div>
+        </div>
+      </div>
+
+      <div class="catalog-group">
+        <div class="catalog-group__head"><h3>Резервуарное оборудование</h3><p>Клапаны, понтоны, пробоотборники, устройства и элементы комплектации резервуаров.</p></div>
+        <div class="cards catalog-grid catalog-grid--compact">
+          <div class="card"><h3>КДС</h3><p>Клапан дыхательный совмещенный.</p></div>
+          <div class="card"><h3>СМДК</h3><p>Совмещенный механический дыхательный клапан.</p></div>
+          <div class="card"><h3>КДМ</h3><p>Клапан дыхательный механический.</p></div>
+          <div class="card"><h3>КПГ</h3><p>Клапан предохранительный гидравлический.</p></div>
+          <div class="card"><h3>НДКМ</h3><p>Непримерзающий дыхательный клапан мембранный.</p></div>
+          <div class="card"><h3>АК</h3><p>Аварийный клапан для защиты резервуаров.</p></div>
+          <div class="card"><h3>Понтоны</h3><p>Оборудование для снижения потерь нефтепродуктов от испарения.</p></div>
+          <div class="card"><h3>ПСР, ПСРП, ПСР ОТ</h3><p>Пробоотборники резервуарные.</p></div>
+          <div class="card"><h3>ПЗУ</h3><p>Плавающие заборные устройства.</p></div>
+          <div class="card"><h3>ПРУ</h3><p>Приемо‑раздаточные устройства.</p></div>
+          <div class="card"><h3>ХП</h3><p>Хлопушки резервуарные.</p></div>
+          <div class="card"><h3>Устройства размыва донных отложений</h3><p>Оборудование для обслуживания резервуаров.</p></div>
+          <div class="card"><h3>Люки и патрубки</h3><p>Элементы комплектации резервуаров.</p></div>
+          <div class="card"><h3>ОП</h3><p>Предохранители огневые.</p></div>
+        </div>
+      </div>
+
+      <div class="catalog-group">
+        <div class="catalog-group__head"><h3>Сепарационное и колонное оборудование</h3><p>Аппараты для разделения потоков и технологических процессов.</p></div>
+        <div class="cards catalog-grid catalog-grid--compact">
+          <div class="card"><h3>ФС</h3><p>Факельные сепараторы.</p></div>
+          <div class="card"><h3>НГС</h3><p>Сепараторы нефтегазовые.</p></div>
+          <div class="card"><h3>ГС</h3><p>Газовые сепараторы.</p></div>
+          <div class="card"><h3>Аппараты колонные</h3><p>Колонное оборудование для технологических установок.</p></div>
+        </div>
+      </div>
+
+      <div class="catalog-group">
+        <div class="catalog-group__head"><h3>Насосное и компрессорное оборудование</h3><p>Насосы и компрессоры для промышленных систем.</p></div>
+        <div class="cards catalog-grid catalog-grid--compact">
+          <div class="card"><h3>Вертикальные полупогружные насосы</h3><p>Насосы для емкостей, дренажных и технологических задач.</p></div>
+          <div class="card"><h3>Центробежные насосы</h3><p>Насосы для перекачки жидкостей в технологических системах.</p></div>
+          <div class="card"><h3>Компрессоры</h3><p>Компрессорное оборудование для промышленных объектов.</p></div>
+        </div>
+      </div>
+
+      <div class="catalog-group">
+        <div class="catalog-group__head"><h3>Дополнительная продукция</h3><p>Позиции из раздела дополнительной продукции без дублей арматуры и КИПиА.</p></div>
+        <div class="cards catalog-grid catalog-grid--compact">
+          <div class="card"><h3>Дымовые трубы и трубы вентиляции</h3><p>Ферменные, самонесущие, колонные, фасадные трубы и трубы на растяжках.</p></div>
+          <div class="card"><h3>Строительные металлоконструкции</h3><p>Металлоконструкции по чертежам и техническому заданию.</p></div>
+        </div>
+      </div>
+
+      <div class="catalog-note"><strong>Не добавлены как дубли:</strong> «Трубопроводная и запорная арматура» и «Контрольно‑измерительные приборы и автоматика КИПиА», так как эти направления уже присутствуют в основных разделах каталога.</div>
     </div>
   </section>
 </main>
