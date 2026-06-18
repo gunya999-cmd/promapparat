@@ -107,12 +107,6 @@
   100%{ background-position:260px 0; }
 }
 
-/* Debug-visible hover outline is intentionally disabled. Enable only for tuning. */
-.home-hero-wow-debug .home-hero-wow{
-  outline:1px dashed rgba(0,120,255,.35);
-  background:rgba(0,120,255,.04);
-}
-
 @media (min-width:1600px){
   .home-hero-wow--blueprint{ left:43%; top:5%; width:34%; height:39%; }
   .home-hero-wow--dots{ left:22%; top:51%; width:63%; height:49%; }

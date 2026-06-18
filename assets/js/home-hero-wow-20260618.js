@@ -6,8 +6,8 @@
   var dots = hero.querySelector('.home-hero-wow--dots');
   if (!blueprint || !dots) return;
 
-  var supportsFinePointer = window.matchMedia('(min-width: 768px)');
-  if (!supportsFinePointer.matches) return;
+  var supportsWidth = window.matchMedia('(min-width: 768px)');
+  if (!supportsWidth.matches) return;
 
   function setZoneVars(zone, event) {
     var rect = zone.getBoundingClientRect();
