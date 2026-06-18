@@ -9,22 +9,20 @@
   <link rel="icon" href="/assets/favicon.png">
   <link rel="stylesheet" href="/assets/css/seo-pages.css">
   <style>
-    .catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
-    .catalog-grid .card{display:block;min-height:172px;background:#fff;border:1px solid #dbe7f6;border-radius:12px;padding:22px;box-shadow:0 12px 28px rgba(31,69,117,.05);transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
-    .catalog-grid .card:hover{border-color:#9bbce8;box-shadow:0 18px 38px rgba(31,69,117,.09);transform:translateY(-2px)}
-    .catalog-grid .card h3{margin:0 0 10px;font-size:19px;line-height:1.25;color:#071b3e}
-    .catalog-grid .card p{margin:0;color:#4a5f7c;font-size:14px;line-height:1.6}
+    .catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}
+    .catalog-grid .card{display:block;background:#fff;border:1px solid #dbe7f6;border-radius:16px;padding:0;box-shadow:0 12px 28px rgba(31,69,117,.06);transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;overflow:hidden;text-decoration:none}
+    .catalog-grid .card:hover{border-color:#9bbce8;box-shadow:0 18px 38px rgba(31,69,117,.11);transform:translateY(-2px)}
+    .catalog-card-img{display:block;width:100%;height:auto;background:#f8fbff}
+    .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
     .catalog-group{margin-top:34px}
     .catalog-group__head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #dbe7f6}
     .catalog-group__head h3{margin:0;font-size:24px;line-height:1.2;color:#071b3e}
     .catalog-group__head p{margin:0;max-width:640px;color:#4a5f7c;font-size:14px;line-height:1.55}
-    .catalog-grid--compact{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:0}
-    .catalog-grid--compact .card{min-height:130px;padding:18px}
-    .catalog-grid--compact .card h3{font-size:16px;margin-bottom:8px}
+    .catalog-grid--compact{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:0}
     .catalog-note{margin-top:24px;background:#f8fbff;border:1px solid #dbe7f6;border-radius:12px;padding:18px;color:#4a5f7c;font-size:14px;line-height:1.6}
     @media(max-width:1100px){.catalog-grid--compact{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:900px){.catalog-grid,.catalog-grid--compact{grid-template-columns:1fr 1fr}.catalog-grid .card{min-height:auto}.catalog-group__head{display:block}.catalog-group__head p{margin-top:8px}}
-    @media(max-width:560px){.catalog-grid,.catalog-grid--compact{grid-template-columns:1fr}}
+    @media(max-width:900px){.catalog-grid,.catalog-grid--compact{grid-template-columns:1fr 1fr}.catalog-group__head{display:block}.catalog-group__head p{margin-top:8px}}
+    @media(max-width:560px){.catalog-grid,.catalog-grid--compact{grid-template-columns:1fr}.catalog-grid{gap:14px}.catalog-group{margin-top:28px}}
   </style>
 </head>
 <body>
@@ -65,12 +63,12 @@
         <p>Шесть базовых разделов каталога. Они не дублируются ниже в дополнительной продукции.</p>
       </div>
       <div class="cards catalog-grid">
-        <a class="card" href="/truboprovodnaya-i-zapornaya-armatura/"><h3>Запорная арматура</h3><p>Краны шаровые КПЛВ‑КШ / КПЛВ‑КШС и отсечные исполнения дисковых затворов КПЛВ‑Д.</p></a>
-        <a class="card" href="/reguliruyushchaya-armatura/"><h3>Регулирующая арматура</h3><p>Клапаны подъёмные КПЛВ‑С / КПЛВ‑СС, дисковые затворы КПЛВ‑Д и сегментные клапаны КПЛВ‑ПС.</p></a>
-        <a class="card" href="/kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya/"><h3>КИПиА</h3><p>Измерительное оборудование: расходомеры, уровнемеры, сигнализаторы уровня и поверка СИ.</p></a>
-        <a class="card" href="/rashodomery/"><h3>Расходомеры</h3><p>Ультразвуковые, вихревые, электромагнитные и массовые расходомеры.</p></a>
-        <a class="card" href="/urovnemery/"><h3>Уровнемеры</h3><p>Радарные, рефлекс‑радарные, байпасные, буйковые, магнитострикционные уровнемеры и FPS.</p></a>
-        <a class="card" href="/vspomogatelnoe-oborudovanie/"><h3>Вспомогательное оборудование</h3><p>Камеры СОД, струевыпрямители, мерники, прямые участки, фланцы, выносные камеры и трубы Вентури.</p></a>
+          <a class="card catalog-card" href="/truboprovodnaya-i-zapornaya-armatura/" aria-label="Запорная арматура"><img class="catalog-card-img" src="/assets/catalog-cards-v2/zapornaya-armatura.webp" width="640" height="800" alt="Запорная арматура" loading="lazy" decoding="async"><span class="sr-only"><h3>Запорная арматура</h3><p>Краны шаровые КПЛВ‑КШ / КПЛВ‑КШС и отсечные исполнения дисковых затворов КПЛВ‑Д.</p></span></a>
+          <a class="card catalog-card" href="/reguliruyushchaya-armatura/" aria-label="Регулирующая арматура"><img class="catalog-card-img" src="/assets/catalog-cards-v2/reguliruyushchaya-armatura.webp" width="640" height="800" alt="Регулирующая арматура" loading="lazy" decoding="async"><span class="sr-only"><h3>Регулирующая арматура</h3><p>Клапаны подъёмные КПЛВ‑С / КПЛВ‑СС, дисковые затворы КПЛВ‑Д и сегментные клапаны КПЛВ‑ПС.</p></span></a>
+          <a class="card catalog-card" href="/kontrolno-izmeritelnyie-priboryi-i-avtomatizatsiya/" aria-label="КИПиА"><img class="catalog-card-img" src="/assets/catalog-cards-v2/kipia.webp" width="640" height="800" alt="КИПиА" loading="lazy" decoding="async"><span class="sr-only"><h3>КИПиА</h3><p>Измерительное оборудование: расходомеры, уровнемеры, сигнализаторы уровня и поверка СИ.</p></span></a>
+          <a class="card catalog-card" href="/rashodomery/" aria-label="Расходомеры"><img class="catalog-card-img" src="/assets/catalog-cards-v2/rashodomery.webp" width="640" height="800" alt="Расходомеры" loading="lazy" decoding="async"><span class="sr-only"><h3>Расходомеры</h3><p>Ультразвуковые, вихревые, электромагнитные и массовые расходомеры.</p></span></a>
+          <a class="card catalog-card" href="/urovnemery/" aria-label="Уровнемеры"><img class="catalog-card-img" src="/assets/catalog-cards-v2/urovnemery.webp" width="640" height="800" alt="Уровнемеры" loading="lazy" decoding="async"><span class="sr-only"><h3>Уровнемеры</h3><p>Радарные, рефлекс‑радарные, байпасные, буйковые, магнитострикционные уровнемеры и FPS.</p></span></a>
+          <a class="card catalog-card" href="/vspomogatelnoe-oborudovanie/" aria-label="Вспомогательное оборудование"><img class="catalog-card-img" src="/assets/catalog-cards-v2/vspomogatelnoe-oborudovanie.webp" width="640" height="800" alt="Вспомогательное оборудование" loading="lazy" decoding="async"><span class="sr-only"><h3>Вспомогательное оборудование</h3><p>Камеры СОД, струевыпрямители, мерники, прямые участки, фланцы, выносные камеры и трубы Вентури.</p></span></a>
       </div>
     </div>
   </section>
@@ -85,94 +83,94 @@
       <div class="catalog-group">
         <div class="catalog-group__head"><h3>Емкостное оборудование</h3><p>Резервуары, емкости и аппараты для хранения и технологических процессов.</p></div>
         <div class="cards catalog-grid catalog-grid--compact">
-          <div class="card"><h3>РВС, РВСП</h3><p>Резервуары вертикальные стальные.</p></div>
-          <div class="card"><h3>РГС, РГСП</h3><p>Резервуары горизонтальные стальные.</p></div>
-          <div class="card"><h3>ЕП, ЕПП</h3><p>Емкости подземные, в том числе с подогревом.</p></div>
-          <div class="card"><h3>Емкости СУГ</h3><p>Емкости для сжиженных углеводородных газов.</p></div>
-          <div class="card"><h3>Аппараты с перемешивающими устройствами</h3><p>Емкостные аппараты с мешалками и приводами.</p></div>
-          <div class="card"><h3>Воздухосборники и ресиверы</h3><p>Сосуды для сжатого воздуха и газов.</p></div>
-          <div class="card"><h3>Отстойники</h3><p>Вертикальные и горизонтальные аппараты разделения фаз.</p></div>
-          <div class="card"><h3>Емкости из стеклопластика</h3><p>Емкости для воды, пищевых и агрессивных сред.</p></div>
+          <div class="card catalog-card" role="group" aria-label="РВС, РВСП"><img class="catalog-card-img" src="/assets/catalog-cards-v2/rvs-rvsp.webp" width="640" height="800" alt="РВС, РВСП" loading="lazy" decoding="async"><span class="sr-only"><h3>РВС, РВСП</h3><p>Резервуары вертикальные стальные.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="РГС, РГСП"><img class="catalog-card-img" src="/assets/catalog-cards-v2/rgs-rgsp.webp" width="640" height="800" alt="РГС, РГСП" loading="lazy" decoding="async"><span class="sr-only"><h3>РГС, РГСП</h3><p>Резервуары горизонтальные стальные.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="ЕП, ЕПП"><img class="catalog-card-img" src="/assets/catalog-cards-v2/ep-epp.webp" width="640" height="800" alt="ЕП, ЕПП" loading="lazy" decoding="async"><span class="sr-only"><h3>ЕП, ЕПП</h3><p>Емкости подземные, в том числе с подогревом.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Емкости СУГ"><img class="catalog-card-img" src="/assets/catalog-cards-v2/emkosti-sug.webp" width="640" height="800" alt="Емкости СУГ" loading="lazy" decoding="async"><span class="sr-only"><h3>Емкости СУГ</h3><p>Емкости для сжиженных углеводородных газов.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Аппараты с перемешивающими устройствами"><img class="catalog-card-img" src="/assets/catalog-cards-v2/apparaty-s-meshalkami.webp" width="640" height="800" alt="Аппараты с перемешивающими устройствами" loading="lazy" decoding="async"><span class="sr-only"><h3>Аппараты с перемешивающими устройствами</h3><p>Емкостные аппараты с мешалками и приводами.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Воздухосборники и ресиверы"><img class="catalog-card-img" src="/assets/catalog-cards-v2/vozduhosborniki-resivery.webp" width="640" height="800" alt="Воздухосборники и ресиверы" loading="lazy" decoding="async"><span class="sr-only"><h3>Воздухосборники и ресиверы</h3><p>Сосуды для сжатого воздуха и газов.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Отстойники"><img class="catalog-card-img" src="/assets/catalog-cards-v2/otstoyniki.webp" width="640" height="800" alt="Отстойники" loading="lazy" decoding="async"><span class="sr-only"><h3>Отстойники</h3><p>Вертикальные и горизонтальные аппараты разделения фаз.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Емкости из стеклопластика"><img class="catalog-card-img" src="/assets/catalog-cards-v2/emkosti-stekloplastik.webp" width="640" height="800" alt="Емкости из стеклопластика" loading="lazy" decoding="async"><span class="sr-only"><h3>Емкости из стеклопластика</h3><p>Емкости для воды, пищевых и агрессивных сред.</p></span></div>
         </div>
       </div>
 
       <div class="catalog-group">
         <div class="catalog-group__head"><h3>Теплообменное оборудование</h3><p>Кожухотрубные аппараты и аппараты воздушного охлаждения.</p></div>
         <div class="cards catalog-grid catalog-grid--compact">
-          <div class="card"><h3>Аппараты с неподвижными трубными решетками</h3><p>Теплообменники, холодильники, конденсаторы и испарители.</p></div>
-          <div class="card"><h3>Аппараты «труба в трубе»</h3><p>Однопоточные и многопоточные теплообменники.</p></div>
-          <div class="card"><h3>Аппараты с U‑образными трубами</h3><p>Теплообменники со свободным удлинением труб.</p></div>
-          <div class="card"><h3>Кожухотрубные аппараты с плавающей головкой</h3><p>Теплообменные аппараты для жидких охлаждающих сред.</p></div>
-          <div class="card"><h3>Аппараты воздушного охлаждения</h3><p>АВО с секциями теплообмена и осевыми вентиляторами.</p></div>
+          <div class="card catalog-card" role="group" aria-label="Аппараты с неподвижными трубными решетками"><img class="catalog-card-img" src="/assets/catalog-cards-v2/apparaty-nepodvizhnye-reshetki.webp" width="640" height="800" alt="Аппараты с неподвижными трубными решетками" loading="lazy" decoding="async"><span class="sr-only"><h3>Аппараты с неподвижными трубными решетками</h3><p>Теплообменники, холодильники, конденсаторы и испарители.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Аппараты «труба в трубе»"><img class="catalog-card-img" src="/assets/catalog-cards-v2/apparaty-truba-v-trube.webp" width="640" height="800" alt="Аппараты «труба в трубе»" loading="lazy" decoding="async"><span class="sr-only"><h3>Аппараты «труба в трубе»</h3><p>Однопоточные и многопоточные теплообменники.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Аппараты с U‑образными трубами"><img class="catalog-card-img" src="/assets/catalog-cards-v2/apparaty-u-obraznye-truby.webp" width="640" height="800" alt="Аппараты с U‑образными трубами" loading="lazy" decoding="async"><span class="sr-only"><h3>Аппараты с U‑образными трубами</h3><p>Теплообменники со свободным удлинением труб.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Кожухотрубные аппараты с плавающей головкой"><img class="catalog-card-img" src="/assets/catalog-cards-v2/kozhuhotrubnye-plavayuschaya-golovka.webp" width="640" height="800" alt="Кожухотрубные аппараты с плавающей головкой" loading="lazy" decoding="async"><span class="sr-only"><h3>Кожухотрубные аппараты с плавающей головкой</h3><p>Теплообменные аппараты для жидких охлаждающих сред.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Аппараты воздушного охлаждения"><img class="catalog-card-img" src="/assets/catalog-cards-v2/apparaty-vozdushnogo-ohlazhdeniya.webp" width="640" height="800" alt="Аппараты воздушного охлаждения" loading="lazy" decoding="async"><span class="sr-only"><h3>Аппараты воздушного охлаждения</h3><p>АВО с секциями теплообмена и осевыми вентиляторами.</p></span></div>
         </div>
       </div>
 
       <div class="catalog-group">
         <div class="catalog-group__head"><h3>Фильтровальное оборудование и компенсаторы</h3><p>Фильтры, грязевики и компенсаторы для трубопроводных систем.</p></div>
         <div class="cards catalog-grid catalog-grid--compact">
-          <div class="card"><h3>ФЖУ</h3><p>Фильтры жидкостные универсальные.</p></div>
-          <div class="card"><h3>СДЖ</h3><p>Фильтры жидкостные сетчатые дренажные.</p></div>
-          <div class="card"><h3>Фильтры газовые</h3><p>Очистка природного газа, азота, воздуха и других газов.</p></div>
-          <div class="card"><h3>Грязевики</h3><p>Узлы фильтрации для трубопроводов и теплообменных систем.</p></div>
-          <div class="card"><h3>Компенсаторы</h3><p>Компенсация температурных перемещений в теплосетях и трубопроводах.</p></div>
+          <div class="card catalog-card" role="group" aria-label="ФЖУ"><img class="catalog-card-img" src="/assets/catalog-cards-v2/fzhu.webp" width="640" height="800" alt="ФЖУ" loading="lazy" decoding="async"><span class="sr-only"><h3>ФЖУ</h3><p>Фильтры жидкостные универсальные.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="СДЖ"><img class="catalog-card-img" src="/assets/catalog-cards-v2/sdzh.webp" width="640" height="800" alt="СДЖ" loading="lazy" decoding="async"><span class="sr-only"><h3>СДЖ</h3><p>Фильтры жидкостные сетчатые дренажные.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Фильтры газовые"><img class="catalog-card-img" src="/assets/catalog-cards-v2/filtry-gazovye.webp" width="640" height="800" alt="Фильтры газовые" loading="lazy" decoding="async"><span class="sr-only"><h3>Фильтры газовые</h3><p>Очистка природного газа, азота, воздуха и других газов.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Грязевики"><img class="catalog-card-img" src="/assets/catalog-cards-v2/gryazeviki.webp" width="640" height="800" alt="Грязевики" loading="lazy" decoding="async"><span class="sr-only"><h3>Грязевики</h3><p>Узлы фильтрации для трубопроводов и теплообменных систем.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Компенсаторы"><img class="catalog-card-img" src="/assets/catalog-cards-v2/kompensatory.webp" width="640" height="800" alt="Компенсаторы" loading="lazy" decoding="async"><span class="sr-only"><h3>Компенсаторы</h3><p>Компенсация температурных перемещений в теплосетях и трубопроводах.</p></span></div>
         </div>
       </div>
 
       <div class="catalog-group">
         <div class="catalog-group__head"><h3>Слив‑налив и учет нефтепродуктов</h3><p>Оборудование для нижнего слива, верхнего слива, налива и контейнерных АЗС.</p></div>
         <div class="cards catalog-grid catalog-grid--compact">
-          <div class="card"><h3>УСН</h3><p>Устройство для нижнего слива нефтепродуктов.</p></div>
-          <div class="card"><h3>УПВС</h3><p>Устройство переносное верхнего слива.</p></div>
-          <div class="card"><h3>УНЖ</h3><p>Устройство верхнего налива в железнодорожные цистерны.</p></div>
-          <div class="card"><h3>АСН</h3><p>Устройства верхнего налива в автомобильные цистерны.</p></div>
-          <div class="card"><h3>КАЗС</h3><p>Модульные и контейнерные автозаправочные станции.</p></div>
+          <div class="card catalog-card" role="group" aria-label="УСН"><img class="catalog-card-img" src="/assets/catalog-cards-v2/usn.webp" width="640" height="800" alt="УСН" loading="lazy" decoding="async"><span class="sr-only"><h3>УСН</h3><p>Устройство для нижнего слива нефтепродуктов.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="УПВС"><img class="catalog-card-img" src="/assets/catalog-cards-v2/upvs.webp" width="640" height="800" alt="УПВС" loading="lazy" decoding="async"><span class="sr-only"><h3>УПВС</h3><p>Устройство переносное верхнего слива.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="УНЖ"><img class="catalog-card-img" src="/assets/catalog-cards-v2/unzh.webp" width="640" height="800" alt="УНЖ" loading="lazy" decoding="async"><span class="sr-only"><h3>УНЖ</h3><p>Устройство верхнего налива в железнодорожные цистерны.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="АСН"><img class="catalog-card-img" src="/assets/catalog-cards-v2/asn.webp" width="640" height="800" alt="АСН" loading="lazy" decoding="async"><span class="sr-only"><h3>АСН</h3><p>Устройства верхнего налива в автомобильные цистерны.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="КАЗС"><img class="catalog-card-img" src="/assets/catalog-cards-v2/kazs.webp" width="640" height="800" alt="КАЗС" loading="lazy" decoding="async"><span class="sr-only"><h3>КАЗС</h3><p>Модульные и контейнерные автозаправочные станции.</p></span></div>
         </div>
       </div>
 
       <div class="catalog-group">
         <div class="catalog-group__head"><h3>Резервуарное оборудование</h3><p>Клапаны, понтоны, пробоотборники, устройства и элементы комплектации резервуаров.</p></div>
         <div class="cards catalog-grid catalog-grid--compact">
-          <div class="card"><h3>КДС</h3><p>Клапан дыхательный совмещенный.</p></div>
-          <div class="card"><h3>СМДК</h3><p>Совмещенный механический дыхательный клапан.</p></div>
-          <div class="card"><h3>КДМ</h3><p>Клапан дыхательный механический.</p></div>
-          <div class="card"><h3>КПГ</h3><p>Клапан предохранительный гидравлический.</p></div>
-          <div class="card"><h3>НДКМ</h3><p>Непримерзающий дыхательный клапан мембранный.</p></div>
-          <div class="card"><h3>АК</h3><p>Аварийный клапан для защиты резервуаров.</p></div>
-          <div class="card"><h3>Понтоны</h3><p>Оборудование для снижения потерь нефтепродуктов от испарения.</p></div>
-          <div class="card"><h3>ПСР, ПСРП, ПСР ОТ</h3><p>Пробоотборники резервуарные.</p></div>
-          <div class="card"><h3>ПЗУ</h3><p>Плавающие заборные устройства.</p></div>
-          <div class="card"><h3>ПРУ</h3><p>Приемо‑раздаточные устройства.</p></div>
-          <div class="card"><h3>ХП</h3><p>Хлопушки резервуарные.</p></div>
-          <div class="card"><h3>Устройства размыва донных отложений</h3><p>Оборудование для обслуживания резервуаров.</p></div>
-          <div class="card"><h3>Люки и патрубки</h3><p>Элементы комплектации резервуаров.</p></div>
-          <div class="card"><h3>ОП</h3><p>Предохранители огневые.</p></div>
+          <div class="card catalog-card" role="group" aria-label="КДС"><img class="catalog-card-img" src="/assets/catalog-cards-v2/kds.webp" width="640" height="800" alt="КДС" loading="lazy" decoding="async"><span class="sr-only"><h3>КДС</h3><p>Клапан дыхательный совмещенный.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="СМДК"><img class="catalog-card-img" src="/assets/catalog-cards-v2/smdk.webp" width="640" height="800" alt="СМДК" loading="lazy" decoding="async"><span class="sr-only"><h3>СМДК</h3><p>Совмещенный механический дыхательный клапан.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="КДМ"><img class="catalog-card-img" src="/assets/catalog-cards-v2/kdm.webp" width="640" height="800" alt="КДМ" loading="lazy" decoding="async"><span class="sr-only"><h3>КДМ</h3><p>Клапан дыхательный механический.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="КПГ"><img class="catalog-card-img" src="/assets/catalog-cards-v2/kpg.webp" width="640" height="800" alt="КПГ" loading="lazy" decoding="async"><span class="sr-only"><h3>КПГ</h3><p>Клапан предохранительный гидравлический.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="НДКМ"><img class="catalog-card-img" src="/assets/catalog-cards-v2/ndkm.webp" width="640" height="800" alt="НДКМ" loading="lazy" decoding="async"><span class="sr-only"><h3>НДКМ</h3><p>Непримерзающий дыхательный клапан мембранный.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="АК"><img class="catalog-card-img" src="/assets/catalog-cards-v2/ak.webp" width="640" height="800" alt="АК" loading="lazy" decoding="async"><span class="sr-only"><h3>АК</h3><p>Аварийный клапан для защиты резервуаров.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Понтоны"><img class="catalog-card-img" src="/assets/catalog-cards-v2/pontony.webp" width="640" height="800" alt="Понтоны" loading="lazy" decoding="async"><span class="sr-only"><h3>Понтоны</h3><p>Оборудование для снижения потерь нефтепродуктов от испарения.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="ПСР, ПСРП, ПСР ОТ"><img class="catalog-card-img" src="/assets/catalog-cards-v2/psr.webp" width="640" height="800" alt="ПСР, ПСРП, ПСР ОТ" loading="lazy" decoding="async"><span class="sr-only"><h3>ПСР, ПСРП, ПСР ОТ</h3><p>Пробоотборники резервуарные.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="ПЗУ"><img class="catalog-card-img" src="/assets/catalog-cards-v2/pzu.webp" width="640" height="800" alt="ПЗУ" loading="lazy" decoding="async"><span class="sr-only"><h3>ПЗУ</h3><p>Плавающие заборные устройства.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="ПРУ"><img class="catalog-card-img" src="/assets/catalog-cards-v2/pru.webp" width="640" height="800" alt="ПРУ" loading="lazy" decoding="async"><span class="sr-only"><h3>ПРУ</h3><p>Приемо‑раздаточные устройства.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="ХП"><img class="catalog-card-img" src="/assets/catalog-cards-v2/hp.webp" width="640" height="800" alt="ХП" loading="lazy" decoding="async"><span class="sr-only"><h3>ХП</h3><p>Хлопушки резервуарные.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Устройства размыва донных отложений"><img class="catalog-card-img" src="/assets/catalog-cards-v2/ustroystva-razmyva-donnyh-otlozheniy.webp" width="640" height="800" alt="Устройства размыва донных отложений" loading="lazy" decoding="async"><span class="sr-only"><h3>Устройства размыва донных отложений</h3><p>Оборудование для обслуживания резервуаров.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Люки и патрубки"><img class="catalog-card-img" src="/assets/catalog-cards-v2/lyuki-patrubki.webp" width="640" height="800" alt="Люки и патрубки" loading="lazy" decoding="async"><span class="sr-only"><h3>Люки и патрубки</h3><p>Элементы комплектации резервуаров.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="ОП"><img class="catalog-card-img" src="/assets/catalog-cards-v2/op.webp" width="640" height="800" alt="ОП" loading="lazy" decoding="async"><span class="sr-only"><h3>ОП</h3><p>Предохранители огневые.</p></span></div>
         </div>
       </div>
 
       <div class="catalog-group">
         <div class="catalog-group__head"><h3>Сепарационное и колонное оборудование</h3><p>Аппараты для разделения потоков и технологических процессов.</p></div>
         <div class="cards catalog-grid catalog-grid--compact">
-          <div class="card"><h3>ФС</h3><p>Факельные сепараторы.</p></div>
-          <div class="card"><h3>НГС</h3><p>Сепараторы нефтегазовые.</p></div>
-          <div class="card"><h3>ГС</h3><p>Газовые сепараторы.</p></div>
-          <div class="card"><h3>Аппараты колонные</h3><p>Колонное оборудование для технологических установок.</p></div>
+          <div class="card catalog-card" role="group" aria-label="ФС"><img class="catalog-card-img" src="/assets/catalog-cards-v2/fs.webp" width="640" height="800" alt="ФС" loading="lazy" decoding="async"><span class="sr-only"><h3>ФС</h3><p>Факельные сепараторы.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="НГС"><img class="catalog-card-img" src="/assets/catalog-cards-v2/ngs.webp" width="640" height="800" alt="НГС" loading="lazy" decoding="async"><span class="sr-only"><h3>НГС</h3><p>Сепараторы нефтегазовые.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="ГС"><img class="catalog-card-img" src="/assets/catalog-cards-v2/gs.webp" width="640" height="800" alt="ГС" loading="lazy" decoding="async"><span class="sr-only"><h3>ГС</h3><p>Газовые сепараторы.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Аппараты колонные"><img class="catalog-card-img" src="/assets/catalog-cards-v2/apparaty-kolonnye.webp" width="640" height="800" alt="Аппараты колонные" loading="lazy" decoding="async"><span class="sr-only"><h3>Аппараты колонные</h3><p>Колонное оборудование для технологических установок.</p></span></div>
         </div>
       </div>
 
       <div class="catalog-group">
         <div class="catalog-group__head"><h3>Насосное и компрессорное оборудование</h3><p>Насосы и компрессоры для промышленных систем.</p></div>
         <div class="cards catalog-grid catalog-grid--compact">
-          <div class="card"><h3>Вертикальные полупогружные насосы</h3><p>Насосы для емкостей, дренажных и технологических задач.</p></div>
-          <div class="card"><h3>Центробежные насосы</h3><p>Насосы для перекачки жидкостей в технологических системах.</p></div>
-          <div class="card"><h3>Компрессоры</h3><p>Компрессорное оборудование для промышленных объектов.</p></div>
+          <div class="card catalog-card" role="group" aria-label="Вертикальные полупогружные насосы"><img class="catalog-card-img" src="/assets/catalog-cards-v2/vertikalnye-polupogruzhnye-nasosy.webp" width="640" height="800" alt="Вертикальные полупогружные насосы" loading="lazy" decoding="async"><span class="sr-only"><h3>Вертикальные полупогружные насосы</h3><p>Насосы для емкостей, дренажных и технологических задач.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Центробежные насосы"><img class="catalog-card-img" src="/assets/catalog-cards-v2/centrobezhnye-nasosy.webp" width="640" height="800" alt="Центробежные насосы" loading="lazy" decoding="async"><span class="sr-only"><h3>Центробежные насосы</h3><p>Насосы для перекачки жидкостей в технологических системах.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Компрессоры"><img class="catalog-card-img" src="/assets/catalog-cards-v2/kompressory.webp" width="640" height="800" alt="Компрессоры" loading="lazy" decoding="async"><span class="sr-only"><h3>Компрессоры</h3><p>Компрессорное оборудование для промышленных объектов.</p></span></div>
         </div>
       </div>
 
       <div class="catalog-group">
         <div class="catalog-group__head"><h3>Дополнительная продукция</h3><p>Позиции из раздела дополнительной продукции без дублей арматуры и КИПиА.</p></div>
         <div class="cards catalog-grid catalog-grid--compact">
-          <div class="card"><h3>Дымовые трубы и трубы вентиляции</h3><p>Ферменные, самонесущие, колонные, фасадные трубы и трубы на растяжках.</p></div>
-          <div class="card"><h3>Строительные металлоконструкции</h3><p>Металлоконструкции по чертежам и техническому заданию.</p></div>
+          <div class="card catalog-card" role="group" aria-label="Дымовые трубы и трубы вентиляции"><img class="catalog-card-img" src="/assets/catalog-cards-v2/dymovye-truby.webp" width="640" height="800" alt="Дымовые трубы и трубы вентиляции" loading="lazy" decoding="async"><span class="sr-only"><h3>Дымовые трубы и трубы вентиляции</h3><p>Ферменные, самонесущие, колонные, фасадные трубы и трубы на растяжках.</p></span></div>
+          <div class="card catalog-card" role="group" aria-label="Строительные металлоконструкции"><img class="catalog-card-img" src="/assets/catalog-cards-v2/stroitelnye-metallokonstrukcii.webp" width="640" height="800" alt="Строительные металлоконструкции" loading="lazy" decoding="async"><span class="sr-only"><h3>Строительные металлоконструкции</h3><p>Металлоконструкции по чертежам и техническому заданию.</p></span></div>
         </div>
       </div>
 
