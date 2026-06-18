@@ -1,3 +1,3 @@
 force deploy for hero wow effect
-version: 20260618-baunfire-wow-deploy-1
-previous required commit: 1b62d53
+version: 20260618-baunfire-wow-deploy-2
+must include commits after c8fc905: 0163f9d and 1b62d53
