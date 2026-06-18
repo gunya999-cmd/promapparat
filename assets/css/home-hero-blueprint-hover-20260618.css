@@ -1,0 +1,61 @@
+/* Clean blueprint-only hover effect for desktop */
+.home-hero-static--blueprint-hover{
+  position:relative;
+}
+
+.home-hero-blueprint-hotspot{
+  position:absolute;
+  z-index:3;
+  left:47.85%;
+  top:4.69%;
+  width:27.67%;
+  height:39.26%;
+  background:transparent;
+}
+
+.home-hero-blueprint-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .18s ease;
+  background-image:url('/assets/hero/hero-blueprint-overlay-20260618.png?v=20260618-blueprint-hover-clean-1');
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-size:contain;
+}
+
+.home-hero-blueprint-hotspot:hover ~ .home-hero-blueprint-overlay{
+  opacity:.94;
+}
+
+/* Match the hero background behavior on desktop / large screens */
+@media (min-width:2200px){
+  .home-hero-blueprint-overlay{
+    background-size:auto 100%;
+    background-position:center top;
+  }
+}
+
+@media (min-width:1600px) and (max-width:2199px){
+  .home-hero-blueprint-overlay{
+    background-size:auto 100%;
+    background-position:center top;
+  }
+}
+
+@media (min-width:1101px) and (max-width:1599px){
+  .home-hero-blueprint-overlay{
+    background-size:cover;
+    background-position:center top;
+  }
+}
+
+/* Disable effect on tablet/mobile to avoid misalignment with cropped hero variants */
+@media (max-width:1100px){
+  .home-hero-blueprint-hotspot,
+  .home-hero-blueprint-overlay{
+    display:none;
+  }
+}
