@@ -1,3 +1,3 @@
-force deploy for hero wow effect
-version: 20260618-baunfire-wow-deploy-2
-must include commits after c8fc905: 0163f9d and 1b62d53
+force deploy for blueprint only hero effect
+version: 20260618-blueprint-only-1
+latest effect commit: f2fa527
