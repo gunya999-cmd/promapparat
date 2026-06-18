@@ -1,0 +1,84 @@
+/* Baunfire hero – tuned for mobile, tablet, desktop and very large screens */
+.home-hero-static{
+  position:relative;
+  display:block;
+  width:100%;
+  min-height:clamp(560px,66.6667vw,1024px);
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  isolation:isolate;
+  border-bottom:1px solid rgba(204,221,241,.92);
+  background-color:#f4f8fd;
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-size:contain;
+  background-image:image-set(
+    url('/assets/hero/hero-baunfire-desktop-1920.webp?v=20260618-baunfire-perfect-1') 1x,
+    url('/assets/hero/hero-baunfire-desktop-2880.webp?v=20260618-baunfire-perfect-1') 2x
+  );
+}
+
+@supports not (background-image:image-set(url("x") 1x)){
+  .home-hero-static{
+    background-image:url('/assets/hero/hero-baunfire-desktop-1920.webp?v=20260618-baunfire-perfect-1');
+  }
+}
+
+/* Very large / 4K screens */
+@media (min-width:2200px){
+  .home-hero-static{
+    min-height:clamp(700px,52vw,1024px);
+    background-image:url('/assets/hero/hero-baunfire-desktop-3200.webp?v=20260618-baunfire-perfect-1');
+    background-size:auto 100%;
+    background-position:center top;
+  }
+}
+
+/* Large desktops */
+@media (min-width:1600px) and (max-width:2199px){
+  .home-hero-static{
+    min-height:clamp(620px,58vw,1024px);
+    background-size:auto 100%;
+    background-position:center top;
+  }
+}
+
+/* Standard desktops and laptops */
+@media (min-width:1101px) and (max-width:1599px){
+  .home-hero-static{
+    min-height:clamp(520px,62vw,900px);
+    background-size:cover;
+    background-position:center top;
+  }
+}
+
+/* Tablets landscape / small laptops */
+@media (min-width:768px) and (max-width:1100px){
+  .home-hero-static{
+    min-height:clamp(430px,72vw,700px);
+    background-image:url('/assets/hero/hero-baunfire-tablet-1800.webp?v=20260618-baunfire-perfect-1');
+    background-size:cover;
+    background-position:44% top;
+  }
+}
+
+/* Phones */
+@media (min-width:421px) and (max-width:767px){
+  .home-hero-static{
+    min-height:520px;
+    background-image:url('/assets/hero/hero-baunfire-mobile-1280.webp?v=20260618-baunfire-perfect-1');
+    background-size:cover;
+    background-position:left top;
+  }
+}
+
+/* Small phones */
+@media (max-width:420px){
+  .home-hero-static{
+    min-height:460px;
+    background-image:url('/assets/hero/hero-baunfire-mobile-narrow-1080.webp?v=20260618-baunfire-perfect-1');
+    background-size:cover;
+    background-position:left top;
+  }
+}
