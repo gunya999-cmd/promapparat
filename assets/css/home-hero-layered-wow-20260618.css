@@ -1,0 +1,84 @@
+/* Layered hero overlays: blueprint + dots strip, calm and bright states */
+.home-hero-static--layered-wow{
+  position:relative;
+}
+
+.home-hero-hotspot,
+.home-hero-overlay{
+  position:absolute;
+}
+
+.home-hero-hotspot{
+  z-index:4;
+  background:transparent;
+}
+
+.home-hero-overlay{
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-size:contain;
+}
+
+/* Calm states */
+.home-hero-overlay--blueprint-calm{
+  opacity:1;
+  background-image:url('/assets/hero/layers/hero-blueprint-calm-20260618.png?v=20260618-layered-wow-1');
+}
+.home-hero-overlay--dots-calm{
+  opacity:1;
+  background-image:url('/assets/hero/layers/hero-dots-calm-20260618.png?v=20260618-layered-wow-1');
+}
+
+/* Bright hover states */
+.home-hero-overlay--blueprint-bright,
+.home-hero-overlay--dots-bright{
+  opacity:0;
+  transition:opacity .18s ease;
+}
+.home-hero-overlay--blueprint-bright{
+  background-image:url('/assets/hero/layers/hero-blueprint-bright-20260618.png?v=20260618-layered-wow-1');
+}
+.home-hero-overlay--dots-bright{
+  background-image:url('/assets/hero/layers/hero-dots-bright-20260618.png?v=20260618-layered-wow-1');
+}
+
+/* Hover zones */
+.home-hero-hotspot--blueprint{
+  left:47.8%;
+  top:4.6%;
+  width:27.8%;
+  height:39.4%;
+}
+.home-hero-hotspot--dots{
+  left:34.0%;
+  top:56.8%;
+  width:54.5%;
+  height:36.5%;
+}
+
+.home-hero-hotspot--blueprint:hover ~ .home-hero-overlay--blueprint-bright{
+  opacity:1;
+}
+.home-hero-hotspot--dots:hover ~ .home-hero-overlay--dots-bright{
+  opacity:1;
+}
+
+/* Match the existing hero background scaling */
+@media (min-width:2200px){
+  .home-hero-overlay{background-size:auto 100%;background-position:center top;}
+}
+@media (min-width:1600px) and (max-width:2199px){
+  .home-hero-overlay{background-size:auto 100%;background-position:center top;}
+}
+@media (min-width:1101px) and (max-width:1599px){
+  .home-hero-overlay{background-size:cover;background-position:center top;}
+}
+
+/* Disable on tablet/mobile because the base hero uses cropped variants there */
+@media (max-width:1100px){
+  .home-hero-hotspot,
+  .home-hero-overlay{display:none;}
+}
