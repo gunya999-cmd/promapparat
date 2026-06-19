@@ -1,0 +1,146 @@
+/* Promapparat clean hero — line-only wow overlay v7.
+   Built from cleaned transparent layers extracted from the approved clean hero.
+   No haze, no white blob, no old generated glow layers. */
+
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
+  position: relative !important;
+  overflow: hidden !important;
+  background: #f6f9fd url('/assets/hero/responsive/hero-clean-desktop-1920-20260619.webp?v=20260619-lineonly-v7-1') center top / cover no-repeat !important;
+}
+
+/* Hide any old media nodes and old overlay/hotspot system. */
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > picture,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > img,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > .home-hero-media,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > .hero-media,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > [class*='hero-bg'],
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > [class*='hero-image'],
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > .home-hero-hotspot,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > .home-hero-overlay{
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Keep the entire left side free for future custom content. */
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .home-hero-copy,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .home-hero-content,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .home-hero-text,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-copy,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-content,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-text,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-liquid-icons,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-liquid-card,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-liquid-grid,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-cta,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-actions,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-badges,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-kpis{
+  display: none !important;
+}
+
+/* Desktop wow layers only. They are true transparent line-only layers. */
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  pointer-events: none !important;
+  z-index: 20 !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  transform: translateZ(0) !important;
+  will-change: opacity, filter !important;
+  transition: opacity .42s cubic-bezier(.2,.7,.2,1), filter .42s cubic-bezier(.2,.7,.2,1) !important;
+  animation: none !important;
+  box-shadow: none !important;
+}
+
+/* Blueprint only: no roof, no furniture, no parts list block. */
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before{
+  background-image: url('/assets/hero/layers/hero-clean-blueprint-line-only-v7-1920-20260619.webp?v=20260619-lineonly-v7-1') !important;
+  mix-blend-mode: screen !important;
+  opacity: .16 !important;
+  filter: brightness(1.08) contrast(1.06) drop-shadow(0 0 3px rgba(220,240,255,.22)) !important;
+}
+
+/* Data wave only. */
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
+  background-image: url('/assets/hero/layers/hero-clean-data-wave-line-only-v7-1920-20260619.webp?v=20260619-lineonly-v7-1') !important;
+  mix-blend-mode: screen !important;
+  opacity: .14 !important;
+  filter: brightness(1.06) contrast(1.08) saturate(1.08) drop-shadow(0 0 4px rgba(115,200,255,.24)) !important;
+}
+
+/* On hover, make the line work clearly visible without adding any haze. */
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow:hover::before{
+  opacity: .40 !important;
+  filter: brightness(1.22) contrast(1.14) drop-shadow(0 0 6px rgba(235,246,255,.32)) !important;
+}
+
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow:hover::after{
+  opacity: .34 !important;
+  filter: brightness(1.18) contrast(1.14) saturate(1.14) drop-shadow(0 0 7px rgba(115,200,255,.34)) !important;
+}
+
+/* Larger desktop sources */
+@media (min-width: 1600px){
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
+    background: #f6f9fd url('/assets/hero/responsive/hero-clean-desktop-2560-20260619.webp?v=20260619-lineonly-v7-1') center top / cover no-repeat !important;
+  }
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before{
+    background-image: url('/assets/hero/layers/hero-clean-blueprint-line-only-v7-2560-20260619.webp?v=20260619-lineonly-v7-1') !important;
+  }
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
+    background-image: url('/assets/hero/layers/hero-clean-data-wave-line-only-v7-2560-20260619.webp?v=20260619-lineonly-v7-1') !important;
+  }
+}
+
+@media (min-width: 2400px){
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
+    background: #f6f9fd url('/assets/hero/responsive/hero-clean-desktop-3200-20260619.webp?v=20260619-lineonly-v7-1') center top / cover no-repeat !important;
+  }
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before{
+    background-image: url('/assets/hero/layers/hero-clean-blueprint-line-only-v7-3200-20260619.webp?v=20260619-lineonly-v7-1') !important;
+  }
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
+    background-image: url('/assets/hero/layers/hero-clean-data-wave-line-only-v7-3200-20260619.webp?v=20260619-lineonly-v7-1') !important;
+  }
+}
+
+/* Tablet/mobile: use clean background only, no overlay effect to avoid crop drift. */
+@media (max-width: 1100px) and (min-width: 701px){
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
+    background: #f6f9fd url('/assets/hero/responsive/hero-clean-tablet-1800-20260619.webp?v=20260619-lineonly-v7-1') center top / cover no-repeat !important;
+  }
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before,
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
+    content: none !important;
+    display: none !important;
+  }
+}
+
+@media (max-width: 700px) and (min-width: 421px){
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
+    background: #f6f9fd url('/assets/hero/responsive/hero-clean-mobile-1280-20260619.webp?v=20260619-lineonly-v7-1') 58% top / cover no-repeat !important;
+  }
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before,
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
+    content: none !important;
+    display: none !important;
+  }
+}
+
+@media (max-width: 420px){
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
+    background: #f6f9fd url('/assets/hero/responsive/hero-clean-mobile-narrow-1080-20260619.webp?v=20260619-lineonly-v7-1') 61% top / cover no-repeat !important;
+  }
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before,
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
+    content: none !important;
+    display: none !important;
+  }
+}
