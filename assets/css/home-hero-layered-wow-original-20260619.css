@@ -35,11 +35,11 @@
 }
 
 .home-hero-overlay--blueprint-calm{
-  background-image:url('/assets/hero/layers/hero-blueprint-calm-20260619-original.png?v=20260619-original-layer-2');
+  background-image:url('/assets/hero/layers/hero-blueprint-calm-20260619-original.png?v=20260619-original-layer-3');
 }
 
 .home-hero-overlay--dots-calm{
-  background-image:url('/assets/hero/layers/hero-dots-calm-20260619-original.png?v=20260619-original-layer-2');
+  background-image:url('/assets/hero/layers/hero-dots-calm-20260619-original.png?v=20260619-original-layer-3');
 }
 
 /* Bright hover states: restrained, premium, not overexposed. */
@@ -50,12 +50,12 @@
 }
 
 .home-hero-overlay--blueprint-bright{
-  background-image:url('/assets/hero/layers/hero-blueprint-bright-20260619-original.png?v=20260619-original-layer-2');
+  background-image:url('/assets/hero/layers/hero-blueprint-bright-20260619-original.png?v=20260619-original-layer-3');
   filter:brightness(1.08) contrast(1.04) drop-shadow(0 0 4px rgba(175,225,255,.20));
 }
 
 .home-hero-overlay--dots-bright{
-  background-image:url('/assets/hero/layers/hero-dots-bright-20260619-original.png?v=20260619-original-layer-2');
+  background-image:url('/assets/hero/layers/hero-dots-bright-20260619-original.png?v=20260619-original-layer-3');
   filter:brightness(1.10) contrast(1.05) saturate(1.06) drop-shadow(0 0 5px rgba(90,175,255,.20));
 }
 
@@ -80,6 +80,19 @@
 
 .home-hero-hotspot--dots:hover ~ .home-hero-overlay--dots-bright{
   opacity:.38;
+}
+
+/* Remove the live-system cursor-follow radial spot.
+   This rule intentionally overrides promapparat-live-system-20260619.css. */
+.home-hero-static--layered-wow::before{
+  content:none!important;
+  display:none!important;
+  opacity:0!important;
+  background:none!important;
+}
+
+.home-hero-static--layered-wow:hover::before{
+  opacity:0!important;
 }
 
 @media (min-width:2200px){
