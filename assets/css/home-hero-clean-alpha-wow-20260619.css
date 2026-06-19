@@ -1,0 +1,83 @@
+/* Corrected alpha wow layers for clean hero.
+   Previous generated layers were RGB checkerboard images, not true transparent overlays.
+   This file must load after the responsive clean hero CSS. */
+
+.home-hero-static--layered-wow{
+  position:relative !important;
+  overflow:hidden !important;
+}
+
+.home-hero-static--layered-wow > .home-hero-hotspot,
+.home-hero-static--layered-wow > .home-hero-overlay{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+}
+
+.home-hero-static--layered-wow::before,
+.home-hero-static--layered-wow::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  display:block !important;
+  pointer-events:none !important;
+  z-index:1 !important;
+  background-repeat:no-repeat !important;
+  background-position:center top !important;
+  background-size:cover !important;
+  mix-blend-mode:screen !important;
+  transform:translateZ(0) !important;
+  will-change:opacity,filter !important;
+  transition:opacity .52s cubic-bezier(.2,.7,.2,1), filter .52s cubic-bezier(.2,.7,.2,1) !important;
+  animation:none !important;
+  box-shadow:none !important;
+}
+
+.home-hero-static--layered-wow::before{
+  background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-alpha-1920-20260619.webp?v=20260619-alpha-wow-1') !important;
+  opacity:.28 !important;
+  filter:brightness(1.10) contrast(1.10) !important;
+}
+
+.home-hero-static--layered-wow::after{
+  background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-alpha-1920-20260619.webp?v=20260619-alpha-wow-1') !important;
+  opacity:.26 !important;
+  filter:brightness(1.10) contrast(1.10) saturate(1.06) !important;
+}
+
+.home-hero-static--layered-wow:hover::before{
+  opacity:.48 !important;
+  filter:brightness(1.20) contrast(1.16) !important;
+}
+
+.home-hero-static--layered-wow:hover::after{
+  opacity:.46 !important;
+  filter:brightness(1.20) contrast(1.16) saturate(1.08) !important;
+}
+
+@media (min-width:1600px){
+  .home-hero-static--layered-wow::before{
+    background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-alpha-2560-20260619.webp?v=20260619-alpha-wow-1') !important;
+  }
+  .home-hero-static--layered-wow::after{
+    background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-alpha-2560-20260619.webp?v=20260619-alpha-wow-1') !important;
+  }
+}
+
+@media (min-width:2400px){
+  .home-hero-static--layered-wow::before{
+    background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-alpha-3200-20260619.webp?v=20260619-alpha-wow-1') !important;
+  }
+  .home-hero-static--layered-wow::after{
+    background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-alpha-3200-20260619.webp?v=20260619-alpha-wow-1') !important;
+  }
+}
+
+@media (max-width:1100px), (hover:none){
+  .home-hero-static--layered-wow::before,
+  .home-hero-static--layered-wow::after{
+    content:none !important;
+    display:none !important;
+  }
+}
