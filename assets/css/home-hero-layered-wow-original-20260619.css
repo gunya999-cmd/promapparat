@@ -86,7 +86,7 @@
   -webkit-mask-size:100% 100%;
   mask-size:100% 100%;
 
-  filter:brightness(1.16) contrast(1.07) drop-shadow(0 0 1px rgba(170,220,255,.08));
+  filter:brightness(1.08) contrast(1.04) drop-shadow(0 0 1px rgba(170,220,255,.04));
 }
 
 .home-hero-overlay--dots-bright{
@@ -111,7 +111,7 @@
 /* center highlight visible on hero hover, but much calmer than before */
 .home-hero-static--layered-wow:hover .home-hero-overlay--blueprint-bright,
 .home-hero-hotspot--blueprint:hover ~ .home-hero-overlay--blueprint-bright{
-  opacity:.44;
+  opacity:.22;
 }
 
 .home-hero-hotspot--dots:hover ~ .home-hero-overlay--dots-bright{
