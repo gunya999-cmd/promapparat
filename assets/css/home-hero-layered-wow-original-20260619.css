@@ -1,4 +1,4 @@
-/* Original extracted hero layers - clean hover-only correction.
+﻿/* Original extracted hero layers - clean hover-only correction.
    The base hero image already contains the blueprint and data wave.
    These overlays must not duplicate the calm state; they only add a controlled hover boost. */
 .home-hero-static--layered-wow{
@@ -27,50 +27,67 @@
   will-change:opacity,filter;
 }
 
-/* Calm overlays are intentionally hidden.
-   Showing them over the finished hero doubles the drawing/wave and makes the hero look dirty. */
+/* Calm overlays hidden: the base hero already contains the artwork */
 .home-hero-overlay--blueprint-calm,
 .home-hero-overlay--dots-calm{
-  opacity:0;
+  opacity:0 !important;
 }
 
 .home-hero-overlay--blueprint-calm{
-  background-image:url('/assets/hero/layers/hero-blueprint-calm-20260619-original.png?v=20260619-original-layer-4');
+  background-image:url('/assets/hero/layers/hero-blueprint-calm-20260619-original.png?v=20260619-original-layer-5');
 }
 
 .home-hero-overlay--dots-calm{
-  background-image:url('/assets/hero/layers/hero-dots-calm-20260619-original.png?v=20260619-original-layer-4');
+  background-image:url('/assets/hero/layers/hero-dots-calm-20260619-original.png?v=20260619-original-layer-5');
 }
 
-/* Fade the blueprint toward its outer bounds so edge glow stays soft and the center remains readable. */
-.home-hero-overlay--blueprint-calm,
+/* Default hidden bright states */
+.home-hero-overlay--blueprint-bright,
+.home-hero-overlay--dots-bright{
+  opacity:0;
+  transition:opacity .42s cubic-bezier(.2,.7,.2,1), filter .42s cubic-bezier(.2,.7,.2,1);
+}
+
+/* Blueprint: illuminate only the very center, then fade very aggressively outward */
 .home-hero-overlay--blueprint-bright{
-  -webkit-mask-image:radial-gradient(ellipse at 54% 32%, #000 0 48%, rgba(0,0,0,.96) 58%, rgba(0,0,0,.78) 70%, rgba(0,0,0,.38) 84%, transparent 100%);
-  mask-image:radial-gradient(ellipse at 54% 32%, #000 0 48%, rgba(0,0,0,.96) 58%, rgba(0,0,0,.78) 70%, rgba(0,0,0,.38) 84%, transparent 100%);
+  background-image:url('/assets/hero/layers/hero-blueprint-bright-20260619-original.png?v=20260619-original-layer-5');
+
+  -webkit-mask-image:radial-gradient(
+    ellipse at 54% 31%,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 8%,
+    rgba(0,0,0,.92) 13%,
+    rgba(0,0,0,.72) 18%,
+    rgba(0,0,0,.42) 24%,
+    rgba(0,0,0,.18) 31%,
+    rgba(0,0,0,.06) 38%,
+    transparent 48%
+  );
+  mask-image:radial-gradient(
+    ellipse at 54% 31%,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 8%,
+    rgba(0,0,0,.92) 13%,
+    rgba(0,0,0,.72) 18%,
+    rgba(0,0,0,.42) 24%,
+    rgba(0,0,0,.18) 31%,
+    rgba(0,0,0,.06) 38%,
+    transparent 48%
+  );
   -webkit-mask-repeat:no-repeat;
   mask-repeat:no-repeat;
   -webkit-mask-size:100% 100%;
   mask-size:100% 100%;
-}
 
-/* Bright hover states: restrained, premium, not overexposed. */
-.home-hero-overlay--blueprint-bright,
-.home-hero-overlay--dots-bright{
-  opacity:0;
-  transition:opacity .46s cubic-bezier(.2,.7,.2,1), filter .46s cubic-bezier(.2,.7,.2,1);
-}
-
-.home-hero-overlay--blueprint-bright{
-  background-image:url('/assets/hero/layers/hero-blueprint-bright-20260619-original.png?v=20260619-original-layer-4');
-  filter:brightness(1.05) contrast(1.03) drop-shadow(0 0 2px rgba(175,225,255,.12));
+  filter:brightness(1.14) contrast(1.08) drop-shadow(0 0 1px rgba(170,220,255,.10));
 }
 
 .home-hero-overlay--dots-bright{
-  background-image:url('/assets/hero/layers/hero-dots-bright-20260619-original.png?v=20260619-original-layer-4');
+  background-image:url('/assets/hero/layers/hero-dots-bright-20260619-original.png?v=20260619-original-layer-5');
   filter:brightness(1.10) contrast(1.05) saturate(1.06) drop-shadow(0 0 5px rgba(90,175,255,.20));
 }
 
-/* Hover zones match the original extracted layer positions. */
+/* Hover zones */
 .home-hero-hotspot--blueprint{
   left:47.8%;
   top:4.6%;
@@ -85,25 +102,25 @@
   height:36.5%;
 }
 
+/* Make blueprint center visible enough, but only in the masked center */
 .home-hero-hotspot--blueprint:hover ~ .home-hero-overlay--blueprint-bright{
-  opacity:.30;
+  opacity:.52;
 }
 
 .home-hero-hotspot--dots:hover ~ .home-hero-overlay--dots-bright{
   opacity:.38;
 }
 
-/* Remove the live-system cursor-follow radial spot.
-   This rule intentionally overrides promapparat-live-system-20260619.css. */
+/* Remove cursor-follow spot from other CSS */
 .home-hero-static--layered-wow::before{
-  content:none!important;
-  display:none!important;
-  opacity:0!important;
-  background:none!important;
+  content:none !important;
+  display:none !important;
+  opacity:0 !important;
+  background:none !important;
 }
 
 .home-hero-static--layered-wow:hover::before{
-  opacity:0!important;
+  opacity:0 !important;
 }
 
 @media (min-width:2200px){
@@ -116,7 +133,6 @@
   .home-hero-overlay{background-size:cover;background-position:center top;}
 }
 
-/* Tablet/mobile use cropped hero assets; full-canvas desktop overlays are disabled to avoid mismatch. */
 @media (max-width:1100px), (hover:none){
   .home-hero-hotspot,
   .home-hero-overlay{display:none;}
