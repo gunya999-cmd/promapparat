@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/assets/css/home-hero-baunfire-perfect-20260618.css?v=20260618-baunfire-wow-hotfix-2">
   <link rel="stylesheet" href="/assets/css/home-hero-layered-wow-original-20260619.css?v=20260619-original-layer-1">
   <link rel="stylesheet" href="/assets/css/promapparat-live-system-20260619.css?v=20260619-1">
+  <link rel="stylesheet" href="/assets/css/engineering-nodes-20260619.css?v=20260619-1">
 </head>
 <body>
 <header class="top">
@@ -141,71 +142,140 @@
     </div>
   </section>
 
-  <section class="live-section live-section--dark" aria-labelledby="live-schemes-title" data-live-tabs>
+  <section class="live-section live-section--dark engineering-module" aria-labelledby="live-schemes-title" data-live-tabs>
     <div class="wrap">
       <div class="live-head">
         <div>
           <span class="live-kicker">Технические схемы</span>
           <h2 id="live-schemes-title">Интерактивные инженерные узлы</h2>
         </div>
-        <p>Hotspots показывают, что компания подбирает оборудование не по картинке, а по рабочим параметрам, монтажу, сигналам и комплекту документов.</p>
+        <p>Детальный блок показывает, какие параметры реально проверяются при подборе: конструкция узла, присоединение, материалы, сигнал, условия эксплуатации и комплект документов.</p>
       </div>
-      <div class="live-tabs" role="tablist" aria-label="Тип схемы">
+      <div class="engineering-lead-grid" aria-label="Принцип работы блока">
+        <div class="engineering-lead-card"><strong>01. Узел</strong>Схема показывает ключевые элементы оборудования и место установки.</div>
+        <div class="engineering-lead-card"><strong>02. Контрольные точки</strong>Hotspots раскрывают, что нужно уточнить перед КП.</div>
+        <div class="engineering-lead-card"><strong>03. Параметры</strong>DN, PN, среда, температура, сигнал, Ex и материалы собраны рядом.</div>
+        <div class="engineering-lead-card"><strong>04. Заявка</strong>Кнопки ведут к опросному листу или письму инженеру.</div>
+      </div>
+      <div class="live-tabs engineering-tabs" role="tablist" aria-label="Тип инженерного узла">
         <button class="live-tab" type="button" data-live-target="valve">Регулирующий клапан</button>
-        <button class="live-tab" type="button" data-live-target="flow">Расходомер</button>
-        <button class="live-tab" type="button" data-live-target="level">Уровнемер</button>
+        <button class="live-tab" type="button" data-live-target="flow">Электромагнитный расходомер</button>
+        <button class="live-tab" type="button" data-live-target="level">Радарный уровнемер</button>
       </div>
-      <div class="live-schematic" data-live-panel="valve">
-        <div class="live-schematic__visual">
-          <div class="live-schematic__pipe"></div>
-          <div class="live-schematic__device"></div>
-          <span class="live-node" style="left:31%;top:38%" data-tip="DN/PN, тип присоединения, фланцы">01</span>
-          <span class="live-node" style="left:55%;top:28%" data-tip="Материал корпуса, седло, уплотнение">02</span>
-          <span class="live-node" style="left:65%;top:58%" data-tip="Привод, позиционер, сигнал управления">03</span>
+
+      <article class="engineering-panel" data-live-panel="valve" aria-label="Регулирующий клапан">
+        <div class="engineering-blueprint">
+          <div class="engineering-svg-wrap">
+            <svg class="engineering-svg" viewBox="0 0 760 430" role="img" aria-label="Схема регулирующего клапана с приводом, фланцами и позиционером">
+              <defs>
+                <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#36a7ff"/></marker>
+              </defs>
+              <path class="eng-stroke-soft" d="M40 242 H230 M530 242 H720"/>
+              <rect class="eng-metal" x="54" y="213" width="142" height="58" rx="20"/>
+              <rect class="eng-metal" x="564" y="213" width="142" height="58" rx="20"/>
+              <path class="eng-stroke" d="M182 186 V300 M578 186 V300"/>
+              <circle class="eng-metal" cx="182" cy="242" r="44"/><circle class="eng-metal" cx="578" cy="242" r="44"/>
+              <path class="eng-fill-strong" d="M262 190 C306 160 454 160 498 190 L536 242 L498 294 C454 324 306 324 262 294 L224 242 Z"/>
+              <path class="eng-stroke" d="M294 242 C334 206 426 206 466 242 C426 278 334 278 294 242 Z"/>
+              <path class="eng-metal" d="M362 147 H398 L408 242 H352 Z"/>
+              <path class="eng-stroke" d="M380 146 V92"/>
+              <rect class="eng-metal" x="330" y="66" width="100" height="30" rx="8"/>
+              <path class="eng-fill" d="M300 54 C300 20 460 20 460 54 V72 C460 110 300 110 300 72 Z"/>
+              <path class="eng-stroke-soft" d="M320 62 H440 M320 78 H440"/>
+              <rect class="eng-fill" x="494" y="70" width="94" height="62" rx="14"/>
+              <path class="eng-signal" d="M494 101 C458 101 442 92 430 82"/>
+              <path class="eng-signal" d="M588 101 C632 120 642 154 620 186"/>
+              <path class="eng-stroke-soft" d="M120 320 H640 M120 340 H640"/>
+              <path class="eng-signal" d="M88 242 H150" marker-end="url(#arrow-blue)"/>
+              <path class="eng-signal" d="M610 242 H672" marker-end="url(#arrow-blue)"/>
+              <text x="94" y="198" fill="#8ecbff" font-size="13">вход потока</text>
+              <text x="604" y="198" fill="#8ecbff" font-size="13">выход</text>
+              <text x="510" y="58" fill="#d6e7ff" font-size="13">позиционер</text>
+              <text x="314" y="24" fill="#d6e7ff" font-size="13">пневмо / электро привод</text>
+            </svg>
+          </div>
+          <span class="eng-hotspot" style="left:21%;top:45%" tabindex="0">01<span class="eng-tip"><strong>Присоединение</strong>DN, PN, исполнение фланцев, межфланцевое расстояние, направление потока.</span></span>
+          <span class="eng-hotspot" style="left:49%;top:50%" tabindex="0">02<span class="eng-tip"><strong>Корпус и затвор</strong>Материал корпуса, седло, уплотнение, класс герметичности, рабочая среда.</span></span>
+          <span class="eng-hotspot" style="left:50%;top:18%" tabindex="0">03<span class="eng-tip"><strong>Привод</strong>Пневматический, электрический или ручной привод; отказобезопасное положение.</span></span>
+          <span class="eng-hotspot" style="left:72%;top:22%" tabindex="0">04<span class="eng-tip"><strong>Позиционер</strong>4–20 мА, HART, питание, обратная связь, Ex-исполнение.</span></span>
+          <div class="engineering-label-strip"><span>DN / PN / ANSI</span><span>Kv/Cv и перепад давления</span><span>Материалы и герметичность</span><span>Привод, позиционер, Ex</span></div>
         </div>
-        <div class="live-schematic__text">
-          <h3>Регулирующая арматура</h3>
-          <ul>
-            <li>Проверяются Kv/Cv, давления до/после, среда и температура.</li>
-            <li>Уточняются привод, позиционер, материал и класс герметичности.</li>
-            <li>Комплект документов согласуется до поставки.</li>
-          </ul>
+        <div class="engineering-side">
+          <div class="engineering-side-card"><h3>Регулирующая арматура</h3><p>Подбор строится от процесса: расход, перепад давления, среда, температура, кавитация/шум, материал и тип управления.</p><div class="engineering-spec-grid"><div class="eng-spec"><span>Диаметр</span><strong>DN 15–400</strong></div><div class="eng-spec"><span>Давление</span><strong>PN / ANSI</strong></div><div class="eng-spec"><span>Температура</span><strong>−196…+400 °C</strong></div><div class="eng-spec"><span>Сигнал</span><strong>4–20 мА / HART</strong></div></div></div>
+          <div class="engineering-side-card"><h3>Что проверяем</h3><ul class="engineering-checklist"><li>Расход min/normal/max и требуемый Kv/Cv.</li><li>Давление до/после клапана и риск кавитации.</li><li>Материал корпуса, седла, уплотнений и климатическое исполнение.</li><li>Тип привода, позиционер, обратная связь и взрывозащита.</li></ul></div>
+          <div class="engineering-side-card"><h3>Данные для заявки</h3><div class="engineering-data"><div class="engineering-data-row"><span>Процесс</span><strong>среда, расход, температура, давление</strong></div><div class="engineering-data-row"><span>Монтаж</span><strong>DN, PN, фланцы, положение, трубопровод</strong></div><div class="engineering-data-row"><span>Документы</span><strong>паспорт, сертификаты, декларации, РЭ</strong></div></div><div class="engineering-actions"><a class="btn" href="mailto:info@promapparat.ru?subject=Подбор%20регулирующего%20клапана">Отправить параметры</a><a class="btn btn--white" href="/oprosnye-listy/">Опросный лист</a></div></div>
         </div>
-      </div>
-      <div class="live-schematic" data-live-panel="flow">
-        <div class="live-schematic__visual live-schematic__flow">
-          <div class="live-schematic__pipe"></div>
-          <div class="live-schematic__device"></div>
-          <span class="live-node" style="left:26%;top:44%" data-tip="Расход min / normal / max">01</span>
-          <span class="live-node" style="left:50%;top:24%" data-tip="Футеровка, электрод, материал">02</span>
-          <span class="live-node" style="left:72%;top:48%" data-tip="4–20 мА, HART, Modbus, поверка">03</span>
+      </article>
+
+      <article class="engineering-panel" data-live-panel="flow" aria-label="Электромагнитный расходомер">
+        <div class="engineering-blueprint">
+          <div class="engineering-svg-wrap">
+            <svg class="engineering-svg" viewBox="0 0 760 430" role="img" aria-label="Схема электромагнитного расходомера с футеровкой, электродами и преобразователем">
+              <path class="eng-stroke-soft" d="M36 242 H724"/>
+              <rect class="eng-metal" x="48" y="210" width="180" height="64" rx="22"/>
+              <rect class="eng-metal" x="532" y="210" width="180" height="64" rx="22"/>
+              <circle class="eng-metal" cx="240" cy="242" r="50"/><circle class="eng-metal" cx="520" cy="242" r="50"/>
+              <rect class="eng-fill-strong" x="230" y="186" width="300" height="112" rx="54"/>
+              <rect class="eng-metal" x="282" y="214" width="196" height="56" rx="28"/>
+              <path class="eng-liquid" d="M290 242 C330 222 430 222 470 242 C430 262 330 262 290 242 Z"/>
+              <circle class="eng-fill" cx="326" cy="242" r="10"/><circle class="eng-fill" cx="434" cy="242" r="10"/>
+              <path class="eng-stroke" d="M380 186 V114"/>
+              <rect class="eng-fill" x="308" y="58" width="144" height="68" rx="16"/>
+              <path class="eng-stroke-soft" d="M326 80 H434 M326 98 H410"/>
+              <path class="eng-signal" d="M452 94 C530 88 602 112 636 174"/>
+              <path class="eng-stroke-soft" d="M228 324 H532 M260 344 H500"/>
+              <path class="eng-flow-arrow" d="M104 236 l28 0 l0 -12 l34 18 l-34 18 l0 -12 l-28 0 z"/>
+              <path class="eng-flow-arrow" d="M584 236 l28 0 l0 -12 l34 18 l-34 18 l0 -12 l-28 0 z"/>
+              <text x="305" y="38" fill="#d6e7ff" font-size="13">преобразователь</text>
+              <text x="308" y="308" fill="#8ecbff" font-size="13">измерительный участок</text>
+              <text x="584" y="198" fill="#8ecbff" font-size="13">выходной сигнал</text>
+            </svg>
+          </div>
+          <span class="eng-hotspot" style="left:31%;top:51%" tabindex="0">01<span class="eng-tip"><strong>Футеровка</strong>PFA, PTFE, ETFE, PU — подбирается под среду, температуру и абразивность.</span></span>
+          <span class="eng-hotspot" style="left:45%;top:51%" tabindex="0">02<span class="eng-tip"><strong>Электроды</strong>Материал электродов, заземление, проводимость среды, отсутствие воздуха в трубе.</span></span>
+          <span class="eng-hotspot" style="left:50%;top:19%" tabindex="0">03<span class="eng-tip"><strong>Преобразователь</strong>Питание, 4–20 мА, HART, частотный выход, Modbus, поверка.</span></span>
+          <span class="eng-hotspot" style="left:70%;top:49%" tabindex="0">04<span class="eng-tip"><strong>Монтаж</strong>Прямые участки, заполнение трубы, фланцы, вибрация, доступ к обслуживанию.</span></span>
+          <div class="engineering-label-strip"><span>Расход min / normal / max</span><span>DN 10…1600</span><span>Футеровка и электроды</span><span>Сигнал, питание, поверка</span></div>
         </div>
-        <div class="live-schematic__text">
-          <h3>Расходомеры</h3>
-          <ul>
-            <li>Подбор по среде, расходу, точности, DN/PN и монтажным участкам.</li>
-            <li>Учитываются футеровки, материалы и выходные сигналы.</li>
-            <li>Отдельно проверяется поверка и требования объекта.</li>
-          </ul>
+        <div class="engineering-side">
+          <div class="engineering-side-card"><h3>Электромагнитные расходомеры</h3><p>Критично проверить проводимость среды, диапазон расхода, футеровку, материалы электродов, монтажные участки и требования к поверке.</p><div class="engineering-spec-grid"><div class="eng-spec"><span>Диаметр</span><strong>DN 10…1600</strong></div><div class="eng-spec"><span>Давление</span><strong>до 16 МПа</strong></div><div class="eng-spec"><span>Точность</span><strong>до ±0.3%</strong></div><div class="eng-spec"><span>Выходы</span><strong>4–20 мА / HART</strong></div></div></div>
+          <div class="engineering-side-card"><h3>Что проверяем</h3><ul class="engineering-checklist"><li>Минимальный, рабочий и максимальный расход.</li><li>Проводимость, вязкость, загрязненность и температура среды.</li><li>Футеровка, электроды, заземляющие кольца и присоединение.</li><li>Нужна ли поверка, межповерочный интервал и протоколы.</li></ul></div>
+          <div class="engineering-side-card"><h3>Данные для заявки</h3><div class="engineering-data"><div class="engineering-data-row"><span>Среда</span><strong>жидкость, проводимость, включения, температура</strong></div><div class="engineering-data-row"><span>Расход</span><strong>min / normal / max, DN, PN</strong></div><div class="engineering-data-row"><span>Сигнал</span><strong>4–20 мА, HART, импульсный, RS485</strong></div></div><div class="engineering-actions"><a class="btn" href="mailto:info@promapparat.ru?subject=Подбор%20расходомера">Отправить параметры</a><a class="btn btn--white" href="/rashodomery/">Раздел расходомеров</a></div></div>
         </div>
-      </div>
-      <div class="live-schematic" data-live-panel="level">
-        <div class="live-schematic__visual">
-          <div class="live-schematic__radar"></div>
-          <div class="live-schematic__beam"></div>
-          <span class="live-node" style="left:50%;top:18%" data-tip="Присоединение, антенна, Ex-исполнение">01</span>
-          <span class="live-node" style="left:35%;top:58%" data-tip="Диапазон 100…120000 мм, геометрия резервуара">02</span>
-          <span class="live-node" style="left:65%;top:72%" data-tip="Температура, давление, пена, пары, сигнал">03</span>
+      </article>
+
+      <article class="engineering-panel" data-live-panel="level" aria-label="Радарный уровнемер">
+        <div class="engineering-blueprint">
+          <div class="engineering-svg-wrap">
+            <svg class="engineering-svg" viewBox="0 0 760 430" role="img" aria-label="Схема радарного уровнемера на резервуаре">
+              <path class="eng-stroke-soft" d="M220 104 H540 C586 104 620 138 620 184 V340 C620 374 586 398 540 398 H220 C174 398 140 374 140 340 V184 C140 138 174 104 220 104 Z"/>
+              <path class="eng-liquid" d="M154 298 C230 280 306 316 382 298 C458 280 530 312 606 296 V340 C606 360 580 376 540 376 H220 C180 376 154 360 154 340 Z"/>
+              <path class="eng-stroke" d="M334 104 V74 H426 V104"/>
+              <rect class="eng-metal" x="318" y="52" width="124" height="28" rx="8"/>
+              <rect class="eng-fill" x="306" y="8" width="148" height="50" rx="18"/>
+              <path class="eng-stroke-soft" d="M328 28 H432 M328 42 H404"/>
+              <path class="eng-radar-beam" d="M380 80 L266 298 H494 Z"/>
+              <path class="eng-signal" d="M454 34 C538 42 608 82 638 150"/>
+              <path class="eng-stroke-soft" d="M630 104 V398 M650 104 V398"/>
+              <path class="eng-stroke-soft" d="M640 126 H668 M640 296 H668 M640 376 H668"/>
+              <text x="460" y="28" fill="#d6e7ff" font-size="13">4–20 мА / HART</text>
+              <text x="512" y="294" fill="#8ecbff" font-size="13">поверхность продукта</text>
+              <text x="664" y="208" fill="#8ecbff" font-size="13" transform="rotate(90 664 208)">диапазон</text>
+            </svg>
+          </div>
+          <span class="eng-hotspot" style="left:50%;top:15%" tabindex="0">01<span class="eng-tip"><strong>Антенна и присоединение</strong>Фланец/резьба, тип антенны, материал, температура и давление на штуцере.</span></span>
+          <span class="eng-hotspot" style="left:50%;top:44%" tabindex="0">02<span class="eng-tip"><strong>Диапазон измерения</strong>Высота резервуара, мертвая зона, минимальный/максимальный уровень.</span></span>
+          <span class="eng-hotspot" style="left:35%;top:68%" tabindex="0">03<span class="eng-tip"><strong>Среда</strong>Пена, пары, пыль, конденсат, диэлектрическая проницаемость, агрессивность.</span></span>
+          <span class="eng-hotspot" style="left:78%;top:24%" tabindex="0">04<span class="eng-tip"><strong>Сигнал и Ex</strong>4–20 мА + HART, RS485/Modbus, PROFIBUS, взрывозащита Ex d/i/t.</span></span>
+          <div class="engineering-label-strip"><span>Диапазон 100…120000 мм</span><span>До 32 МПа</span><span>−60…+650 °C</span><span>Ex и протокол связи</span></div>
         </div>
-        <div class="live-schematic__text">
-          <h3>Уровнемеры</h3>
-          <ul>
-            <li>Проверяются диапазон измерения, высота резервуара и среда.</li>
-            <li>Учитываются давление, температура, Ex-зона и тип сигнала.</li>
-            <li>Можно подобрать аналог по старой модели или шильдику.</li>
-          </ul>
+        <div class="engineering-side">
+          <div class="engineering-side-card"><h3>Радарные уровнемеры</h3><p>Подбор зависит от геометрии резервуара, среды, условий на штуцере, давления, температуры, наличия пены, паров и требований к взрывозащите.</p><div class="engineering-spec-grid"><div class="eng-spec"><span>Диапазон</span><strong>100…120000 мм</strong></div><div class="eng-spec"><span>Давление</span><strong>до 32 МПа</strong></div><div class="eng-spec"><span>Температура</span><strong>−60…+650 °C</strong></div><div class="eng-spec"><span>Связь</span><strong>HART / Modbus</strong></div></div></div>
+          <div class="engineering-side-card"><h3>Что проверяем</h3><ul class="engineering-checklist"><li>Высота резервуара, диапазон, мертвая зона и место установки.</li><li>Тип среды: жидкость, сыпучий продукт, пена, пары, пыль.</li><li>Температура, давление, материал антенны и присоединение.</li><li>Ex-исполнение, сигнал, питание и требования к индикации.</li></ul></div>
+          <div class="engineering-side-card"><h3>Данные для заявки</h3><div class="engineering-data"><div class="engineering-data-row"><span>Емкость</span><strong>высота, диаметр, штуцер, внутренние элементы</strong></div><div class="engineering-data-row"><span>Среда</span><strong>пена, пары, пыль, температура, давление</strong></div><div class="engineering-data-row"><span>Выход</span><strong>4–20 мА + HART, RS485, PROFIBUS, Ex</strong></div></div><div class="engineering-actions"><a class="btn" href="mailto:info@promapparat.ru?subject=Подбор%20уровнемера">Отправить параметры</a><a class="btn btn--white" href="/urovnemery/">Раздел уровнемеров</a></div></div>
         </div>
-      </div>
+      </article>
+      <div class="engineering-note">Схемы намеренно выполнены как технический интерфейс: без брендов, без чужих логотипов и без псевдотекста. Задача блока — показать инженерный подход к подбору, а не просто декоративную анимацию.</div>
     </div>
   </section>
 
