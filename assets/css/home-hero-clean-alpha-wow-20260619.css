@@ -1,22 +1,53 @@
-/* Corrected alpha wow layers for clean hero.
-   Previous generated layers were RGB checkerboard images, not true transparent overlays.
-   This file must load after the responsive clean hero CSS. */
+/* Clean hero + true-alpha wow layers.
+   This file is self-contained because it is currently the only clean-hero CSS linked after the old hero CSS.
+   It must override the old baked-text background and then apply the transparent glow layers. */
 
-.home-hero-static--layered-wow{
+/* Force the clean hero background over the old baked-text Baunfire bitmap. */
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
   position:relative !important;
   overflow:hidden !important;
+  background:#f6f9fd url('/assets/hero/responsive/hero-clean-desktop-1920-20260619.webp?v=20260619-alpha-wow-bgfix-1') center top / cover no-repeat !important;
 }
 
-.home-hero-static--layered-wow > .home-hero-hotspot,
-.home-hero-static--layered-wow > .home-hero-overlay{
+/* Hide legacy baked-media nodes if the template renders them */
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > picture,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > img,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > .home-hero-media,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > .hero-media,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > [class*='hero-bg'],
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > [class*='hero-image']{
+  display:none !important;
+}
+
+/* Disable old extracted overlay layers and hotspots from the previous hero. */
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > .home-hero-hotspot,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow > .home-hero-overlay{
   display:none !important;
   visibility:hidden !important;
   opacity:0 !important;
   pointer-events:none !important;
 }
 
-.home-hero-static--layered-wow::before,
-.home-hero-static--layered-wow::after{
+/* Hide old hero copy/widgets — left side stays free for new content. */
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .home-hero-copy,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .home-hero-content,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .home-hero-text,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-copy,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-content,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-text,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-liquid-icons,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-liquid-card,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-liquid-grid,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-cta,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-actions,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-badges,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-kpis{
+  display:none !important;
+}
+
+/* True-alpha desktop overlay layers. */
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before,
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
   content:"" !important;
   position:absolute !important;
   inset:0 !important;
@@ -34,49 +65,84 @@
   box-shadow:none !important;
 }
 
-.home-hero-static--layered-wow::before{
-  background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-alpha-1920-20260619.webp?v=20260619-alpha-wow-1') !important;
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before{
+  background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-alpha-1920-20260619.webp?v=20260619-alpha-wow-bgfix-1') !important;
+  opacity:.30 !important;
+  filter:brightness(1.12) contrast(1.10) !important;
+}
+
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
+  background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-alpha-1920-20260619.webp?v=20260619-alpha-wow-bgfix-1') !important;
   opacity:.28 !important;
-  filter:brightness(1.10) contrast(1.10) !important;
+  filter:brightness(1.12) contrast(1.10) saturate(1.06) !important;
 }
 
-.home-hero-static--layered-wow::after{
-  background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-alpha-1920-20260619.webp?v=20260619-alpha-wow-1') !important;
-  opacity:.26 !important;
-  filter:brightness(1.10) contrast(1.10) saturate(1.06) !important;
-}
-
-.home-hero-static--layered-wow:hover::before{
-  opacity:.48 !important;
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow:hover::before{
+  opacity:.50 !important;
   filter:brightness(1.20) contrast(1.16) !important;
 }
 
-.home-hero-static--layered-wow:hover::after{
-  opacity:.46 !important;
+html body #home-draft > .home-hero-static.home-hero-static--layered-wow:hover::after{
+  opacity:.48 !important;
   filter:brightness(1.20) contrast(1.16) saturate(1.08) !important;
 }
 
+/* Large desktop */
 @media (min-width:1600px){
-  .home-hero-static--layered-wow::before{
-    background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-alpha-2560-20260619.webp?v=20260619-alpha-wow-1') !important;
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
+    background:#f6f9fd url('/assets/hero/responsive/hero-clean-desktop-2560-20260619.webp?v=20260619-alpha-wow-bgfix-1') center top / cover no-repeat !important;
   }
-  .home-hero-static--layered-wow::after{
-    background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-alpha-2560-20260619.webp?v=20260619-alpha-wow-1') !important;
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before{
+    background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-alpha-2560-20260619.webp?v=20260619-alpha-wow-bgfix-1') !important;
+  }
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
+    background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-alpha-2560-20260619.webp?v=20260619-alpha-wow-bgfix-1') !important;
   }
 }
 
+/* Ultra-wide / retina desktop */
 @media (min-width:2400px){
-  .home-hero-static--layered-wow::before{
-    background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-alpha-3200-20260619.webp?v=20260619-alpha-wow-1') !important;
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
+    background:#f6f9fd url('/assets/hero/responsive/hero-clean-desktop-3200-20260619.webp?v=20260619-alpha-wow-bgfix-1') center top / cover no-repeat !important;
   }
-  .home-hero-static--layered-wow::after{
-    background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-alpha-3200-20260619.webp?v=20260619-alpha-wow-1') !important;
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before{
+    background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-alpha-3200-20260619.webp?v=20260619-alpha-wow-bgfix-1') !important;
+  }
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
+    background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-alpha-3200-20260619.webp?v=20260619-alpha-wow-bgfix-1') !important;
   }
 }
 
-@media (max-width:1100px), (hover:none){
-  .home-hero-static--layered-wow::before,
-  .home-hero-static--layered-wow::after{
+/* Tablet: dedicated crop, no overlay effect to avoid drift under crop. */
+@media (max-width:1100px) and (min-width:701px){
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
+    background:#f6f9fd url('/assets/hero/responsive/hero-clean-tablet-1800-20260619.webp?v=20260619-alpha-wow-bgfix-1') center top / cover no-repeat !important;
+  }
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before,
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
+    content:none !important;
+    display:none !important;
+  }
+}
+
+/* Mobile */
+@media (max-width:700px) and (min-width:421px){
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
+    background:#f6f9fd url('/assets/hero/responsive/hero-clean-mobile-1280-20260619.webp?v=20260619-alpha-wow-bgfix-1') 58% top / cover no-repeat !important;
+  }
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before,
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
+    content:none !important;
+    display:none !important;
+  }
+}
+
+@media (max-width:420px){
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
+    background:#f6f9fd url('/assets/hero/responsive/hero-clean-mobile-narrow-1080-20260619.webp?v=20260619-alpha-wow-bgfix-1') 61% top / cover no-repeat !important;
+  }
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before,
+  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
     content:none !important;
     display:none !important;
   }
