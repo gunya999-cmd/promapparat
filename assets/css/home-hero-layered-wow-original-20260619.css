@@ -1,8 +1,7 @@
-/* Original extracted hero layers - clean hover-only correction.
-   The base hero image already contains the blueprint and data wave.
-   These overlays must not duplicate the calm state; they only add a controlled hover boost. */
+﻿/* Original extracted hero layers - balanced center glow */
 .home-hero-static--layered-wow{
   position:relative;
+  animation:none !important;
 }
 
 .home-hero-hotspot,
@@ -27,41 +26,71 @@
   will-change:opacity,filter;
 }
 
+/* Calm overlays hidden */
 .home-hero-overlay--blueprint-calm,
 .home-hero-overlay--dots-calm{
   opacity:0 !important;
 }
 
 .home-hero-overlay--blueprint-calm{
-  background-image:url('/assets/hero/layers/hero-blueprint-calm-20260619-original.png?v=20260619-original-layer-6');
+  background-image:url('/assets/hero/layers/hero-blueprint-calm-20260619-original.png?v=20260619-original-layer-7');
 }
 
 .home-hero-overlay--dots-calm{
-  background-image:url('/assets/hero/layers/hero-dots-calm-20260619-original.png?v=20260619-original-layer-6');
+  background-image:url('/assets/hero/layers/hero-dots-calm-20260619-original.png?v=20260619-original-layer-7');
 }
 
+/* Bright states */
 .home-hero-overlay--blueprint-bright,
 .home-hero-overlay--dots-bright{
   opacity:0;
   transition:opacity .42s cubic-bezier(.2,.7,.2,1), filter .42s cubic-bezier(.2,.7,.2,1);
 }
 
-/* Blueprint center only: clipped to a small central ellipse and faded hard outward. */
+/* Blueprint:
+   - center is 2x dimmer than previous version
+   - edges stay at about 10% of center
+*/
 .home-hero-overlay--blueprint-bright{
-  background-image:url('/assets/hero/layers/hero-blueprint-bright-20260619-original.png?v=20260619-original-layer-6');
-  clip-path:ellipse(10% 14% at 58% 28%);
-  -webkit-clip-path:ellipse(10% 14% at 58% 28%);
-  -webkit-mask-image:radial-gradient(ellipse at 58% 28%, #000 0 18%, rgba(0,0,0,.88) 28%, rgba(0,0,0,.52) 42%, rgba(0,0,0,.18) 56%, transparent 72%);
-  mask-image:radial-gradient(ellipse at 58% 28%, #000 0 18%, rgba(0,0,0,.88) 28%, rgba(0,0,0,.52) 42%, rgba(0,0,0,.18) 56%, transparent 72%);
+  background-image:url('/assets/hero/layers/hero-blueprint-bright-20260619-original.png?v=20260619-original-layer-7');
+
+  /* smaller visible zone around center */
+  clip-path:ellipse(21% 24% at 58% 28%);
+  -webkit-clip-path:ellipse(21% 24% at 58% 28%);
+
+  /* strong center + fast fade outward; edge ~= 10% of center */
+  -webkit-mask-image:radial-gradient(
+    ellipse at 58% 28%,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 14%,
+    rgba(0,0,0,.72) 24%,
+    rgba(0,0,0,.38) 38%,
+    rgba(0,0,0,.18) 52%,
+    rgba(0,0,0,.10) 66%,
+    rgba(0,0,0,.06) 74%,
+    transparent 86%
+  );
+  mask-image:radial-gradient(
+    ellipse at 58% 28%,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 14%,
+    rgba(0,0,0,.72) 24%,
+    rgba(0,0,0,.38) 38%,
+    rgba(0,0,0,.18) 52%,
+    rgba(0,0,0,.10) 66%,
+    rgba(0,0,0,.06) 74%,
+    transparent 86%
+  );
   -webkit-mask-repeat:no-repeat;
   mask-repeat:no-repeat;
   -webkit-mask-size:100% 100%;
   mask-size:100% 100%;
-  filter:brightness(1.28) contrast(1.10) drop-shadow(0 0 2px rgba(170,220,255,.12));
+
+  filter:brightness(1.16) contrast(1.07) drop-shadow(0 0 1px rgba(170,220,255,.08));
 }
 
 .home-hero-overlay--dots-bright{
-  background-image:url('/assets/hero/layers/hero-dots-bright-20260619-original.png?v=20260619-original-layer-6');
+  background-image:url('/assets/hero/layers/hero-dots-bright-20260619-original.png?v=20260619-original-layer-7');
   filter:brightness(1.10) contrast(1.05) saturate(1.06) drop-shadow(0 0 5px rgba(90,175,255,.20));
 }
 
@@ -79,24 +108,29 @@
   height:36.5%;
 }
 
-/* Show the center glow when the mouse is anywhere on the hero, not only in a small hotspot. */
+/* center highlight visible on hero hover, but much calmer than before */
 .home-hero-static--layered-wow:hover .home-hero-overlay--blueprint-bright,
 .home-hero-hotspot--blueprint:hover ~ .home-hero-overlay--blueprint-bright{
-  opacity:.88;
+  opacity:.44;
 }
 
 .home-hero-hotspot--dots:hover ~ .home-hero-overlay--dots-bright{
   opacity:.38;
 }
 
-.home-hero-static--layered-wow::before{
+/* remove moving glare / running sheen completely */
+.home-hero-static--layered-wow::before,
+.home-hero-static--layered-wow::after{
   content:none !important;
   display:none !important;
   opacity:0 !important;
   background:none !important;
+  animation:none !important;
+  box-shadow:none !important;
 }
 
-.home-hero-static--layered-wow:hover::before{
+.home-hero-static--layered-wow:hover::before,
+.home-hero-static--layered-wow:hover::after{
   opacity:0 !important;
 }
 
