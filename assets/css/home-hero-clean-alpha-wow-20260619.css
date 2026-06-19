@@ -1,11 +1,11 @@
-/* Clean hero + masked true-alpha wow layers.
-   Fix: the previous visible-calibration layer revealed residual artwork on the empty left side.
-   This version keeps the clean hero, clips each glow layer to its real visual zone, and removes the left-side artifact. */
+/* Clean hero emergency fix.
+   The generated alpha wow layer produced a haze/white spot instead of a line-only blueprint glow.
+   Keep the clean hero background and disable failed pseudo-element overlays until the line-only layer is installed. */
 
 html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
   position:relative !important;
   overflow:hidden !important;
-  background:#f6f9fd url('/assets/hero/responsive/hero-clean-desktop-1920-20260619.webp?v=20260619-alpha-wow-maskfix-1') center top / cover no-repeat !important;
+  background:#f6f9fd url('/assets/hero/responsive/hero-clean-desktop-1920-20260619.webp?v=20260619-clean-no-bad-glow-1') center top / cover no-repeat !important;
 }
 
 html body #home-draft > .home-hero-static.home-hero-static--layered-wow > picture,
@@ -41,110 +41,43 @@ html body #home-draft > .home-hero-static.home-hero-static--layered-wow .hero-kp
   display:none !important;
 }
 
+/* Failed glow disabled: no white blob, no cheap animation. */
 html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before,
 html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
-  content:"" !important;
-  position:absolute !important;
-  inset:0 !important;
-  display:block !important;
-  pointer-events:none !important;
-  z-index:25 !important;
-  background-repeat:no-repeat !important;
-  background-position:center top !important;
-  background-size:cover !important;
-  mix-blend-mode:normal !important;
-  transform:translateZ(0) !important;
-  will-change:opacity,filter !important;
-  transition:opacity .52s cubic-bezier(.2,.7,.2,1), filter .52s cubic-bezier(.2,.7,.2,1) !important;
+  content:none !important;
+  display:none !important;
+  opacity:0 !important;
+  background:none !important;
   animation:none !important;
   box-shadow:none !important;
 }
 
-/* Blueprint glow: visible only around the blueprint cluster. */
-html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before{
-  background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-alpha-1920-20260619.webp?v=20260619-alpha-wow-maskfix-1') !important;
-  opacity:.44 !important;
-  filter:brightness(1.18) contrast(1.16) drop-shadow(0 0 7px rgba(135,205,255,.22)) !important;
-  -webkit-mask-image:radial-gradient(ellipse 29% 34% at 60% 30%, #000 0 54%, rgba(0,0,0,.52) 70%, rgba(0,0,0,.18) 84%, transparent 100%) !important;
-  mask-image:radial-gradient(ellipse 29% 34% at 60% 30%, #000 0 54%, rgba(0,0,0,.52) 70%, rgba(0,0,0,.18) 84%, transparent 100%) !important;
-  -webkit-mask-repeat:no-repeat !important;
-  mask-repeat:no-repeat !important;
-}
-
-/* Data ribbon glow: clipped away from the empty left field, kept on the lower-center/right flow. */
-html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
-  background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-alpha-1920-20260619.webp?v=20260619-alpha-wow-maskfix-1') !important;
-  opacity:.40 !important;
-  filter:brightness(1.18) contrast(1.16) saturate(1.12) drop-shadow(0 0 9px rgba(70,170,255,.28)) !important;
-  -webkit-mask-image:radial-gradient(ellipse 43% 24% at 64% 82%, #000 0 50%, rgba(0,0,0,.52) 66%, rgba(0,0,0,.18) 82%, transparent 100%) !important;
-  mask-image:radial-gradient(ellipse 43% 24% at 64% 82%, #000 0 50%, rgba(0,0,0,.52) 66%, rgba(0,0,0,.18) 82%, transparent 100%) !important;
-  -webkit-mask-repeat:no-repeat !important;
-  mask-repeat:no-repeat !important;
-}
-
-html body #home-draft > .home-hero-static.home-hero-static--layered-wow:hover::before{
-  opacity:.68 !important;
-  filter:brightness(1.32) contrast(1.24) drop-shadow(0 0 10px rgba(135,205,255,.30)) !important;
-}
-
-html body #home-draft > .home-hero-static.home-hero-static--layered-wow:hover::after{
-  opacity:.62 !important;
-  filter:brightness(1.34) contrast(1.26) saturate(1.16) drop-shadow(0 0 12px rgba(70,170,255,.36)) !important;
-}
-
 @media (min-width:1600px){
   html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
-    background:#f6f9fd url('/assets/hero/responsive/hero-clean-desktop-2560-20260619.webp?v=20260619-alpha-wow-maskfix-1') center top / cover no-repeat !important;
-  }
-  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before{
-    background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-alpha-2560-20260619.webp?v=20260619-alpha-wow-maskfix-1') !important;
-  }
-  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
-    background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-alpha-2560-20260619.webp?v=20260619-alpha-wow-maskfix-1') !important;
+    background:#f6f9fd url('/assets/hero/responsive/hero-clean-desktop-2560-20260619.webp?v=20260619-clean-no-bad-glow-1') center top / cover no-repeat !important;
   }
 }
 
 @media (min-width:2400px){
   html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
-    background:#f6f9fd url('/assets/hero/responsive/hero-clean-desktop-3200-20260619.webp?v=20260619-alpha-wow-maskfix-1') center top / cover no-repeat !important;
-  }
-  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before{
-    background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-alpha-3200-20260619.webp?v=20260619-alpha-wow-maskfix-1') !important;
-  }
-  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
-    background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-alpha-3200-20260619.webp?v=20260619-alpha-wow-maskfix-1') !important;
+    background:#f6f9fd url('/assets/hero/responsive/hero-clean-desktop-3200-20260619.webp?v=20260619-clean-no-bad-glow-1') center top / cover no-repeat !important;
   }
 }
 
 @media (max-width:1100px) and (min-width:701px){
   html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
-    background:#f6f9fd url('/assets/hero/responsive/hero-clean-tablet-1800-20260619.webp?v=20260619-alpha-wow-maskfix-1') center top / cover no-repeat !important;
-  }
-  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before,
-  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
-    content:none !important;
-    display:none !important;
+    background:#f6f9fd url('/assets/hero/responsive/hero-clean-tablet-1800-20260619.webp?v=20260619-clean-no-bad-glow-1') center top / cover no-repeat !important;
   }
 }
 
 @media (max-width:700px) and (min-width:421px){
   html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
-    background:#f6f9fd url('/assets/hero/responsive/hero-clean-mobile-1280-20260619.webp?v=20260619-alpha-wow-maskfix-1') 58% top / cover no-repeat !important;
-  }
-  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before,
-  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
-    content:none !important;
-    display:none !important;
+    background:#f6f9fd url('/assets/hero/responsive/hero-clean-mobile-1280-20260619.webp?v=20260619-clean-no-bad-glow-1') 58% top / cover no-repeat !important;
   }
 }
 
 @media (max-width:420px){
   html body #home-draft > .home-hero-static.home-hero-static--layered-wow{
-    background:#f6f9fd url('/assets/hero/responsive/hero-clean-mobile-narrow-1080-20260619.webp?v=20260619-alpha-wow-maskfix-1') 61% top / cover no-repeat !important;
-  }
-  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::before,
-  html body #home-draft > .home-hero-static.home-hero-static--layered-wow::after{
-    content:none !important;
-    display:none !important;
+    background:#f6f9fd url('/assets/hero/responsive/hero-clean-mobile-narrow-1080-20260619.webp?v=20260619-clean-no-bad-glow-1') 61% top / cover no-repeat !important;
   }
 }
