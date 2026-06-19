@@ -1,0 +1,158 @@
+/* Responsive clean hero system.
+   - Uses dedicated background assets for desktop / tablet / mobile.
+   - Uses new overlay glow layers only for desktop widths.
+   - Must be loaded AFTER home-hero-clean-background-20260619.css and after any earlier hero wow CSS.
+*/
+
+.home-hero-static--layered-wow{
+  position:relative !important;
+  overflow:hidden !important;
+  background-repeat:no-repeat !important;
+  background-position:center top !important;
+  background-size:cover !important;
+  background-image:url('/assets/hero/responsive/hero-clean-desktop-1920-20260619.webp?v=20260619-responsive-hero-1') !important;
+}
+
+/* Hide legacy baked-media nodes if the template still renders them */
+.home-hero-static--layered-wow > picture,
+.home-hero-static--layered-wow > img,
+.home-hero-static--layered-wow > .home-hero-media,
+.home-hero-static--layered-wow > .hero-media,
+.home-hero-static--layered-wow > [class*='hero-bg'],
+.home-hero-static--layered-wow > [class*='hero-image']{
+  display:none !important;
+}
+
+/* Clear previous hero overlay systems */
+.home-hero-static--layered-wow > .home-hero-hotspot,
+.home-hero-static--layered-wow > .home-hero-overlay{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+}
+
+/* Hide old hero copy/widgets — left side stays free for new content */
+.home-hero-static--layered-wow .home-hero-copy,
+.home-hero-static--layered-wow .home-hero-content,
+.home-hero-static--layered-wow .home-hero-text,
+.home-hero-static--layered-wow .hero-copy,
+.home-hero-static--layered-wow .hero-content,
+.home-hero-static--layered-wow .hero-text,
+.home-hero-static--layered-wow .hero-liquid-icons,
+.home-hero-static--layered-wow .hero-liquid-card,
+.home-hero-static--layered-wow .hero-liquid-grid,
+.home-hero-static--layered-wow .hero-cta,
+.home-hero-static--layered-wow .hero-actions,
+.home-hero-static--layered-wow .hero-badges,
+.home-hero-static--layered-wow .hero-kpis{
+  display:none !important;
+}
+
+/* Premium overlay layers authored for the clean hero */
+.home-hero-static--layered-wow::before,
+.home-hero-static--layered-wow::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  display:block !important;
+  pointer-events:none !important;
+  z-index:1 !important;
+  background-repeat:no-repeat !important;
+  background-position:center top !important;
+  background-size:cover !important;
+  mix-blend-mode:screen !important;
+  transform:translateZ(0) !important;
+  will-change:opacity,filter !important;
+  transition:opacity .52s cubic-bezier(.2,.7,.2,1), filter .52s cubic-bezier(.2,.7,.2,1) !important;
+  animation:none !important;
+  box-shadow:none !important;
+}
+
+.home-hero-static--layered-wow::before{
+  background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-1920-20260619.webp?v=20260619-responsive-hero-1') !important;
+  opacity:.07 !important;
+  filter:brightness(.96) contrast(1.02) !important;
+}
+
+.home-hero-static--layered-wow::after{
+  background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-1920-20260619.webp?v=20260619-responsive-hero-1') !important;
+  opacity:.06 !important;
+  filter:brightness(.94) contrast(1.02) saturate(1.02) !important;
+}
+
+.home-hero-static--layered-wow:hover::before{
+  opacity:.16 !important;
+  filter:brightness(1.04) contrast(1.06) !important;
+}
+
+.home-hero-static--layered-wow:hover::after{
+  opacity:.15 !important;
+  filter:brightness(1.05) contrast(1.06) saturate(1.05) !important;
+}
+
+/* Large desktop */
+@media (min-width:1600px){
+  .home-hero-static--layered-wow{
+    background-image:url('/assets/hero/responsive/hero-clean-desktop-2560-20260619.webp?v=20260619-responsive-hero-1') !important;
+  }
+  .home-hero-static--layered-wow::before{
+    background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-2560-20260619.webp?v=20260619-responsive-hero-1') !important;
+  }
+  .home-hero-static--layered-wow::after{
+    background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-2560-20260619.webp?v=20260619-responsive-hero-1') !important;
+  }
+}
+
+/* Ultra-wide / retina desktop */
+@media (min-width:2400px){
+  .home-hero-static--layered-wow{
+    background-image:url('/assets/hero/responsive/hero-clean-desktop-3200-20260619.webp?v=20260619-responsive-hero-1') !important;
+  }
+  .home-hero-static--layered-wow::before{
+    background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-3200-20260619.webp?v=20260619-responsive-hero-1') !important;
+  }
+  .home-hero-static--layered-wow::after{
+    background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-3200-20260619.webp?v=20260619-responsive-hero-1') !important;
+  }
+}
+
+/* Tablet: dedicated crop, no overlay effect to avoid drift under crop */
+@media (max-width:1100px) and (min-width:701px){
+  .home-hero-static--layered-wow{
+    background-image:url('/assets/hero/responsive/hero-clean-tablet-1800-20260619.webp?v=20260619-responsive-hero-1') !important;
+    background-position:center top !important;
+  }
+  .home-hero-static--layered-wow::before,
+  .home-hero-static--layered-wow::after{
+    content:none !important;
+    display:none !important;
+  }
+}
+
+/* Mobile */
+@media (max-width:700px) and (min-width:421px){
+  .home-hero-static--layered-wow{
+    background-image:url('/assets/hero/responsive/hero-clean-mobile-1280-20260619.webp?v=20260619-responsive-hero-1') !important;
+    background-position:58% top !important;
+    background-size:cover !important;
+  }
+  .home-hero-static--layered-wow::before,
+  .home-hero-static--layered-wow::after{
+    content:none !important;
+    display:none !important;
+  }
+}
+
+@media (max-width:420px){
+  .home-hero-static--layered-wow{
+    background-image:url('/assets/hero/responsive/hero-clean-mobile-narrow-1080-20260619.webp?v=20260619-responsive-hero-1') !important;
+    background-position:61% top !important;
+    background-size:cover !important;
+  }
+  .home-hero-static--layered-wow::before,
+  .home-hero-static--layered-wow::after{
+    content:none !important;
+    display:none !important;
+  }
+}
