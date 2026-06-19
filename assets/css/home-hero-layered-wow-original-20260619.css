@@ -1,0 +1,94 @@
+/* Original extracted hero layers — no redraw, no regeneration. */
+.home-hero-static--layered-wow{
+  position:relative;
+}
+
+.home-hero-hotspot,
+.home-hero-overlay{
+  position:absolute;
+}
+
+.home-hero-hotspot{
+  z-index:4;
+  background:transparent;
+}
+
+.home-hero-overlay{
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-size:contain;
+  mix-blend-mode:screen;
+  transform:translateZ(0);
+  will-change:opacity,filter;
+}
+
+.home-hero-overlay--blueprint-calm{
+  opacity:.72;
+  background-image:url('/assets/hero/layers/hero-blueprint-calm-20260619-original.png?v=20260619-original-layer-1');
+  filter:brightness(1.08) contrast(1.05) drop-shadow(0 0 3px rgba(170,220,255,.18));
+}
+
+.home-hero-overlay--dots-calm{
+  opacity:.56;
+  background-image:url('/assets/hero/layers/hero-dots-calm-20260619-original.png?v=20260619-original-layer-1');
+  filter:brightness(1.06) contrast(1.04) saturate(1.06) drop-shadow(0 0 4px rgba(95,175,255,.14));
+}
+
+.home-hero-overlay--blueprint-bright,
+.home-hero-overlay--dots-bright{
+  opacity:0;
+  transition:opacity .34s ease, filter .34s ease;
+}
+
+.home-hero-overlay--blueprint-bright{
+  background-image:url('/assets/hero/layers/hero-blueprint-bright-20260619-original.png?v=20260619-original-layer-1');
+  filter:brightness(1.22) contrast(1.10) drop-shadow(0 0 7px rgba(165,220,255,.34)) drop-shadow(0 0 16px rgba(80,170,255,.18));
+}
+
+.home-hero-overlay--dots-bright{
+  background-image:url('/assets/hero/layers/hero-dots-bright-20260619-original.png?v=20260619-original-layer-1');
+  filter:brightness(1.24) contrast(1.10) saturate(1.12) drop-shadow(0 0 7px rgba(80,170,255,.32)) drop-shadow(0 0 18px rgba(40,140,255,.16));
+}
+
+.home-hero-hotspot--blueprint{
+  left:47.8%;
+  top:4.6%;
+  width:27.8%;
+  height:39.4%;
+}
+
+.home-hero-hotspot--dots{
+  left:34.0%;
+  top:56.8%;
+  width:54.5%;
+  height:36.5%;
+}
+
+.home-hero-hotspot--blueprint:hover ~ .home-hero-overlay--blueprint-bright,
+.home-hero-static--layered-wow:hover .home-hero-overlay--blueprint-bright{
+  opacity:.68;
+}
+
+.home-hero-hotspot--dots:hover ~ .home-hero-overlay--dots-bright,
+.home-hero-static--layered-wow:hover .home-hero-overlay--dots-bright{
+  opacity:.74;
+}
+
+@media (min-width:2200px){
+  .home-hero-overlay{background-size:auto 100%;background-position:center top;}
+}
+@media (min-width:1600px) and (max-width:2199px){
+  .home-hero-overlay{background-size:auto 100%;background-position:center top;}
+}
+@media (min-width:1101px) and (max-width:1599px){
+  .home-hero-overlay{background-size:cover;background-position:center top;}
+}
+
+/* Tablet/mobile use cropped hero assets; full-canvas desktop overlays are disabled to avoid mismatch. */
+@media (max-width:1100px){
+  .home-hero-hotspot,
+  .home-hero-overlay{display:none;}
+}
