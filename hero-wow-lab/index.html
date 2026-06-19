@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hero wow lab — ПО Промаппарат</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:#eef4fb;color:#08204a;font:16px/1.5 Arial,Helvetica,sans-serif}
+    .top{padding:18px 28px;background:#fff;border-bottom:1px solid #d9e5f2;display:flex;gap:18px;align-items:center;justify-content:space-between}
+    .top strong{font-size:18px}.top a{color:#075bd8;text-decoration:none;font-weight:700}
+    .wrap{max-width:1440px;margin:0 auto;padding:24px}
+    .note{margin:0 0 18px;color:#4b6180}.note b{color:#08204a}
+    .hero-test{position:relative;width:100%;aspect-ratio:3/2;min-height:520px;overflow:hidden;border:1px solid #d5e2f0;background:#f6f9fd;box-shadow:0 24px 70px rgba(25,57,99,.13);isolation:isolate}
+    .hero-bg,.hero-hover,.hero-blueprint,.hero-wave{position:absolute;inset:0;background-repeat:no-repeat;background-position:center top;background-size:cover;pointer-events:none}
+    .hero-bg{z-index:1;background-image:url('/assets/hero/responsive/hero-clean-desktop-1920-20260619.webp?v=hero-lab-clean-1')}
+    .hero-hover{z-index:2;background-image:url('/assets/hero/responsive/hero-clean-desktop-1920-20260619.webp?v=hero-lab-clean-1');opacity:0;filter:brightness(1.06) contrast(1.05) saturate(1.03);transition:opacity .42s cubic-bezier(.2,.7,.2,1)}
+    /* SAME source image, clipped and filtered. No separate drawing layer, so nothing can mismatch. */
+    .hero-blueprint{z-index:3;background-image:url('/assets/hero/responsive/hero-clean-desktop-1920-20260619.webp?v=hero-lab-clean-1');opacity:0;filter:brightness(1.42) contrast(1.36) saturate(1.03) drop-shadow(0 0 8px rgba(255,255,255,.35));clip-path:ellipse(19% 18% at 57% 28%);transition:opacity .42s cubic-bezier(.2,.7,.2,1)}
+    .hero-wave{z-index:4;background-image:url('/assets/hero/responsive/hero-clean-desktop-1920-20260619.webp?v=hero-lab-clean-1');opacity:0;filter:brightness(1.22) contrast(1.26) saturate(1.18) drop-shadow(0 0 10px rgba(85,180,255,.34));clip-path:polygon(29% 56%,100% 56%,100% 100%,33% 100%);transition:opacity .42s cubic-bezier(.2,.7,.2,1)}
+    .hero-test:hover .hero-hover{opacity:.18}.hero-test:hover .hero-blueprint{opacity:.72}.hero-test:hover .hero-wave{opacity:.48}
+    .hero-test:after{content:'Наведи мышь на hero';position:absolute;left:24px;bottom:24px;z-index:10;padding:10px 14px;border:1px solid rgba(7,91,216,.16);border-radius:999px;background:rgba(255,255,255,.78);backdrop-filter:blur(8px);font-size:13px;font-weight:800;color:#075bd8;box-shadow:0 10px 24px rgba(25,57,99,.09)}
+    .checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}.checks div{padding:14px;border:1px solid #d9e5f2;background:#fff;border-radius:14px}.checks strong{display:block;margin-bottom:4px}
+    @media(max-width:900px){.hero-test{min-height:430px}.checks{grid-template-columns:1fr}.wrap{padding:14px}.top{padding:14px}}
+  </style>
+</head>
+<body>
+  <div class="top"><strong>Hero wow lab</strong><a href="/">Вернуться на главную</a></div>
+  <main class="wrap">
+    <p class="note"><b>Это изолированная песочница.</b> Главная страница не тронута. Здесь проверяется новый безопасный принцип: hover делается из той же самой hero-картинки, без отдельного чертежа-оверлея.</p>
+    <section class="hero-test" aria-label="Hero wow crossfade test">
+      <div class="hero-bg"></div><div class="hero-hover"></div><div class="hero-blueprint"></div><div class="hero-wave"></div>
+    </section>
+    <div class="checks"><div><strong>Нет двойного чертежа</strong>Используется та же картинка, поэтому масштаб и кроп совпадают.</div><div><strong>Нет отдельного line-only слоя</strong>Значит не будет рассинхрона между фоном и чертежом.</div><div><strong>Не переносить на главную без проверки</strong>Сначала смотрим песочницу, потом решаем.</div></div>
+  </main>
+</body>
+</html>
