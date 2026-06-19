@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hero full-frame wow lab v4 — ПО Промаппарат</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:#eef4fb;color:#08204a;font:16px/1.5 Arial,Helvetica,sans-serif}
+    .top{padding:18px 28px;background:#fff;border-bottom:1px solid #d9e5f2;display:flex;gap:18px;align-items:center;justify-content:space-between}
+    .top strong{font-size:18px}.top a{color:#075bd8;text-decoration:none;font-weight:700}
+    .wrap{max-width:1440px;margin:0 auto;padding:24px}
+    .note{margin:0 0 18px;color:#4b6180}.note b{color:#08204a}
+    .hero-test{position:relative;width:100%;aspect-ratio:3/2;min-height:520px;overflow:hidden;border:1px solid #d5e2f0;background:#f6f9fd;box-shadow:0 24px 70px rgba(25,57,99,.13);isolation:isolate}
+    .hero-frame{position:absolute;inset:0;background-repeat:no-repeat;background-position:center top;background-size:cover;pointer-events:none;transition:opacity .42s cubic-bezier(.2,.7,.2,1)}
+    .hero-normal{z-index:1;background-image:url('/assets/hero/fullframe/hero-fullframe-normal-v4-1920-20260619.webp?v=fullframe-v4')}
+    .hero-hover{z-index:2;background-image:url('/assets/hero/fullframe/hero-fullframe-hover-v4-1920-20260619.webp?v=fullframe-v4');opacity:0}
+
+    /* Small activation zone: effect works only over the middle of the blueprint, not across the whole hero. */
+    .hero-trigger{
+      position:absolute;
+      left:50.5%;
+      top:14.2%;
+      width:15.5%;
+      height:25%;
+      z-index:6;
+      pointer-events:auto;
+      cursor:pointer;
+      border-radius:48%;
+      background:rgba(7,91,216,0);
+    }
+    .hero-trigger:hover ~ .hero-hover{opacity:1}
+
+    .badge{position:absolute;left:24px;bottom:24px;z-index:7;padding:10px 14px;border:1px solid rgba(7,91,216,.16);border-radius:999px;background:rgba(255,255,255,.78);backdrop-filter:blur(8px);font-size:13px;font-weight:800;color:#075bd8;box-shadow:0 10px 24px rgba(25,57,99,.09)}
+    .zone-label{
+      position:absolute;
+      left:50.5%;
+      top:14.2%;
+      width:15.5%;
+      height:25%;
+      z-index:5;
+      pointer-events:none;
+      border-radius:48%;
+      border:1px dashed rgba(7,91,216,.18);
+      opacity:.35;
+      transition:opacity .25s ease,border-color .25s ease;
+    }
+    .hero-trigger:hover ~ .zone-label{opacity:.72;border-color:rgba(7,91,216,.42)}
+
+    .checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+    .checks div{padding:14px;border:1px solid #d9e5f2;background:#fff;border-radius:14px}
+    .checks strong{display:block;margin-bottom:4px}
+
+    @media(min-width:1600px){
+      .hero-normal{background-image:url('/assets/hero/fullframe/hero-fullframe-normal-v4-2560-20260619.webp?v=fullframe-v4')}
+      .hero-hover{background-image:url('/assets/hero/fullframe/hero-fullframe-hover-v4-2560-20260619.webp?v=fullframe-v4')}
+    }
+    @media(min-width:2400px){
+      .hero-normal{background-image:url('/assets/hero/fullframe/hero-fullframe-normal-v4-3200-20260619.webp?v=fullframe-v4')}
+      .hero-hover{background-image:url('/assets/hero/fullframe/hero-fullframe-hover-v4-3200-20260619.webp?v=fullframe-v4')}
+    }
+    @media(max-width:900px){
+      .hero-test{min-height:430px}
+      .checks{grid-template-columns:1fr}
+      .wrap{padding:14px}.top{padding:14px}
+      .hero-trigger,.zone-label{left:49%;top:13%;width:20%;height:28%}
+    }
+  </style>
+</head>
+<body>
+  <div class="top"><strong>Hero full-frame wow lab v4</strong><a href="/">Вернуться на главную</a></div>
+  <main class="wrap">
+    <p class="note"><b>Изменено:</b> эффект включается только при наведении на маленькую область в середине blueprint-чертежа. Вся остальная hero-зона не реагирует.</p>
+    <section class="hero-test" aria-label="Hero full-frame hover test">
+      <div class="hero-trigger" title="Зона включения эффекта"></div>
+      <div class="hero-frame hero-normal"></div>
+      <div class="hero-frame hero-hover"></div>
+      <div class="zone-label"></div>
+      <div class="badge">Наведи мышь на середину чертежа</div>
+    </section>
+    <div class="checks">
+      <div><strong>Маленькая зона</strong>Hover больше не срабатывает по всему hero.</div>
+      <div><strong>Full-frame кадры</strong>Normal/hover не расходятся по масштабу.</div>
+      <div><strong>Главная не тронута</strong>Проверка только в песочнице v4.</div>
+    </div>
+  </main>
+</body>
+</html>
