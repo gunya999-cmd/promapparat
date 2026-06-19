@@ -8,13 +8,14 @@
   <link rel="canonical" href="https://promapparat.ru/katalog/">
   <link rel="icon" href="/assets/favicon.png">
   <link rel="stylesheet" href="/assets/css/seo-pages.css">
+  <link rel="stylesheet" href="/assets/css/promapparat-live-system-20260619.css?v=20260619-1">
   <style>
     .catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}
     .catalog-grid .card{display:block;background:#fff;border:1px solid #dbe7f6;border-radius:16px;padding:0;box-shadow:0 12px 28px rgba(31,69,117,.06);transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;overflow:hidden;text-decoration:none}
     .catalog-grid .card:hover{border-color:#9bbce8;box-shadow:0 18px 38px rgba(31,69,117,.11);transform:translateY(-2px)}
     .catalog-card-img{display:block;width:100%;height:auto;background:#f8fbff}
     .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-    .catalog-group{margin-top:34px}
+    .catalog-group{margin-top:34px;scroll-margin-top:120px}
     .catalog-group__head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #dbe7f6}
     .catalog-group__head h3{margin:0;font-size:24px;line-height:1.2;color:#071b3e}
     .catalog-group__head p{margin:0;max-width:640px;color:#4a5f7c;font-size:14px;line-height:1.55}
@@ -28,16 +29,22 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="/"><img src="/assets/logo/logo-main.webp" width="460" height="115" alt="Промаппарат"></a>
-    <nav class="nav">
+    <a class="logo" href="/" aria-label="ПО Промаппарат — на главную"><img src="/assets/logo/logo-main.webp" width="460" height="115" decoding="async" alt="Промаппарат"></a>
+    <nav class="nav" aria-label="Основная навигация">
       <a href="/o-kompanii/">О компании</a>
       <a href="/katalog/">Каталог</a>
+      <a href="/podbor-analogov-importnogo-oborudovaniya/">Аналоги</a>
       <a href="/dokumentatsiya/">Документация</a>
+      <a href="/oprosnye-listy/">Опросные листы</a>
       <a href="/kontakty/">Контакты</a>
     </nav>
-    <div class="head-contacts">
-      <strong>+7 (846) 277-54-14</strong>
-      <span>info@promapparat.ru</span>
+    <div class="head-right">
+      <div class="head-contacts">
+        <strong>+7 (846) 277-54-14</strong>
+        <span>Пн–Пт 9:00–18:00</span>
+        <span>info@promapparat.ru</span>
+      </div>
+      <a class="btn" href="mailto:info@promapparat.ru?subject=Запрос%20КП">Получить КП</a>
     </div>
   </div>
 </header>
@@ -194,5 +201,6 @@
     <div class="copyright">© ПО «Промаппарат». Каталог промышленного оборудования.</div>
   </div>
 </footer>
+<script src="/assets/js/promapparat-live-system-20260619.js?v=20260619-1" defer></script>
 </body>
 </html>
