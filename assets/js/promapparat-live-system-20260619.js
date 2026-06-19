@@ -1,22 +1,28 @@
 (() => {
   const d = document;
   const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   const mail = 'info@promapparat.ru';
   const enc = encodeURIComponent;
 
   function buildMailto(subject, rows) {
     const body = rows
-      .filter(([label, value]) => String(value || '').trim())
+      .filter(([, value]) => String(value || '').trim())
       .map(([label, value]) => `${label}: ${String(value).trim()}`)
       .join('\n');
     return `mailto:${mail}?subject=${enc(subject)}&body=${enc(body + '\n\nПросьба подготовить подбор и КП.')}`;
   }
 
+  function ensureStylesheet(href) {
+    if (d.querySelector(`link[href^="${href}"]`)) return;
+    const link = d.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `${href}?v=20260619-1`;
+    d.head.appendChild(link);
+  }
+
   function repairEngineeringNodes() {
     const module = d.querySelector('.real-engineering-module');
     if (!module) return;
-
     const hasBrokenText = /Р|СЃ|вЂ|Рџ|Рў/.test(module.textContent || '');
     if (!hasBrokenText) return;
 
@@ -30,86 +36,96 @@
         </div>
         <p>Вместо декоративных SVG используются реальные blueprint-чертежи: с размерными линиями, выносками, сечениями, параметрами подбора и интерактивными контрольными точками.</p>
       </div>
-
       <div class="engineering-lead-grid" aria-label="Принцип работы блока">
         <div class="engineering-lead-card"><strong>01. Чертёж</strong>Реальная инженерная подложка вместо условной SVG-графики.</div>
         <div class="engineering-lead-card"><strong>02. Контрольные точки</strong>Hotspots подсвечивают узлы, которые влияют на подбор.</div>
         <div class="engineering-lead-card"><strong>03. Параметры</strong>DN, PN, среда, температура, сигнал, Ex и документы рядом.</div>
         <div class="engineering-lead-card"><strong>04. Заявка</strong>Переход к письму, опросному листу или разделу каталога.</div>
       </div>
-
       <div class="live-tabs engineering-tabs" role="tablist" aria-label="Тип инженерного узла">
         <button class="live-tab" type="button" data-live-target="valve">Регулирующий клапан</button>
         <button class="live-tab" type="button" data-live-target="flow">Электромагнитный расходомер</button>
         <button class="live-tab" type="button" data-live-target="level">Радарный уровнемер</button>
       </div>
-
-      <article class="engineering-panel real-engineering-panel" data-live-panel="valve" aria-label="Регулирующий клапан">
-        <div class="real-drawing-shell">
-          <picture>
-            <source srcset="/assets/engineering-nodes/valve-blueprint.avif" type="image/avif">
-            <source srcset="/assets/engineering-nodes/valve-blueprint.webp" type="image/webp">
-            <img class="real-blueprint-img" src="/assets/engineering-nodes/valve-blueprint.webp" width="1448" height="1086" alt="Технический чертёж регулирующего клапана с пневмоприводом и позиционером" loading="lazy" decoding="async">
-          </picture>
-          <button class="real-hotspot" type="button" style="left:50%;top:19%">01<span class="real-tip"><strong>Пневмопривод</strong>Тип привода, питание или воздух, положение при отказе, требуемое усилие.</span></button>
-          <button class="real-hotspot" type="button" style="left:67%;top:30%">02<span class="real-tip"><strong>Позиционер</strong>4–20 мА, HART, обратная связь, Ex-исполнение, манометры.</span></button>
-          <button class="real-hotspot" type="button" style="left:49%;top:49%">03<span class="real-tip"><strong>Сальниковый узел</strong>Уплотнение штока, материал, температура, требования к герметичности.</span></button>
-          <button class="real-hotspot" type="button" style="left:49%;top:63%">04<span class="real-tip"><strong>Седло и плунжер</strong>Kv/Cv, характеристика регулирования, класс герметичности, перепад давления.</span></button>
-          <button class="real-hotspot" type="button" style="left:36%;top:66%">05<span class="real-tip"><strong>Фланцы</strong>DN, PN, стандарт, исполнение RF, крепёж и межфланцевая длина.</span></button>
-          <a class="real-zoom" href="/assets/engineering-nodes/valve-blueprint.webp" target="_blank" rel="noopener">Открыть чертёж крупно</a>
-        </div>
-        <aside class="real-node-info">
-          <div class="real-node-card"><h3>Регулирующий клапан</h3><p>Чертёж показывает, какие параметры нужны для корректного подбора клапана: расход, перепад давления, материалы, привод, позиционер и комплект документов.</p><div class="real-node-specs"><div class="real-node-spec"><span>Диаметр</span><strong>DN 15–300</strong></div><div class="real-node-spec"><span>Давление</span><strong>PN 16–40</strong></div><div class="real-node-spec"><span>Температура</span><strong>−40…+220 °C</strong></div><div class="real-node-spec"><span>Сигнал</span><strong>4–20 мА / HART</strong></div></div></div>
-          <div class="real-node-card"><h3>Что проверить</h3><ul class="real-node-list"><li>Рабочую среду, расход min/normal/max и требуемый Kv/Cv.</li><li>Давление до/после клапана, кавитацию и шум.</li><li>Материал корпуса, трима, седла и уплотнений.</li><li>Тип привода, позиционер, Ex и положение при отказе.</li></ul></div>
-          <div class="real-node-card"><h3>Действия</h3><p>Отправьте исходные параметры или заполните опросный лист — по ним можно готовить КП.</p><div class="real-node-actions"><a class="btn" href="mailto:info@promapparat.ru?subject=Подбор%20регулирующего%20клапана">Отправить параметры</a><a class="btn btn--white" href="/oprosnye-listy/">Опросный лист</a></div></div>
-        </aside>
-      </article>
-
-      <article class="engineering-panel real-engineering-panel" data-live-panel="flow" aria-label="Электромагнитный расходомер">
-        <div class="real-drawing-shell">
-          <picture>
-            <source srcset="/assets/engineering-nodes/flowmeter-blueprint.avif" type="image/avif">
-            <source srcset="/assets/engineering-nodes/flowmeter-blueprint.webp" type="image/webp">
-            <img class="real-blueprint-img" src="/assets/engineering-nodes/flowmeter-blueprint.webp" width="1448" height="1086" alt="Технический чертёж электромагнитного расходомера во фланцевом исполнении" loading="lazy" decoding="async">
-          </picture>
-          <button class="real-hotspot" type="button" style="left:49%;top:16%">01<span class="real-tip"><strong>Преобразователь</strong>Питание, индикация, 4–20 мА, HART, Modbus, степень защиты.</span></button>
-          <button class="real-hotspot" type="button" style="left:45%;top:48%">02<span class="real-tip"><strong>Измерительная труба</strong>DN, PN, материал, футеровка, проводимость среды.</span></button>
-          <button class="real-hotspot" type="button" style="left:49%;top:44%">03<span class="real-tip"><strong>Электроды</strong>Материал электродов, заземление, коррозионная стойкость.</span></button>
-          <button class="real-hotspot" type="button" style="left:36%;top:45%">04<span class="real-tip"><strong>Фланцевое соединение</strong>Стандарт фланцев, монтажная длина, прямые участки.</span></button>
-          <button class="real-hotspot" type="button" style="left:37%;top:58%">05<span class="real-tip"><strong>Заземление</strong>Заземляющие кольца, перемычки и требования монтажа.</span></button>
-          <a class="real-zoom" href="/assets/engineering-nodes/flowmeter-blueprint.webp" target="_blank" rel="noopener">Открыть чертёж крупно</a>
-        </div>
-        <aside class="real-node-info">
-          <div class="real-node-card"><h3>Электромагнитный расходомер</h3><p>Чертёж показывает конструкцию расходомера, требования к монтажу, заземлению, футеровке, электродам и выходным сигналам.</p><div class="real-node-specs"><div class="real-node-spec"><span>Диаметр</span><strong>DN 15…1000</strong></div><div class="real-node-spec"><span>Давление</span><strong>до PN 40</strong></div><div class="real-node-spec"><span>Футеровка</span><strong>PFA / PTFE</strong></div><div class="real-node-spec"><span>Сигнал</span><strong>HART / Modbus</strong></div></div></div>
-          <div class="real-node-card"><h3>Что проверить</h3><ul class="real-node-list"><li>Расход min/normal/max и DN трубопровода.</li><li>Электропроводность, температура и состав среды.</li><li>Футеровку, электроды, заземление и степень защиты.</li><li>Поверку, протокол связи, питание и выходные сигналы.</li></ul></div>
-          <div class="real-node-card"><h3>Действия</h3><p>Для КП нужны расход, среда, DN/PN, футеровка, сигнал и требования к поверке.</p><div class="real-node-actions"><a class="btn" href="mailto:info@promapparat.ru?subject=Подбор%20расходомера">Отправить параметры</a><a class="btn btn--white" href="/rashodomery/">Раздел расходомеров</a></div></div>
-        </aside>
-      </article>
-
-      <article class="engineering-panel real-engineering-panel" data-live-panel="level" aria-label="Радарный уровнемер">
-        <div class="real-drawing-shell">
-          <picture>
-            <source srcset="/assets/engineering-nodes/levelmeter-blueprint.avif" type="image/avif">
-            <source srcset="/assets/engineering-nodes/levelmeter-blueprint.webp" type="image/webp">
-            <img class="real-blueprint-img" src="/assets/engineering-nodes/levelmeter-blueprint.webp" width="1448" height="1086" alt="Технический чертёж радарного уровнемера на резервуаре" loading="lazy" decoding="async">
-          </picture>
-          <button class="real-hotspot" type="button" style="left:51%;top:11%">01<span class="real-tip"><strong>Корпус электроники</strong>Питание, индикация, выходной сигнал, степень защиты.</span></button>
-          <button class="real-hotspot" type="button" style="left:51%;top:28%">02<span class="real-tip"><strong>Процессное присоединение</strong>DN/PN, штуцер, фланец, материал, температура и давление.</span></button>
-          <button class="real-hotspot" type="button" style="left:51%;top:37%">03<span class="real-tip"><strong>Антенна</strong>Тип антенны, материал PTFE/SS, агрессивность среды, конденсат.</span></button>
-          <button class="real-hotspot" type="button" style="left:53%;top:55%">04<span class="real-tip"><strong>Измерительный луч</strong>Диапазон, мёртвая зона, угол раскрытия, внутренние препятствия.</span></button>
-          <button class="real-hotspot" type="button" style="left:47%;top:63%">05<span class="real-tip"><strong>Уровень продукта</strong>Пена, пары, турбулентность, диэлектрическая проницаемость.</span></button>
-          <a class="real-zoom" href="/assets/engineering-nodes/levelmeter-blueprint.webp" target="_blank" rel="noopener">Открыть чертёж крупно</a>
-        </div>
-        <aside class="real-node-info">
-          <div class="real-node-card"><h3>Радарный уровнемер</h3><p>Чертёж показывает установку прибора на резервуаре: процессное присоединение, антенну, диапазон измерения, уровень продукта и выходные сигналы.</p><div class="real-node-specs"><div class="real-node-spec"><span>Диапазон</span><strong>0…30 м</strong></div><div class="real-node-spec"><span>Давление</span><strong>−1…+4 МПа</strong></div><div class="real-node-spec"><span>Температура</span><strong>−40…+200 °C</strong></div><div class="real-node-spec"><span>Выход</span><strong>4–20 мА + HART</strong></div></div></div>
-          <div class="real-node-card"><h3>Что проверить</h3><ul class="real-node-list"><li>Высоту резервуара, диапазон и место установки.</li><li>Пену, пары, пыль, конденсат и внутренние элементы.</li><li>Материал антенны, присоединение и Ex-зону.</li><li>Сигнал, питание, индикацию и требования к сертификатам.</li></ul></div>
-          <div class="real-node-card"><h3>Действия</h3><p>Для подбора нужны высота резервуара, среда, штуцер, температура, давление и сигнал.</p><div class="real-node-actions"><a class="btn" href="mailto:info@promapparat.ru?subject=Подбор%20уровнемера">Отправить параметры</a><a class="btn btn--white" href="/urovnemery/">Раздел уровнемеров</a></div></div>
-        </aside>
-      </article>
-
+      ${engineeringPanel('valve', 'Регулирующий клапан', 'valve-blueprint', 'Технический чертёж регулирующего клапана с пневмоприводом и позиционером', [
+        ['Пневмопривод','Тип привода, питание или воздух, положение при отказе, требуемое усилие.','50%','19%'],
+        ['Позиционер','4–20 мА, HART, обратная связь, Ex-исполнение, манометры.','67%','30%'],
+        ['Сальниковый узел','Уплотнение штока, материал, температура, требования к герметичности.','49%','49%'],
+        ['Седло и плунжер','Kv/Cv, характеристика регулирования, класс герметичности, перепад давления.','49%','63%'],
+        ['Фланцы','DN, PN, стандарт, исполнение RF, крепёж и межфланцевая длина.','36%','66%']
+      ], 'Чертёж показывает, какие параметры нужны для корректного подбора клапана: расход, перепад давления, материалы, привод, позиционер и комплект документов.', [['Диаметр','DN 15–300'],['Давление','PN 16–40'],['Температура','−40…+220 °C'],['Сигнал','4–20 мА / HART']], ['Рабочую среду, расход min/normal/max и требуемый Kv/Cv.','Давление до/после клапана, кавитацию и шум.','Материал корпуса, трима, седла и уплотнений.','Тип привода, позиционер, Ex и положение при отказе.'], 'Подбор%20регулирующего%20клапана', '/oprosnye-listy/', 'Опросный лист')}
+      ${engineeringPanel('flow', 'Электромагнитный расходомер', 'flowmeter-blueprint', 'Технический чертёж электромагнитного расходомера во фланцевом исполнении', [
+        ['Преобразователь','Питание, индикация, 4–20 мА, HART, Modbus, степень защиты.','49%','16%'],
+        ['Измерительная труба','DN, PN, материал, футеровка, проводимость среды.','45%','48%'],
+        ['Электроды','Материал электродов, заземление, коррозионная стойкость.','49%','44%'],
+        ['Фланцевое соединение','Стандарт фланцев, монтажная длина, прямые участки.','36%','45%'],
+        ['Заземление','Заземляющие кольца, перемычки и требования монтажа.','37%','58%']
+      ], 'Чертёж показывает конструкцию расходомера, требования к монтажу, заземлению, футеровке, электродам и выходным сигналам.', [['Диаметр','DN 15…1000'],['Давление','до PN 40'],['Футеровка','PFA / PTFE'],['Сигнал','HART / Modbus']], ['Расход min/normal/max и DN трубопровода.','Электропроводность, температура и состав среды.','Футеровку, электроды, заземление и степень защиты.','Поверку, протокол связи, питание и выходные сигналы.'], 'Подбор%20расходомера', '/rashodomery/', 'Раздел расходомеров')}
+      ${engineeringPanel('level', 'Радарный уровнемер', 'levelmeter-blueprint', 'Технический чертёж радарного уровнемера на резервуаре', [
+        ['Корпус электроники','Питание, индикация, выходной сигнал, степень защиты.','51%','11%'],
+        ['Процессное присоединение','DN/PN, штуцер, фланец, материал, температура и давление.','51%','28%'],
+        ['Антенна','Тип антенны, материал PTFE/SS, агрессивность среды, конденсат.','51%','37%'],
+        ['Измерительный луч','Диапазон, мёртвая зона, угол раскрытия, внутренние препятствия.','53%','55%'],
+        ['Уровень продукта','Пена, пары, турбулентность, диэлектрическая проницаемость.','47%','63%']
+      ], 'Чертёж показывает установку прибора на резервуаре: процессное присоединение, антенну, диапазон измерения, уровень продукта и выходные сигналы.', [['Диапазон','0…30 м'],['Давление','−1…+4 МПа'],['Температура','−40…+200 °C'],['Выход','4–20 мА + HART']], ['Высоту резервуара, диапазон и место установки.','Пену, пары, пыль, конденсат и внутренние элементы.','Материал антенны, присоединение и Ex-зону.','Сигнал, питание, индикацию и требования к сертификатам.'], 'Подбор%20уровнемера', '/urovnemery/', 'Раздел уровнемеров')}
       <div class="engineering-note real-node-note">Чертежи используются как визуальная инженерная подложка. Важные коммерческие действия, hotspots и SEO-текст остаются HTML-слоем — так блок остаётся быстрым, адаптивным и управляемым.</div>
     </div>
   </section>`;
+  }
+
+  function engineeringPanel(id, title, file, alt, points, text, specs, checks, subject, link, linkText) {
+    return `<article class="engineering-panel real-engineering-panel" data-live-panel="${id}" aria-label="${title}">
+      <div class="real-drawing-shell">
+        <picture><source srcset="/assets/engineering-nodes/${file}.avif" type="image/avif"><source srcset="/assets/engineering-nodes/${file}.webp" type="image/webp"><img class="real-blueprint-img" src="/assets/engineering-nodes/${file}.webp" width="1448" height="1086" alt="${alt}" loading="lazy" decoding="async"></picture>
+        ${points.map((p,i)=>`<button class="real-hotspot" type="button" style="left:${p[2]};top:${p[3]}">${String(i+1).padStart(2,'0')}<span class="real-tip"><strong>${p[0]}</strong>${p[1]}</span></button>`).join('')}
+        <a class="real-zoom" href="/assets/engineering-nodes/${file}.webp" target="_blank" rel="noopener">Открыть чертёж крупно</a>
+      </div>
+      <aside class="real-node-info">
+        <div class="real-node-card"><h3>${title}</h3><p>${text}</p><div class="real-node-specs">${specs.map(s=>`<div class="real-node-spec"><span>${s[0]}</span><strong>${s[1]}</strong></div>`).join('')}</div></div>
+        <div class="real-node-card"><h3>Что проверить</h3><ul class="real-node-list">${checks.map(c=>`<li>${c}</li>`).join('')}</ul></div>
+        <div class="real-node-card"><h3>Действия</h3><p>Отправьте исходные параметры или откройте профильный раздел.</p><div class="real-node-actions"><a class="btn" href="mailto:${mail}?subject=${subject}">Отправить параметры</a><a class="btn btn--white" href="${link}">${linkText}</a></div></div>
+      </aside>
+    </article>`;
+  }
+
+  function replaceDocumentationBlock() {
+    ensureStylesheet('/assets/css/home-docs-placeholder-20260619.css');
+    const old = d.querySelector('[aria-labelledby="live-docs-title"]');
+    if (!old || old.classList.contains('home-docs-placeholder')) return;
+
+    old.outerHTML = `
+  <section class="home-docs-placeholder" aria-labelledby="home-docs-title">
+    <div class="wrap home-docs-placeholder__inner">
+      <div class="home-docs-placeholder__copy">
+        <h2 id="home-docs-title">Комплект сопроводительной документации</h2>
+        <p>По поставляемому оборудованию подготавливается комплект документов в зависимости от типа изделия, требований проекта и условий поставки.</p>
+      </div>
+      <div class="home-docs-placeholder__cards" aria-label="Состав документации">
+        ${docCard('file','Паспорта изделий')}
+        ${docCard('badge','Сертификаты')}
+        ${docCard('check','Декларации ЕАЭС')}
+        ${docCard('test','Протоколы испытаний')}
+        ${docCard('cert','Сертификаты материалов')}
+        ${docCard('folder','Исполнительная документация')}
+      </div>
+      <div class="home-docs-visual" aria-hidden="true">
+        <div class="home-docs-sheet"><div class="home-docs-lines"><i></i><i></i><i></i><i></i></div><div class="home-docs-blueprint"></div><div class="home-docs-stamp"></div></div>
+        <div class="home-docs-pen"></div>
+      </div>
+    </div>
+  </section>`;
+  }
+
+  function docCard(type, text) {
+    const icons = {
+      file: '<path d="M8 3h10l5 5v18H8z"/><path d="M18 3v6h5"/><path d="M12 17h8M12 21h6"/>',
+      badge: '<path d="M8 3h10l5 5v18H8z"/><path d="M18 3v6h5"/><circle cx="17" cy="20" r="3"/><path d="m19.5 22.5 2.5 2.5M14.5 22.5 12 25"/>',
+      check: '<path d="M9 7h13v18H7V7h2z"/><path d="M11 7a3 3 0 0 1 6 0"/><path d="m11 18 3 3 7-8"/>',
+      test: '<path d="M9 7h13v18H7V7h2z"/><path d="M11 7a3 3 0 0 1 6 0"/><path d="M15 13v7M12 20h6"/>',
+      cert: '<path d="M8 4h14v17H8z"/><path d="M12 9h6M12 13h7"/><circle cx="17" cy="21" r="3"/><path d="M15 23v4l2-1 2 1v-4"/>',
+      folder: '<path d="M4 8h9l2 3h13v13H4z"/><path d="M4 12h24"/>'
+    };
+    return `<div class="home-doc-card"><span class="home-doc-card__icon"><svg viewBox="0 0 32 32" aria-hidden="true">${icons[type]}</svg></span><strong>${text}</strong></div>`;
   }
 
   function initHeroCursor() {
@@ -117,15 +133,13 @@
     if (!hero || reduceMotion) return;
     hero.addEventListener('pointermove', (event) => {
       const rect = hero.getBoundingClientRect();
-      const x = ((event.clientX - rect.left) / rect.width) * 100;
-      const y = ((event.clientY - rect.top) / rect.height) * 100;
-      hero.style.setProperty('--hero-x', `${x.toFixed(2)}%`);
-      hero.style.setProperty('--hero-y', `${y.toFixed(2)}%`);
+      hero.style.setProperty('--hero-x', `${(((event.clientX - rect.left) / rect.width) * 100).toFixed(2)}%`);
+      hero.style.setProperty('--hero-y', `${(((event.clientY - rect.top) / rect.height) * 100).toFixed(2)}%`);
     }, { passive: true });
   }
 
   function initReveal() {
-    const targets = Array.from(d.querySelectorAll('[data-live-reveal], .live-section, .live-card, .live-panel, .download-card, .catalog-group, .catalog-grid .card, .home-stage-process__item, .about-service, .about-direction'));
+    const targets = Array.from(d.querySelectorAll('[data-live-reveal], .live-section, .home-docs-placeholder, .live-card, .live-panel, .download-card, .catalog-group, .catalog-grid .card, .home-stage-process__item, .about-service, .about-direction, .home-doc-card'));
     targets.forEach((node, index) => {
       node.setAttribute('data-live-reveal', '');
       node.style.transitionDelay = reduceMotion ? '0ms' : `${Math.min(index % 8, 7) * 45}ms`;
@@ -147,9 +161,7 @@
   function initProcess() {
     const items = Array.from(d.querySelectorAll('.home-stage-process__item'));
     if (!items.length) return;
-    const activate = (item) => {
-      items.forEach((node) => node.classList.toggle('is-active', node === item));
-    };
+    const activate = (item) => items.forEach((node) => node.classList.toggle('is-active', node === item));
     items.forEach((item, index) => {
       item.tabIndex = 0;
       if (index === 0) item.classList.add('is-active');
@@ -160,8 +172,7 @@
   }
 
   function initTabs() {
-    const groups = Array.from(d.querySelectorAll('[data-live-tabs]'));
-    groups.forEach((group) => {
+    Array.from(d.querySelectorAll('[data-live-tabs]')).forEach((group) => {
       const tabs = Array.from(group.querySelectorAll('[data-live-target]'));
       const panels = Array.from(group.querySelectorAll('[data-live-panel]'));
       const activate = (id) => {
@@ -199,13 +210,7 @@
       wrap.appendChild(oldBtn);
       const fill = d.createElement('a');
       fill.className = 'btn live-fill';
-      fill.href = buildMailto(`Заполнение опросного листа: ${title}`, [
-        ['Раздел', title],
-        ['Оборудование', ''],
-        ['DN / PN', ''],
-        ['Среда / температура / давление', ''],
-        ['Требуемые документы', '']
-      ]);
+      fill.href = buildMailto(`Заполнение опросного листа: ${title}`, [['Раздел', title], ['Оборудование', ''], ['DN / PN', ''], ['Среда / температура / давление', ''], ['Требуемые документы', '']]);
       fill.textContent = 'Заполнить онлайн';
       wrap.appendChild(fill);
     });
@@ -236,11 +241,7 @@
     const cta = d.createElement('aside');
     cta.className = 'live-sticky-cta';
     cta.setAttribute('aria-label', 'Быстрые действия');
-    cta.innerHTML = `
-      <a href="mailto:${mail}?subject=${enc('Запрос КП ПО Промаппарат')}">Получить КП</a>
-      <a href="/oprosnye-listy/">Опросные листы</a>
-      <a href="/podbor-analogov-importnogo-oborudovaniya/">Подобрать аналог</a>
-    `;
+    cta.innerHTML = `<a href="mailto:${mail}?subject=${enc('Запрос КП ПО Промаппарат')}">Получить КП</a><a href="/oprosnye-listy/">Опросные листы</a><a href="/podbor-analogov-importnogo-oborudovaniya/">Подобрать аналог</a>`;
     d.body.appendChild(cta);
     const show = () => cta.classList.toggle('is-visible', window.scrollY > 360);
     window.addEventListener('scroll', show, { passive: true });
@@ -267,6 +268,7 @@
   function init() {
     d.documentElement.classList.add('has-live-system');
     repairEngineeringNodes();
+    replaceDocumentationBlock();
     initHeroCursor();
     initTabs();
     initForms();
