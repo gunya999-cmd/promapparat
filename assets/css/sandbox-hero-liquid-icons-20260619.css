@@ -1,20 +1,141 @@
-/* Sandbox hero liquid glass icons v2 */
+/* Sandbox hero liquid glass icons v3 — clean left-bottom overlay */
 .home-hero-static--layered-wow{overflow:hidden;}
-.sandbox-hero-icon-cleaner{position:absolute;z-index:7;left:0;bottom:0;width:min(760px,48vw);height:170px;pointer-events:none;background:radial-gradient(circle at 32% 45%,rgba(255,255,255,.94) 0%,rgba(255,255,255,.86) 42%,rgba(242,248,255,.58) 68%,rgba(242,248,255,0) 100%),linear-gradient(90deg,rgba(250,253,255,.96) 0%,rgba(244,250,255,.78) 64%,rgba(244,250,255,0) 100%);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);}
-.sandbox-hero-liquid-icons{position:absolute;z-index:9;left:2.4vw;bottom:3.1vw;width:min(620px,40.5vw);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;pointer-events:auto;}
-.sandbox-hero-liquid-card{position:relative;overflow:hidden;min-height:108px;padding:10px 8px 9px;border-radius:17px;border:1px solid rgba(108,181,255,.20);background:linear-gradient(180deg,rgba(255,255,255,.24),rgba(232,246,255,.12));backdrop-filter:blur(12px) saturate(1.16);-webkit-backdrop-filter:blur(12px) saturate(1.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.52),inset 0 -1px 0 rgba(74,154,238,.06),0 10px 24px rgba(16,69,130,.075);text-align:center;transform:translateZ(0);transition:transform .32s ease,border-color .32s ease,box-shadow .32s ease,background .32s ease;}
-.sandbox-hero-liquid-card::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.34;background:radial-gradient(circle at 25% 18%,rgba(255,255,255,.62),transparent 24%),linear-gradient(130deg,transparent 0%,rgba(255,255,255,.42) 44%,transparent 62%);}
-.sandbox-hero-liquid-card::after{content:"";position:absolute;left:-34%;right:-34%;top:52%;height:1px;opacity:0;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(74,177,255,.92),rgba(255,255,255,.94),rgba(80,188,255,.74),transparent);box-shadow:0 0 16px rgba(70,180,255,.48),0 0 34px rgba(80,210,255,.22);transform:rotate(-10deg) translateX(-34%);transition:opacity .26s ease,transform .58s cubic-bezier(.2,.75,.2,1);}
-.sandbox-hero-liquid-card__icon{position:relative;z-index:1;width:45px;height:45px;margin:0 auto 5px;}
-.sandbox-hero-liquid-card__icon img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .28s ease,transform .34s ease,filter .34s ease;filter:drop-shadow(0 5px 10px rgba(22,90,170,.14));}
+
+/* hides baked old bottom icon labels in the hero image without touching workshop/blueprint */
+.sandbox-hero-icon-cleaner{
+  position:absolute;
+  z-index:7;
+  left:0;
+  bottom:0;
+  width:min(820px,50vw);
+  height:230px;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 28% 58%,rgba(255,255,255,.98) 0%,rgba(255,255,255,.92) 42%,rgba(244,250,255,.70) 66%,rgba(244,250,255,0) 100%),
+    linear-gradient(90deg,rgba(250,253,255,.98) 0%,rgba(247,252,255,.88) 58%,rgba(247,252,255,0) 100%);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
+}
+
+.sandbox-hero-liquid-icons{
+  position:absolute;
+  z-index:9;
+  left:2.35vw;
+  bottom:3.6vw;
+  width:min(670px,41vw);
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  pointer-events:auto;
+}
+
+.sandbox-hero-liquid-card{
+  position:relative;
+  overflow:hidden;
+  min-height:116px;
+  padding:10px 8px 9px;
+  border-radius:18px;
+  border:1px solid rgba(104,178,255,.18);
+  background:linear-gradient(180deg,rgba(255,255,255,.24),rgba(230,245,255,.13));
+  backdrop-filter:blur(14px) saturate(1.18);
+  -webkit-backdrop-filter:blur(14px) saturate(1.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.56),
+    inset 0 -1px 0 rgba(76,154,230,.06),
+    0 10px 24px rgba(16,69,130,.07);
+  text-align:center;
+  transform:translateZ(0);
+  transition:transform .32s ease,border-color .32s ease,box-shadow .32s ease,background .32s ease;
+}
+
+.sandbox-hero-liquid-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.30;
+  background:
+    radial-gradient(circle at 25% 16%,rgba(255,255,255,.66),transparent 23%),
+    linear-gradient(132deg,transparent 0%,rgba(255,255,255,.42) 44%,transparent 62%);
+}
+
+.sandbox-hero-liquid-card::after{
+  content:"";
+  position:absolute;
+  left:-34%;
+  right:-34%;
+  top:52%;
+  height:1px;
+  opacity:0;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(74,177,255,.88),rgba(255,255,255,.95),rgba(80,188,255,.70),transparent);
+  box-shadow:0 0 16px rgba(70,180,255,.42),0 0 34px rgba(80,210,255,.18);
+  transform:rotate(-10deg) translateX(-34%);
+  transition:opacity .26s ease,transform .58s cubic-bezier(.2,.75,.2,1);
+}
+
+.sandbox-hero-liquid-card__icon{
+  position:relative;
+  z-index:1;
+  width:50px;
+  height:50px;
+  margin:0 auto 5px;
+}
+
+.sandbox-hero-liquid-card__icon img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  transition:opacity .28s ease,transform .34s ease,filter .34s ease;
+  filter:drop-shadow(0 5px 10px rgba(22,90,170,.13));
+}
+
 .sandbox-hero-liquid-card__icon img:nth-child(2){opacity:0;transform:scale(.98);}
 .sandbox-hero-liquid-card strong,.sandbox-hero-liquid-card span{position:relative;z-index:1;display:block;}
-.sandbox-hero-liquid-card strong{color:#072756;font-size:12px;line-height:1.12;font-weight:720;letter-spacing:-.015em;}
-.sandbox-hero-liquid-card span{margin-top:4px;color:rgba(10,43,88,.76);font-size:9.6px;line-height:1.22;}
-.sandbox-hero-liquid-card:hover{transform:translateY(-3px);border-color:rgba(79,176,255,.55);background:linear-gradient(180deg,rgba(255,255,255,.34),rgba(225,244,255,.20));box-shadow:inset 0 1px 0 rgba(255,255,255,.70),0 14px 32px rgba(18,82,158,.13),0 0 22px rgba(83,184,255,.16);}
+
+.sandbox-hero-liquid-card strong{
+  color:#072756;
+  font-size:12px;
+  line-height:1.12;
+  font-weight:720;
+  letter-spacing:-.015em;
+}
+
+.sandbox-hero-liquid-card span{
+  margin-top:4px;
+  color:rgba(10,43,88,.76);
+  font-size:9.5px;
+  line-height:1.22;
+}
+
+.sandbox-hero-liquid-card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(79,176,255,.52);
+  background:linear-gradient(180deg,rgba(255,255,255,.34),rgba(225,244,255,.20));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.70),
+    0 14px 32px rgba(18,82,158,.12),
+    0 0 22px rgba(83,184,255,.15);
+}
+
 .sandbox-hero-liquid-card:hover::after{opacity:1;transform:rotate(-10deg) translateX(34%);}
 .sandbox-hero-liquid-card:hover .sandbox-hero-liquid-card__icon img:nth-child(1){opacity:0;transform:scale(.97);}
-.sandbox-hero-liquid-card:hover .sandbox-hero-liquid-card__icon img:nth-child(2){opacity:1;transform:scale(1.06);filter:drop-shadow(0 0 12px rgba(66,185,255,.42)) drop-shadow(0 8px 14px rgba(22,90,170,.18));}
-@media(max-width:1200px){.sandbox-hero-liquid-icons{width:min(570px,42vw);gap:8px}.sandbox-hero-liquid-card{min-height:100px;padding:9px 7px 8px;border-radius:15px}.sandbox-hero-liquid-card__icon{width:39px;height:39px}.sandbox-hero-liquid-card strong{font-size:10.8px}.sandbox-hero-liquid-card span{font-size:8.8px}}
-@media(max-width:900px){.sandbox-hero-icon-cleaner{display:none}.sandbox-hero-liquid-icons{position:relative;left:auto;bottom:auto;width:auto;margin:18px 18px 0;grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:520px){.sandbox-hero-liquid-icons{grid-template-columns:1fr}}
+.sandbox-hero-liquid-card:hover .sandbox-hero-liquid-card__icon img:nth-child(2){opacity:1;transform:scale(1.06);filter:drop-shadow(0 0 12px rgba(66,185,255,.42)) drop-shadow(0 8px 14px rgba(22,90,170,.16));}
+
+@media(max-width:1200px){
+  .sandbox-hero-icon-cleaner{height:215px;width:min(760px,52vw);}
+  .sandbox-hero-liquid-icons{width:min(620px,43vw);gap:8px;bottom:3.3vw;}
+  .sandbox-hero-liquid-card{min-height:106px;padding:9px 7px 8px;border-radius:15px;}
+  .sandbox-hero-liquid-card__icon{width:42px;height:42px;}
+  .sandbox-hero-liquid-card strong{font-size:10.8px;}
+  .sandbox-hero-liquid-card span{font-size:8.8px;}
+}
+
+@media(max-width:900px){
+  .sandbox-hero-icon-cleaner{display:none;}
+  .sandbox-hero-liquid-icons{position:relative;left:auto;bottom:auto;width:auto;margin:18px 18px 0;grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+
+@media(max-width:520px){.sandbox-hero-liquid-icons{grid-template-columns:1fr;}}
