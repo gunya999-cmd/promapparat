@@ -1,0 +1,63 @@
+/* Clean hero background install: replaces text-baked hero art with clean background.
+   Keeps the workshop, blueprint, and pixel wave while freeing the left side.
+   This file is meant to be loaded AFTER existing hero CSS. */
+
+.home-hero-static--layered-wow{
+  background-image:url('/assets/hero/hero-clean-background-20260619.webp?v=20260619-clean-hero-1') !important;
+  background-repeat:no-repeat !important;
+  background-position:center top !important;
+  background-size:cover !important;
+}
+
+/* Disable previous text-cut masks / sheen once the clean background is installed */
+.home-hero-static--layered-wow::before,
+.home-hero-static--layered-wow::after{
+  content:none !important;
+  display:none !important;
+  opacity:0 !important;
+  background:none !important;
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+  animation:none !important;
+  box-shadow:none !important;
+}
+
+/* Hide the old baked-hero media if the template renders it as an <img>, <picture>, or media wrapper */
+.home-hero-static--layered-wow > picture,
+.home-hero-static--layered-wow > img,
+.home-hero-static--layered-wow > .home-hero-media,
+.home-hero-static--layered-wow > .hero-media,
+.home-hero-static--layered-wow > [class*='hero-bg'],
+.home-hero-static--layered-wow > [class*='hero-image']{
+  display:none !important;
+}
+
+/* Remove legacy left-side copy and icon widgets from the hero only */
+.home-hero-static--layered-wow .home-hero-copy,
+.home-hero-static--layered-wow .home-hero-content,
+.home-hero-static--layered-wow .home-hero-text,
+.home-hero-static--layered-wow .hero-copy,
+.home-hero-static--layered-wow .hero-content,
+.home-hero-static--layered-wow .hero-text,
+.home-hero-static--layered-wow .hero-liquid-icons,
+.home-hero-static--layered-wow .hero-liquid-card,
+.home-hero-static--layered-wow .hero-liquid-grid,
+.home-hero-static--layered-wow .hero-cta,
+.home-hero-static--layered-wow .hero-actions,
+.home-hero-static--layered-wow .hero-badges,
+.home-hero-static--layered-wow .hero-kpis{
+  display:none !important;
+}
+
+/* Keep the original overlay system alive */
+.home-hero-static--layered-wow .home-hero-hotspot,
+.home-hero-static--layered-wow .home-hero-overlay{
+  display:block;
+}
+
+@media (max-width:1100px){
+  .home-hero-static--layered-wow{
+    background-position:center top !important;
+    background-size:cover !important;
+  }
+}
