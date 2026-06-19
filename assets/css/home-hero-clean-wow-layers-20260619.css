@@ -1,0 +1,99 @@
+/* Premium wow layers for the clean hero.
+   These overlays are authored specifically for hero-clean-background-20260619.webp.
+   Load this AFTER home-hero-clean-background-20260619.css. */
+
+.home-hero-static--layered-wow{
+  position:relative !important;
+  overflow:hidden !important;
+}
+
+/* Disable previous temporary gradient effect and old shifted overlay system. */
+.home-hero-static--layered-wow > .home-hero-hotspot,
+.home-hero-static--layered-wow > .home-hero-overlay{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  pointer-events:none !important;
+}
+
+.home-hero-static--layered-wow::before,
+.home-hero-static--layered-wow::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  display:block !important;
+  pointer-events:none !important;
+  z-index:1 !important;
+  background-repeat:no-repeat !important;
+  background-position:center top !important;
+  background-size:cover !important;
+  mix-blend-mode:screen !important;
+  transform:translateZ(0) !important;
+  will-change:opacity !important;
+  transition:opacity .5s cubic-bezier(.2,.7,.2,1), filter .5s cubic-bezier(.2,.7,.2,1) !important;
+  animation:none !important;
+  box-shadow:none !important;
+}
+
+/* Base state */
+.home-hero-static--layered-wow::before{
+  background-image:url('/assets/hero/layers/hero-clean-blueprint-glow-20260619.webp?v=20260619-clean-wow-1') !important;
+  opacity:.07 !important;
+  filter:brightness(.96) contrast(1.02) !important;
+}
+
+.home-hero-static--layered-wow::after{
+  background-image:url('/assets/hero/layers/hero-clean-data-wave-glow-20260619.webp?v=20260619-clean-wow-1') !important;
+  opacity:.06 !important;
+  filter:brightness(.94) contrast(1.02) saturate(1.02) !important;
+}
+
+/* Hover state */
+.home-hero-static--layered-wow:hover::before{
+  opacity:.16 !important;
+  filter:brightness(1.04) contrast(1.06) !important;
+}
+
+.home-hero-static--layered-wow:hover::after{
+  opacity:.15 !important;
+  filter:brightness(1.05) contrast(1.06) saturate(1.05) !important;
+}
+
+/* No mouse-follow spot, no moving sheen. */
+.home-hero-static--layered-wow,
+.home-hero-static--layered-wow *{
+  cursor:default;
+}
+
+@media (min-width:2200px){
+  .home-hero-static--layered-wow::before,
+  .home-hero-static--layered-wow::after{
+    background-size:auto 100% !important;
+    background-position:center top !important;
+  }
+}
+
+@media (min-width:1600px) and (max-width:2199px){
+  .home-hero-static--layered-wow::before,
+  .home-hero-static--layered-wow::after{
+    background-size:auto 100% !important;
+    background-position:center top !important;
+  }
+}
+
+@media (min-width:1101px) and (max-width:1599px){
+  .home-hero-static--layered-wow::before,
+  .home-hero-static--layered-wow::after{
+    background-size:cover !important;
+    background-position:center top !important;
+  }
+}
+
+/* Disable on mobile/tablet where the hero is cropped differently. */
+@media (max-width:1100px), (hover:none){
+  .home-hero-static--layered-wow::before,
+  .home-hero-static--layered-wow::after{
+    content:none !important;
+    display:none !important;
+  }
+}
