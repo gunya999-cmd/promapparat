@@ -1,4 +1,25 @@
-.proma-main-hero-old-hidden{display:none !important;}
+/* Final homepage blueprint-only hero v7.1 */
+
+/* Strong legacy-hero shutdown. Older hero CSS uses #home-draft and !important,
+   so this selector must be more specific than .proma-main-hero-old-hidden. */
+html body #home-draft > .home-hero-static.proma-main-hero-old-hidden,
+html body #home-draft > .home-hero-static--layered-wow.proma-main-hero-old-hidden,
+html body #home-draft > section.home-hero-static.home-hero-static--layered-wow.proma-main-hero-old-hidden,
+html body #home-draft > [class*='home-hero'].proma-main-hero-old-hidden,
+html body #home-draft > [class*='hero'].proma-main-hero-old-hidden,
+.proma-main-hero-old-hidden{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  height:0 !important;
+  min-height:0 !important;
+  max-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  pointer-events:none !important;
+}
+
 .proma-main-hero-v7{
   position:relative;
   width:100%;
@@ -20,11 +41,11 @@
 }
 .proma-main-hero-v7__frame--normal{
   z-index:1;
-  background-image:url('/assets/hero/fullframe/hero-fullframe-normal-v7-1920-20260619.webp?v=20260619-main-hero-v7');
+  background-image:url('/assets/hero/fullframe/hero-fullframe-normal-v7-1920-20260619.webp?v=20260619-main-hero-v7-1');
 }
 .proma-main-hero-v7__frame--hover{
   z-index:2;
-  background-image:url('/assets/hero/fullframe/hero-fullframe-hover-blueprint-v7-1920-20260619.webp?v=20260619-main-hero-v7');
+  background-image:url('/assets/hero/fullframe/hero-fullframe-hover-blueprint-v7-1920-20260619.webp?v=20260619-main-hero-v7-1');
   opacity:0;
 }
 .proma-main-hero-v7__trigger{
@@ -43,12 +64,12 @@
   .proma-main-hero-v7__trigger:hover ~ .proma-main-hero-v7__frame--hover{opacity:1;}
 }
 @media (min-width:1600px){
-  .proma-main-hero-v7__frame--normal{background-image:url('/assets/hero/fullframe/hero-fullframe-normal-v7-2560-20260619.webp?v=20260619-main-hero-v7');}
-  .proma-main-hero-v7__frame--hover{background-image:url('/assets/hero/fullframe/hero-fullframe-hover-blueprint-v7-2560-20260619.webp?v=20260619-main-hero-v7');}
+  .proma-main-hero-v7__frame--normal{background-image:url('/assets/hero/fullframe/hero-fullframe-normal-v7-2560-20260619.webp?v=20260619-main-hero-v7-1');}
+  .proma-main-hero-v7__frame--hover{background-image:url('/assets/hero/fullframe/hero-fullframe-hover-blueprint-v7-2560-20260619.webp?v=20260619-main-hero-v7-1');}
 }
 @media (min-width:2400px){
-  .proma-main-hero-v7__frame--normal{background-image:url('/assets/hero/fullframe/hero-fullframe-normal-v7-3200-20260619.webp?v=20260619-main-hero-v7');}
-  .proma-main-hero-v7__frame--hover{background-image:url('/assets/hero/fullframe/hero-fullframe-hover-blueprint-v7-3200-20260619.webp?v=20260619-main-hero-v7');}
+  .proma-main-hero-v7__frame--normal{background-image:url('/assets/hero/fullframe/hero-fullframe-normal-v7-3200-20260619.webp?v=20260619-main-hero-v7-1');}
+  .proma-main-hero-v7__frame--hover{background-image:url('/assets/hero/fullframe/hero-fullframe-hover-blueprint-v7-3200-20260619.webp?v=20260619-main-hero-v7-1');}
 }
 @media (max-width:900px){
   .proma-main-hero-v7{min-height:340px;}
