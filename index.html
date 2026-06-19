@@ -15,22 +15,22 @@
   <link rel="stylesheet" href="/assets/css/home-stage-trust.css?v=20260612-4">
   <link rel="stylesheet" href="/assets/css/home-stage-footer.css?v=20260618-b2b-footer-1">
   <link rel="stylesheet" href="/assets/css/home-card-images.css?v=20260614-v2-scan-1">
-
   <link rel="stylesheet" href="/assets/css/home-hero-baunfire-perfect-20260618.css?v=20260618-baunfire-wow-hotfix-2">
-
   <link rel="stylesheet" href="/assets/css/home-hero-layered-wow-20260618.css?v=20260618-layered-wow-1">
+  <link rel="stylesheet" href="/assets/css/promapparat-live-system-20260619.css?v=20260619-1">
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="/">
+    <a class="logo" href="/" aria-label="ПО Промаппарат — на главную">
       <img src="/assets/logo/logo-main.webp" width="460" height="115" decoding="async" fetchpriority="high" alt="Промаппарат">
     </a>
-    <nav class="nav">
+    <nav class="nav" aria-label="Основная навигация">
       <a href="/o-kompanii/">О компании</a>
       <a href="/katalog/">Каталог</a>
       <a href="/podbor-analogov-importnogo-oborudovaniya/">Аналоги</a>
       <a href="/dokumentatsiya/">Документация</a>
+      <a href="/oprosnye-listy/">Опросные листы</a>
       <a href="/kontakty/">Контакты</a>
     </nav>
     <div class="head-right">
@@ -46,13 +46,13 @@
 
 <main id="home-draft">
   <section class="home-hero-static home-hero-static--layered-wow" aria-label="Production workshop">
-  <div class="home-hero-hotspot home-hero-hotspot--blueprint" aria-hidden="true"></div>
-  <div class="home-hero-hotspot home-hero-hotspot--dots" aria-hidden="true"></div>
-  <div class="home-hero-overlay home-hero-overlay--blueprint-calm" aria-hidden="true"></div>
-  <div class="home-hero-overlay home-hero-overlay--dots-calm" aria-hidden="true"></div>
-  <div class="home-hero-overlay home-hero-overlay--blueprint-bright" aria-hidden="true"></div>
-  <div class="home-hero-overlay home-hero-overlay--dots-bright" aria-hidden="true"></div>
-</section>
+    <div class="home-hero-hotspot home-hero-hotspot--blueprint" aria-hidden="true"></div>
+    <div class="home-hero-hotspot home-hero-hotspot--dots" aria-hidden="true"></div>
+    <div class="home-hero-overlay home-hero-overlay--blueprint-calm" aria-hidden="true"></div>
+    <div class="home-hero-overlay home-hero-overlay--dots-calm" aria-hidden="true"></div>
+    <div class="home-hero-overlay home-hero-overlay--blueprint-bright" aria-hidden="true"></div>
+    <div class="home-hero-overlay home-hero-overlay--dots-bright" aria-hidden="true"></div>
+  </section>
 
   <section class="home-stage-directions" aria-labelledby="home-stage-directions-title">
     <div class="wrap">
@@ -81,6 +81,130 @@
         <a class="home-stage-direction home-stage-direction--image" href="/vspomogatelnoe-oborudovanie/">
           <img src="/assets/catalog/home-cards/home-vspomogatelnoe-oborudovanie.webp" width="900" height="900" alt="Вспомогательное оборудование" loading="lazy" decoding="async">
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="live-section" aria-labelledby="live-picker-title">
+    <div class="wrap">
+      <div class="live-head">
+        <div>
+          <span class="live-kicker">Инженерный подбор</span>
+          <h2 id="live-picker-title">Подобрать оборудование по параметрам</h2>
+        </div>
+        <p>Живая форма превращает сайт в рабочий B2B-инструмент: пользователь выбирает тип оборудования, DN/PN, среду и требования к документам — письмо формируется автоматически.</p>
+      </div>
+      <div class="live-grid live-grid--2">
+        <form class="live-panel live-picker" data-live-mail data-live-subject="Заявка на подбор оборудования">
+          <div class="live-field">
+            <label for="pick-type">Тип оборудования</label>
+            <select id="pick-type" name="Тип оборудования" data-label="Тип оборудования">
+              <option>Запорная арматура</option>
+              <option>Регулирующая арматура</option>
+              <option>КИПиА</option>
+              <option>Расходомер</option>
+              <option>Уровнемер</option>
+              <option>Вспомогательное оборудование</option>
+              <option>Аналог импортного оборудования</option>
+            </select>
+          </div>
+          <div class="live-field">
+            <label for="pick-dn">DN / PN</label>
+            <input id="pick-dn" name="DN / PN" data-label="DN / PN" placeholder="Например: DN100, PN40">
+          </div>
+          <div class="live-field">
+            <label for="pick-medium">Рабочая среда</label>
+            <input id="pick-medium" name="Рабочая среда" data-label="Рабочая среда" placeholder="Вода, газ, пар, нефть...">
+          </div>
+          <div class="live-field">
+            <label for="pick-temp">Температура / давление</label>
+            <input id="pick-temp" name="Температура и давление" data-label="Температура и давление" placeholder="Например: −40…+180 °C, 1.6 МПа">
+          </div>
+          <div class="live-field live-field--wide">
+            <label for="pick-docs">Документы и требования</label>
+            <textarea id="pick-docs" name="Документы и требования" data-label="Документы и требования" placeholder="Паспорт, сертификат, декларация ЕАЭС, Ex, материал корпуса, сигнал, присоединение..."></textarea>
+          </div>
+          <div class="live-picker__actions">
+            <button class="btn" type="submit">Сформировать заявку</button>
+            <a class="btn btn--white" href="/oprosnye-listy/">Опросные листы</a>
+          </div>
+          <p class="live-picker__note">Форма не заменяет инженера, но собирает исходные данные для быстрого КП.</p>
+          <div class="live-status" aria-live="polite"></div>
+        </form>
+        <aside class="live-panel live-result" aria-label="Что проверяется при подборе">
+          <div class="live-result__line"><i class="live-result__dot"></i><div><strong>Совместимость с процессом</strong><span>Среда, давление, температура, расход, уровень или диапазон измерения.</span></div></div>
+          <div class="live-result__line"><i class="live-result__dot"></i><div><strong>Исполнение и монтаж</strong><span>DN, PN, материалы, уплотнения, фланцы, привод, сигнал, питание, Ex.</span></div></div>
+          <div class="live-result__line"><i class="live-result__dot"></i><div><strong>Документация</strong><span>Паспорта, сертификаты, декларации, протоколы, комплектность под проект.</span></div></div>
+          <div class="live-result__line"><i class="live-result__dot"></i><div><strong>Импортозамещение</strong><span>Подбор аналога по модели, артикулу, спецификации или фото шильдика.</span></div></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="live-section live-section--dark" aria-labelledby="live-schemes-title" data-live-tabs>
+    <div class="wrap">
+      <div class="live-head">
+        <div>
+          <span class="live-kicker">Технические схемы</span>
+          <h2 id="live-schemes-title">Интерактивные инженерные узлы</h2>
+        </div>
+        <p>Hotspots показывают, что компания подбирает оборудование не по картинке, а по рабочим параметрам, монтажу, сигналам и комплекту документов.</p>
+      </div>
+      <div class="live-tabs" role="tablist" aria-label="Тип схемы">
+        <button class="live-tab" type="button" data-live-target="valve">Регулирующий клапан</button>
+        <button class="live-tab" type="button" data-live-target="flow">Расходомер</button>
+        <button class="live-tab" type="button" data-live-target="level">Уровнемер</button>
+      </div>
+      <div class="live-schematic" data-live-panel="valve">
+        <div class="live-schematic__visual">
+          <div class="live-schematic__pipe"></div>
+          <div class="live-schematic__device"></div>
+          <span class="live-node" style="left:31%;top:38%" data-tip="DN/PN, тип присоединения, фланцы">01</span>
+          <span class="live-node" style="left:55%;top:28%" data-tip="Материал корпуса, седло, уплотнение">02</span>
+          <span class="live-node" style="left:65%;top:58%" data-tip="Привод, позиционер, сигнал управления">03</span>
+        </div>
+        <div class="live-schematic__text">
+          <h3>Регулирующая арматура</h3>
+          <ul>
+            <li>Проверяются Kv/Cv, давления до/после, среда и температура.</li>
+            <li>Уточняются привод, позиционер, материал и класс герметичности.</li>
+            <li>Комплект документов согласуется до поставки.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="live-schematic" data-live-panel="flow">
+        <div class="live-schematic__visual live-schematic__flow">
+          <div class="live-schematic__pipe"></div>
+          <div class="live-schematic__device"></div>
+          <span class="live-node" style="left:26%;top:44%" data-tip="Расход min / normal / max">01</span>
+          <span class="live-node" style="left:50%;top:24%" data-tip="Футеровка, электрод, материал">02</span>
+          <span class="live-node" style="left:72%;top:48%" data-tip="4–20 мА, HART, Modbus, поверка">03</span>
+        </div>
+        <div class="live-schematic__text">
+          <h3>Расходомеры</h3>
+          <ul>
+            <li>Подбор по среде, расходу, точности, DN/PN и монтажным участкам.</li>
+            <li>Учитываются футеровки, материалы и выходные сигналы.</li>
+            <li>Отдельно проверяется поверка и требования объекта.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="live-schematic" data-live-panel="level">
+        <div class="live-schematic__visual">
+          <div class="live-schematic__radar"></div>
+          <div class="live-schematic__beam"></div>
+          <span class="live-node" style="left:50%;top:18%" data-tip="Присоединение, антенна, Ex-исполнение">01</span>
+          <span class="live-node" style="left:35%;top:58%" data-tip="Диапазон 100…120000 мм, геометрия резервуара">02</span>
+          <span class="live-node" style="left:65%;top:72%" data-tip="Температура, давление, пена, пары, сигнал">03</span>
+        </div>
+        <div class="live-schematic__text">
+          <h3>Уровнемеры</h3>
+          <ul>
+            <li>Проверяются диапазон измерения, высота резервуара и среда.</li>
+            <li>Учитываются давление, температура, Ex-зона и тип сигнала.</li>
+            <li>Можно подобрать аналог по старой модели или шильдику.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -119,6 +243,27 @@
           </div>
           <div class="home-stage-trust__actions"><a class="btn" href="mailto:info@promapparat.ru?subject=Заявка%20на%20подбор%20оборудования">Отправить заявку</a></div>
         </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="live-section" aria-labelledby="live-docs-title">
+    <div class="wrap live-docs">
+      <div>
+        <span class="live-kicker">Комплектность</span>
+        <h2 id="live-docs-title">Живой блок документации</h2>
+        <p class="live-muted">Документы показаны как рабочий комплект поставки: каждый лист реагирует на hover, визуально объясняя, что документация — не второстепенный элемент, а часть инженерной поставки.</p>
+        <ul class="live-mini-list">
+          <li>Паспорта изделий и руководства по эксплуатации.</li>
+          <li>Сертификаты, декларации ЕАЭС и протоколы испытаний.</li>
+          <li>Сертификаты материалов и исполнительная документация по запросу.</li>
+        </ul>
+      </div>
+      <div class="live-doc-stack" aria-label="Комплект документов">
+        <div class="live-doc-sheet"><strong>Паспорт изделия</strong><span>Технические характеристики, заводской номер, комплектность.</span></div>
+        <div class="live-doc-sheet"><strong>Сертификаты</strong><span>Подтверждающие документы под требования закупки.</span></div>
+        <div class="live-doc-sheet"><strong>Декларации ЕАЭС</strong><span>Документы соответствия для применимых групп оборудования.</span></div>
+        <div class="live-doc-sheet"><strong>Протоколы / материалы</strong><span>Испытания, материалы, исполнительная документация.</span></div>
       </div>
     </div>
   </section>
@@ -176,7 +321,7 @@
         <div class="home-footer__links">
           <a href="/podbor-analogov-importnogo-oborudovaniya/">Подбор аналогов</a>
           <a href="/katalog/">Комплектация по ведомости МТР</a>
-          <a href="/katalog/">Подбор по опросному листу</a>
+          <a href="/oprosnye-listy/">Подбор по опросному листу</a>
           <a href="/katalog/">Замена по модели или шильдику</a>
           <a href="/dokumentatsiya/">Согласование документации</a>
         </div>
@@ -214,5 +359,6 @@
     </div>
   </div>
 </footer>
+<script src="/assets/js/promapparat-live-system-20260619.js?v=20260619-1" defer></script>
 </body>
 </html>
