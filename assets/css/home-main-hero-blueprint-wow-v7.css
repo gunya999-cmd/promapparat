@@ -1,4 +1,32 @@
-.proma-main-hero-old-hidden{display:none !important;}
+.proma-main-hero-old-hidden,
+html body #home-draft > .proma-main-hero-old-hidden,
+html body #home-draft > section.proma-main-hero-old-hidden,
+html body #home-draft > div.proma-main-hero-old-hidden,
+html body #home-draft > .home-hero-static.proma-main-hero-old-hidden,
+html body #home-draft > .home-hero-static--layered-wow.proma-main-hero-old-hidden,
+html body #home-draft > .home-hero-static--clean-background.proma-main-hero-old-hidden,
+html body #home-draft > .home-stage-hero.proma-main-hero-old-hidden,
+html body #home-draft > .hero-wow-lab.proma-main-hero-old-hidden,
+html body #home-draft > .hero-wow-lab-fullframe.proma-main-hero-old-hidden,
+html body #home-draft > .hero-wow-lab-fullframe-v2.proma-main-hero-old-hidden,
+html body #home-draft > .hero-wow-lab-fullframe-v3.proma-main-hero-old-hidden,
+html body #home-draft > .hero-wow-lab-fullframe-v4.proma-main-hero-old-hidden,
+html body #home-draft > .hero-wow-lab-fullframe-v5.proma-main-hero-old-hidden,
+html body #home-draft > .hero-wow-lab-fullframe-v6.proma-main-hero-old-hidden,
+html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  height:0 !important;
+  min-height:0 !important;
+  max-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  overflow:hidden !important;
+  pointer-events:none !important;
+}
+
 .proma-main-hero-v7{
   position:relative;
   width:100%;
