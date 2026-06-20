@@ -71,12 +71,16 @@ html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
   position:absolute;
   z-index:5;
   left:7.2%;
-  top:12.8%;
+  top:10.6%;
   width:38%;
   max-width:620px;
   pointer-events:none;
+  animation:promaHeroTextIn .9s cubic-bezier(.2,.72,.18,1) both;
+  filter:drop-shadow(0 12px 28px rgba(16,43,86,.08));
 }
 .proma-main-hero-v7__kicker{
+  position:relative;
+  display:inline-block;
   margin:0 0 14px;
   font-size:13px;
   line-height:1.25;
@@ -85,6 +89,17 @@ html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
   text-transform:uppercase;
   color:#2b6fb8;
 }
+.proma-main-hero-v7__kicker::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-7px;
+  width:64px;
+  height:1px;
+  background:linear-gradient(90deg,rgba(43,111,184,.75),rgba(43,111,184,0));
+  transform-origin:left center;
+  animation:promaHeroLinePulse 3.6s ease-in-out infinite;
+}
 .proma-main-hero-v7__copy h1{
   margin:0;
   font-size:clamp(34px,3.2vw,58px);
@@ -92,10 +107,17 @@ html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
   letter-spacing:-.03em;
   color:#07172c;
   font-weight:700;
+  text-shadow:0 1px 0 rgba(255,255,255,.38);
 }
 .proma-main-hero-v7__copy h1 span{
   display:block;
   color:#1b66b1;
+  background:linear-gradient(90deg,#1b66b1 0%,#1b66b1 38%,#4e98de 52%,#1b66b1 68%,#1b66b1 100%);
+  background-size:230% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:promaHeroTextSheen 5.4s ease-in-out infinite;
 }
 .proma-main-hero-v7__copy p{
   margin:18px 0 0;
@@ -113,6 +135,25 @@ html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
   color:#52657c;
   font-weight:500;
 }
+@keyframes promaHeroTextIn{
+  from{opacity:0;transform:translateY(12px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes promaHeroTextSheen{
+  0%,62%,100%{background-position:0% 50%;}
+  78%{background-position:100% 50%;}
+}
+@keyframes promaHeroLinePulse{
+  0%,100%{opacity:.42;transform:scaleX(.72);}
+  50%{opacity:.95;transform:scaleX(1);}
+}
+@media (prefers-reduced-motion:reduce){
+  .proma-main-hero-v7__copy,
+  .proma-main-hero-v7__kicker::after,
+  .proma-main-hero-v7__copy h1 span{
+    animation:none !important;
+  }
+}
 @media (hover:hover){
   .proma-main-hero-v7__trigger:hover ~ .proma-main-hero-v7__frame--hover{opacity:1;}
 }
@@ -127,7 +168,7 @@ html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
 @media (max-width:1100px){
   .proma-main-hero-v7__copy{
     left:6%;
-    top:10.8%;
+    top:9.2%;
     width:42%;
   }
   .proma-main-hero-v7__copy h1{
@@ -148,7 +189,7 @@ html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
   .proma-main-hero-v7__copy{
     left:24px;
     right:24px;
-    top:22px;
+    top:18px;
     width:auto;
     max-width:520px;
   }
@@ -174,7 +215,7 @@ html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
 }
 @media (max-width:520px){
   .proma-main-hero-v7__copy{
-    top:18px;
+    top:14px;
     left:18px;
     right:18px;
   }
