@@ -89,6 +89,10 @@
         +   '<div class="proma-main-hero-v7__kicker">Производство • комплектация • поставка</div>'
         +   '<h1>Промышленная арматура, КИПиА <span>и инженерное оборудование</span></h1>'
         +   '<p>Подбор по ТЗ, аналоги импортного оборудования, техподдержка и полный комплект сопроводительной документации.</p>'
+        +   '<div class="proma-main-hero-v7__actions">'
+        +     '<a class="proma-main-hero-v7__btn proma-main-hero-v7__btn--primary" href="mailto:info@promapparat.ru?subject=Заявка%20на%20подбор%20оборудования">Подобрать оборудование</a>'
+        +     '<a class="proma-main-hero-v7__btn proma-main-hero-v7__btn--secondary" href="mailto:info@promapparat.ru?subject=ТЗ%20для%20ПО%20Промаппарат">Отправить ТЗ</a>'
+        +   '</div>'
         +   '<div class="proma-main-hero-v7__docs">Паспорта • Сертификаты • Декларации ЕАЭС • Протоколы испытаний</div>'
         + '</div>';
       parent.insertBefore(hero, anchor || parent.firstChild);
