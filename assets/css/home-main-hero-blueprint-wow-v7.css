@@ -71,7 +71,7 @@ html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
   position:absolute;
   z-index:5;
   left:7.2%;
-  top:18.5%;
+  top:12.8%;
   width:38%;
   max-width:620px;
   pointer-events:none;
@@ -80,7 +80,7 @@ html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
   margin:0 0 14px;
   font-size:13px;
   line-height:1.25;
-  font-weight:700;
+  font-weight:600;
   letter-spacing:.08em;
   text-transform:uppercase;
   color:#2b6fb8;
@@ -88,30 +88,30 @@ html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
 .proma-main-hero-v7__copy h1{
   margin:0;
   font-size:clamp(34px,3.2vw,58px);
-  line-height:1.02;
-  letter-spacing:-.04em;
+  line-height:1.04;
+  letter-spacing:-.03em;
   color:#07172c;
-  font-weight:800;
+  font-weight:700;
 }
 .proma-main-hero-v7__copy h1 span{
   display:block;
   color:#1b66b1;
 }
 .proma-main-hero-v7__copy p{
-  margin:20px 0 0;
+  margin:18px 0 0;
   max-width:560px;
   font-size:clamp(16px,1.05vw,19px);
   line-height:1.55;
   color:#334155;
-  font-weight:400;
+  font-weight:300;
 }
 .proma-main-hero-v7__docs{
-  margin-top:22px;
+  margin-top:20px;
   max-width:560px;
   font-size:13px;
   line-height:1.45;
   color:#52657c;
-  font-weight:600;
+  font-weight:500;
 }
 @media (hover:hover){
   .proma-main-hero-v7__trigger:hover ~ .proma-main-hero-v7__frame--hover{opacity:1;}
@@ -127,15 +127,18 @@ html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
 @media (max-width:1100px){
   .proma-main-hero-v7__copy{
     left:6%;
-    top:14%;
+    top:10.8%;
     width:42%;
   }
   .proma-main-hero-v7__copy h1{
     font-size:clamp(28px,4vw,42px);
+    font-weight:700;
+    line-height:1.04;
   }
   .proma-main-hero-v7__copy p{
     margin-top:14px;
     font-size:15px;
+    font-weight:300;
   }
   .proma-main-hero-v7__docs{display:none;}
 }
@@ -145,7 +148,7 @@ html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
   .proma-main-hero-v7__copy{
     left:24px;
     right:24px;
-    top:28px;
+    top:22px;
     width:auto;
     max-width:520px;
   }
@@ -153,31 +156,36 @@ html body #home-draft > .hero-wow-lab-fullframe-v7.proma-main-hero-old-hidden{
     margin-bottom:10px;
     font-size:11px;
     letter-spacing:.06em;
+    font-weight:600;
   }
   .proma-main-hero-v7__copy h1{
     max-width:460px;
     font-size:30px;
     line-height:1.05;
+    font-weight:700;
   }
   .proma-main-hero-v7__copy p{
     max-width:420px;
     margin-top:12px;
     font-size:14px;
     line-height:1.45;
+    font-weight:300;
   }
 }
 @media (max-width:520px){
   .proma-main-hero-v7__copy{
-    top:22px;
+    top:18px;
     left:18px;
     right:18px;
   }
   .proma-main-hero-v7__copy h1{
     font-size:26px;
     max-width:360px;
+    font-weight:700;
   }
   .proma-main-hero-v7__copy p{
     max-width:340px;
     font-size:13px;
+    font-weight:300;
   }
 }
