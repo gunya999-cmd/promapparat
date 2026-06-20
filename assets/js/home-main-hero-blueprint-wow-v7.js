@@ -3,6 +3,15 @@
     var p=(location.pathname||'/').replace(/\/+/g,'/');
     return p==='/' || p==='/index.html';
   }
+
+  function injectHideRule(){
+    if(document.getElementById('proma-main-hero-v7-hide-old-rule')) return;
+    var style=document.createElement('style');
+    style.id='proma-main-hero-v7-hide-old-rule';
+    style.textContent='html body #home-draft>.proma-main-hero-old-hidden{display:none!important;visibility:hidden!important;opacity:0!important;height:0!important;min-height:0!important;max-height:0!important;margin:0!important;padding:0!important;border:0!important;overflow:hidden!important;pointer-events:none!important;}';
+    document.head.appendChild(style);
+  }
+
   function findAnchor(){
     var nodes=[].slice.call(document.querySelectorAll('section, h1, h2'));
     for(var i=0;i<nodes.length;i++){
@@ -15,7 +24,26 @@
     }
     return document.querySelector('section');
   }
+
+  function forceHide(el){
+    if(!el || el.classList.contains('proma-main-hero-v7')) return;
+    el.classList.add('proma-main-hero-old-hidden');
+    el.setAttribute('aria-hidden','true');
+    el.style.setProperty('display','none','important');
+    el.style.setProperty('visibility','hidden','important');
+    el.style.setProperty('opacity','0','important');
+    el.style.setProperty('height','0','important');
+    el.style.setProperty('min-height','0','important');
+    el.style.setProperty('max-height','0','important');
+    el.style.setProperty('margin','0','important');
+    el.style.setProperty('padding','0','important');
+    el.style.setProperty('border','0','important');
+    el.style.setProperty('overflow','hidden','important');
+    el.style.setProperty('pointer-events','none','important');
+  }
+
   function hideOldHeroes(anchor){
+    injectHideRule();
     var selectors=[
       '.home-hero',
       '.home-hero-static',
@@ -32,33 +60,35 @@
       '.hero-wow-lab-fullframe-v7'
     ];
     selectors.forEach(function(sel){
-      document.querySelectorAll(sel).forEach(function(el){ el.classList.add('proma-main-hero-old-hidden'); });
+      document.querySelectorAll(sel).forEach(forceHide);
     });
-    // fallback: if the first section before anchor visually looks like a hero, hide it conservatively by class name containing hero
-    var all=[].slice.call(document.querySelectorAll('section,div'));
+    var all=[].slice.call(document.querySelectorAll('#home-draft > section, #home-draft > div'));
     all.forEach(function(el){
       if(anchor && el===anchor) return;
       var cls=(typeof el.className==='string') ? el.className : '';
-      if(/hero/i.test(cls) && !/proma-main-hero-v7/.test(cls)){
-        el.classList.add('proma-main-hero-old-hidden');
-      }
+      if(/hero/i.test(cls) && !/proma-main-hero-v7/.test(cls)) forceHide(el);
     });
   }
+
   function insertHero(){
     if(!isHomepage()) return;
-    if(document.querySelector('.proma-main-hero-v7')) return;
     var anchor=findAnchor();
     var parent=(anchor && anchor.parentNode) ? anchor.parentNode : (document.querySelector('main') || document.body);
     if(!parent) return;
     hideOldHeroes(anchor);
-    var hero=document.createElement('section');
-    hero.className='proma-main-hero-v7';
-    hero.setAttribute('aria-label','Hero');
-    hero.innerHTML=''
-      + '<div class="proma-main-hero-v7__trigger" aria-hidden="true"></div>'
-      + '<div class="proma-main-hero-v7__frame proma-main-hero-v7__frame--normal"></div>'
-      + '<div class="proma-main-hero-v7__frame proma-main-hero-v7__frame--hover"></div>';
-    parent.insertBefore(hero, anchor || parent.firstChild);
+    var hero=document.querySelector('.proma-main-hero-v7');
+    if(!hero){
+      hero=document.createElement('section');
+      hero.className='proma-main-hero-v7';
+      hero.setAttribute('aria-label','Hero');
+      hero.innerHTML=''
+        + '<div class="proma-main-hero-v7__trigger" aria-hidden="true"></div>'
+        + '<div class="proma-main-hero-v7__frame proma-main-hero-v7__frame--normal"></div>'
+        + '<div class="proma-main-hero-v7__frame proma-main-hero-v7__frame--hover"></div>';
+      parent.insertBefore(hero, anchor || parent.firstChild);
+    }
+    hideOldHeroes(anchor);
   }
+
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', insertHero); else insertHero();
 })();
