@@ -24,7 +24,8 @@
     const module = d.querySelector('.real-engineering-module');
     if (!module) return;
     const hasBrokenText = /Р|СЃ|вЂ|Рџ|Рў/.test(module.textContent || '');
-    if (!hasBrokenText) return;
+    const isSimplifiedEngineeringBlock = !module.querySelector('.engineering-panel');
+    if (!hasBrokenText && !isSimplifiedEngineeringBlock) return;
 
     module.outerHTML = `
   <section class="live-section live-section--dark engineering-module real-engineering-module" aria-labelledby="live-schemes-title" data-live-tabs>
