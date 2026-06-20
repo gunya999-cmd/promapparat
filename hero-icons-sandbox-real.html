@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Песочница hero-иконок на реальном hero — ПО ПРОМАППАРАТ</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/assets/favicon.png">
+  <link rel="preload" as="image" href="/assets/logo/logo-main.webp" type="image/webp">
+  <link rel="stylesheet" href="/assets/css/homepage.css">
+  <link rel="stylesheet" href="/assets/css/logo-overrides.css">
+  <link rel="stylesheet" href="/assets/css/home-stage.css?v=20260612-3">
+  <link rel="preload" as="image" href="/assets/hero/responsive/hero-clean-desktop-1920-20260619.webp?v=20260619-lineonly-v7-2" type="image/webp">
+  <link rel="stylesheet" href="/assets/css/home-stage-trust.css?v=20260612-4">
+  <link rel="stylesheet" href="/assets/css/home-stage-footer.css?v=20260618-b2b-footer-1">
+  <link rel="stylesheet" href="/assets/css/home-card-images.css?v=20260614-v2-scan-1">
+  <link rel="stylesheet" href="/assets/css/home-hero-baunfire-perfect-20260618.css?v=20260618-baunfire-wow-hotfix-2">
+  <link rel="stylesheet" href="/assets/css/home-hero-layered-wow-original-20260619.css?v=20260619-blueprint-hotspot-tight-1">
+  <link rel="stylesheet" href="/assets/css/promapparat-live-system-20260619.css?v=20260619-1">
+  <link rel="stylesheet" href="/assets/css/engineering-nodes-20260619.css?v=20260619-1">
+  <link rel="stylesheet" href="/assets/css/engineering-nodes-real-20260619.css?v=20260619-real-1">
+  <link rel="stylesheet" href="/assets/css/home-hero-line-only-v7-20260619.css?v=20260619-lineonly-v7-2">
+  <link rel="stylesheet" href="/assets/css/home-main-hero-blueprint-wow-v7.css?v=20260619-main-hero-v7">
+  <script defer src="/assets/js/home-main-hero-blueprint-wow-v7.js?v=20260619-main-hero-v7"></script>
+  <style>
+    /* Sandbox only. Main page is not affected. */
+    .sandbox-note {
+      margin: 0;
+      padding: 10px 18px;
+      font: 13px/1.45 Arial, sans-serif;
+      color: rgba(16,42,66,.72);
+      background: rgba(255,255,255,.74);
+      border-bottom: 1px solid rgba(118,160,190,.20);
+    }
+
+    .hero-proof-icons {
+      position: absolute;
+      left: clamp(34px, 6.2vw, 92px);
+      bottom: clamp(36px, 7.2vw, 76px);
+      z-index: 12;
+      display: grid;
+      grid-template-columns: repeat(4, 136px);
+      gap: clamp(14px, 1.6vw, 24px);
+      align-items: start;
+      pointer-events: auto;
+    }
+
+    .hero-proof-item {
+      position: relative;
+      width: 136px;
+      min-height: 154px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #16324a;
+      isolation: isolate;
+      cursor: default;
+    }
+
+    .hero-proof-item::before {
+      content: "";
+      position: absolute;
+      inset: 18px 18px 48px;
+      z-index: 0;
+      opacity: 0;
+      border-radius: 999px;
+      border: 1px solid rgba(58, 186, 235, .0);
+      transform: scale(.86);
+      transition:
+        opacity .24s ease,
+        transform .24s ease,
+        border-color .24s ease;
+      pointer-events: none;
+    }
+
+    .hero-proof-icon {
+      position: relative;
+      z-index: 2;
+      width: 92px;
+      height: 92px;
+      display: block;
+      object-fit: contain;
+      transform: translateZ(0);
+      filter:
+        drop-shadow(0 9px 14px rgba(28, 120, 210, .08))
+        saturate(1.02)
+        contrast(1.02);
+      transition:
+        transform .24s cubic-bezier(.2,.8,.2,1),
+        filter .24s ease,
+        opacity .24s ease;
+      will-change: transform, filter;
+    }
+
+    .hero-proof-text {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      margin-top: 10px;
+      min-height: 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .hero-proof-text strong {
+      display: block;
+      max-width: 132px;
+      margin: 0 0 4px;
+      font-size: 12.5px;
+      line-height: 1.12;
+      font-weight: 700;
+      letter-spacing: -.015em;
+      color: rgba(14, 41, 66, .90);
+      transition: color .24s ease;
+    }
+
+    .hero-proof-text span {
+      display: block;
+      max-width: 132px;
+      font-size: 10.5px;
+      line-height: 1.22;
+      color: rgba(14, 41, 66, .56);
+      transition: color .24s ease;
+    }
+
+    .hero-proof-text::after {
+      content: "";
+      width: 22px;
+      height: 1px;
+      margin-top: 7px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, rgba(30,124,214,0), rgba(38,196,238,.86), rgba(30,124,214,0));
+      opacity: .34;
+      transform: scaleX(.7);
+      transition:
+        width .24s ease,
+        opacity .24s ease,
+        transform .24s ease;
+    }
+
+    .hero-proof-item:hover::before {
+      opacity: 1;
+      transform: scale(1);
+      border-color: rgba(58, 186, 235, .28);
+    }
+
+    .hero-proof-item:hover .hero-proof-icon {
+      transform: translateY(-3px) scale(1.035);
+      filter:
+        drop-shadow(0 12px 18px rgba(28, 120, 210, .14))
+        drop-shadow(0 0 6px rgba(60, 210, 245, .13))
+        saturate(1.18)
+        contrast(1.08)
+        brightness(1.035);
+    }
+
+    .hero-proof-item:hover .hero-proof-text strong {
+      color: rgba(8, 52, 93, .96);
+    }
+
+    .hero-proof-item:hover .hero-proof-text span {
+      color: rgba(8, 52, 93, .68);
+    }
+
+    .hero-proof-item:hover .hero-proof-text::after {
+      width: 48px;
+      opacity: .92;
+      transform: scaleX(1);
+    }
+
+    .hero-proof-item:focus-within .hero-proof-icon {
+      transform: translateY(-3px) scale(1.035);
+      filter:
+        drop-shadow(0 12px 18px rgba(28, 120, 210, .14))
+        drop-shadow(0 0 6px rgba(60, 210, 245, .13))
+        saturate(1.18)
+        contrast(1.08)
+        brightness(1.035);
+    }
+
+    .sandbox-after-hero {
+      padding: 24px clamp(22px, 6vw, 80px) 54px;
+      color: rgba(16, 42, 66, .66);
+      font: 14px/1.55 Arial, sans-serif;
+      background: #f6fafc;
+    }
+
+    .sandbox-after-hero strong {
+      color: rgba(16,42,66,.92);
+    }
+
+    @media (max-width: 980px) {
+      .hero-proof-icons {
+        left: 28px;
+        right: 28px;
+        bottom: 42px;
+        grid-template-columns: repeat(4, 124px);
+        gap: 14px;
+        overflow-x: auto;
+        padding-bottom: 6px;
+      }
+      .hero-proof-item { width: 124px; }
+      .hero-proof-icon { width: 84px; height: 84px; }
+      .hero-proof-text strong { font-size: 11.5px; }
+      .hero-proof-text span { font-size: 10px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-proof-item::before,
+      .hero-proof-icon,
+      .hero-proof-text strong,
+      .hero-proof-text span,
+      .hero-proof-text::after {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="ПО Промаппарат — на главную">
+      <img src="/assets/logo/logo-main.webp" width="460" height="115" decoding="async" fetchpriority="high" alt="Промаппарат">
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="/o-kompanii/">О компании</a>
+      <a href="/katalog/">Каталог</a>
+      <a href="/podbor-analogov-importnogo-oborudovaniya/">Аналоги</a>
+      <a href="/dokumentatsiya/">Документация</a>
+      <a href="/oprosnye-listy/">Опросные листы</a>
+      <a href="/kontakty/">Контакты</a>
+    </nav>
+    <div class="head-right">
+      <div class="head-contacts">
+        <strong>+7 (846) 277-54-14</strong>
+        <span>Пн–Пт 9:00–18:00</span>
+        <span>info@promapparat.ru</span>
+      </div>
+      <a class="btn" href="mailto:info@promapparat.ru?subject=Запрос%20КП">Получить КП</a>
+    </div>
+  </div>
+</header>
+
+<p class="sandbox-note">Песочница: реальный hero с главной страницы + новые иконки + текст под иконками. Главная страница не изменена.</p>
+
+<main id="home-draft">
+  <section class="home-hero-static home-hero-static--layered-wow" aria-label="Production workshop">
+    <div class="home-hero-hotspot home-hero-hotspot--blueprint" aria-hidden="true"></div>
+    <div class="home-hero-hotspot home-hero-hotspot--dots" aria-hidden="true"></div>
+    <div class="home-hero-overlay home-hero-overlay--blueprint-calm" aria-hidden="true"></div>
+    <div class="home-hero-overlay home-hero-overlay--dots-calm" aria-hidden="true"></div>
+    <div class="home-hero-overlay home-hero-overlay--blueprint-bright" aria-hidden="true"></div>
+    <div class="home-hero-overlay home-hero-overlay--dots-bright" aria-hidden="true"></div>
+
+    <div class="hero-proof-icons" aria-label="Ключевые преимущества">
+      <div class="hero-proof-item">
+        <img class="hero-proof-icon" src="/assets/hero-icons-css-v5/param.png?v=icons-real-v6" alt="">
+        <div class="hero-proof-text">
+          <strong>Подбор по параметрам</strong>
+          <span>DN, PN, среда, температура</span>
+        </div>
+      </div>
+
+      <div class="hero-proof-item">
+        <img class="hero-proof-icon" src="/assets/hero-icons-css-v5/docs.png?v=icons-real-v6" alt="">
+        <div class="hero-proof-text">
+          <strong>Комплект документов</strong>
+          <span>Паспорта, сертификаты, протоколы</span>
+        </div>
+      </div>
+
+      <div class="hero-proof-item">
+        <img class="hero-proof-icon" src="/assets/hero-icons-css-v5/production.png?v=icons-real-v6" alt="">
+        <div class="hero-proof-text">
+          <strong>Производство и поставка</strong>
+          <span>Изготовление и отгрузка в срок</span>
+        </div>
+      </div>
+
+      <div class="hero-proof-item">
+        <img class="hero-proof-icon" src="/assets/hero-icons-css-v5/import.png?v=icons-real-v6" alt="">
+        <div class="hero-proof-text">
+          <strong>Импортозамещение</strong>
+          <span>Аналоги по ТЗ и модели</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sandbox-after-hero">
+    <strong>Проверка:</strong> иконки стоят на настоящем hero, hover сделан без второго PNG и без замазки. Эффект — подъём, усиление резкости/контраста и тонкая cyan-линия под текстом.
+  </section>
+</main>
+</body>
+</html>
