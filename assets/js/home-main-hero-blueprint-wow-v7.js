@@ -80,11 +80,17 @@
     if(!hero){
       hero=document.createElement('section');
       hero.className='proma-main-hero-v7';
-      hero.setAttribute('aria-label','Hero');
+      hero.setAttribute('aria-label','Производство и поставка промышленной арматуры, КИПиА и инженерного оборудования');
       hero.innerHTML=''
         + '<div class="proma-main-hero-v7__trigger" aria-hidden="true"></div>'
         + '<div class="proma-main-hero-v7__frame proma-main-hero-v7__frame--normal"></div>'
-        + '<div class="proma-main-hero-v7__frame proma-main-hero-v7__frame--hover"></div>';
+        + '<div class="proma-main-hero-v7__frame proma-main-hero-v7__frame--hover"></div>'
+        + '<div class="proma-main-hero-v7__copy">'
+        +   '<div class="proma-main-hero-v7__kicker">Производство • комплектация • поставка</div>'
+        +   '<h1>Промышленная арматура, КИПиА <span>и инженерное оборудование</span></h1>'
+        +   '<p>Подбор по ТЗ, аналоги импортного оборудования, техподдержка и полный комплект сопроводительной документации.</p>'
+        +   '<div class="proma-main-hero-v7__docs">Паспорта • Сертификаты • Декларации ЕАЭС • Протоколы испытаний</div>'
+        + '</div>';
       parent.insertBefore(hero, anchor || parent.firstChild);
     }
     hideOldHeroes(anchor);
