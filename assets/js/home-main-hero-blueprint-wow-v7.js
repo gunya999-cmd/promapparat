@@ -1,7 +1,7 @@
 (function(){
   function isHomepage(){
-    var p=(location.pathname||'/').replace(/\/+$/,'/');
-    return p==='/' || p==='/index.html/';
+    var p=(location.pathname||'/').replace(/\/+$/,'') || '/';
+    return p==='/' || p==='/index.html';
   }
 
   function injectHideRule(){
