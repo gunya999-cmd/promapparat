@@ -2,7 +2,7 @@ html,body{max-width:100%;overflow-x:hidden}
 img{max-width:100%;height:auto}
 
 .logo img{
-  width: clamp(300px, 36vw, 504px);
+  width: clamp(360px, 43.2vw, 605px);
   height: auto;
   display: block;
   object-fit: contain;
@@ -17,8 +17,8 @@ img{max-width:100%;height:auto}
 
 @media(max-width:980px){
   .logo img{
-    width: 372px;
-    max-width: 74vw;
+    width: 446px;
+    max-width: 88vw;
   }
 
   .foot-logo{
@@ -28,8 +28,8 @@ img{max-width:100%;height:auto}
 
 @media(max-width:640px){
   .logo img{
-    width: 270px!important;
-    max-width: 86vw;
+    width: 324px!important;
+    max-width: 92vw;
   }
 
   .foot-logo{
@@ -40,8 +40,8 @@ img{max-width:100%;height:auto}
 
 @media(max-width:420px){
   .logo img{
-    width: 234px!important;
-    max-width: 82vw;
+    width: 281px!important;
+    max-width: 88vw;
   }
 
   .foot-logo{
