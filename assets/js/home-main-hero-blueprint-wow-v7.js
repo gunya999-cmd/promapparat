@@ -1,7 +1,7 @@
 (function(){
   function isHomepage(){
-    var p=(location.pathname||'/').replace(/\/+/g,'/');
-    return p==='/' || p==='/index.html';
+    var p=(location.pathname||'/').replace(/\/+$/,'/');
+    return p==='/' || p==='/index.html/';
   }
 
   function injectHideRule(){
@@ -88,12 +88,16 @@
         + '<div class="proma-main-hero-v7__copy">'
         +   '<div class="proma-main-hero-v7__kicker">Производство • комплектация • поставка</div>'
         +   '<h1>Промышленная арматура, КИПиА <span>и инженерное оборудование</span></h1>'
-        +   '<p>Подбор по ТЗ, аналоги импортного оборудования, техподдержка и полный комплект сопроводительной документации.</p>'
         +   '<div class="proma-main-hero-v7__actions">'
         +     '<a class="proma-main-hero-v7__btn proma-main-hero-v7__btn--primary" href="mailto:info@promapparat.ru?subject=Заявка%20на%20подбор%20оборудования">Подобрать оборудование</a>'
         +     '<a class="proma-main-hero-v7__btn proma-main-hero-v7__btn--secondary" href="mailto:info@promapparat.ru?subject=ТЗ%20для%20ПО%20Промаппарат">Отправить ТЗ</a>'
         +   '</div>'
-        +   '<div class="proma-main-hero-v7__docs">Паспорта • Сертификаты • Декларации ЕАЭС • Протоколы испытаний</div>'
+        + '</div>'
+        + '<div class="proma-main-hero-v7__features" aria-label="Ключевые преимущества">'
+        +   '<article class="proma-main-hero-v7__feature"><span class="proma-main-hero-v7__feature-scan"></span><div class="proma-main-hero-v7__feature-icon"><img src="/assets/hero/designer-icons/pick_hero_icon.webp?v=20260621-v12-main" alt="" loading="eager" decoding="async"></div><div class="proma-main-hero-v7__feature-title">Подбор по ТЗ</div><div class="proma-main-hero-v7__feature-text">Технический анализ требований проекта.</div></article>'
+        +   '<article class="proma-main-hero-v7__feature"><span class="proma-main-hero-v7__feature-scan"></span><div class="proma-main-hero-v7__feature-icon"><img src="/assets/hero/designer-icons/docs_hero_icon.webp?v=20260621-v12-main" alt="" loading="eager" decoding="async"></div><div class="proma-main-hero-v7__feature-title">Конструкторская документация</div><div class="proma-main-hero-v7__feature-text">Паспорта • Сертификаты • Декларации ЕАЭС • Протоколы испытаний.</div></article>'
+        +   '<article class="proma-main-hero-v7__feature"><span class="proma-main-hero-v7__feature-scan"></span><div class="proma-main-hero-v7__feature-icon"><img src="/assets/hero/designer-icons/prod_hero_icon.webp?v=20260621-v12-main" alt="" loading="eager" decoding="async"></div><div class="proma-main-hero-v7__feature-title">Согласование КД и Производство</div><div class="proma-main-hero-v7__feature-text">Поставки точно в срок.</div></article>'
+        +   '<article class="proma-main-hero-v7__feature"><span class="proma-main-hero-v7__feature-scan"></span><div class="proma-main-hero-v7__feature-icon"><img src="/assets/hero/designer-icons/ship_hero_icon.webp?v=20260621-v12-main" alt="" loading="eager" decoding="async"></div><div class="proma-main-hero-v7__feature-title">Поставка</div><div class="proma-main-hero-v7__feature-text">От единичных позиций до комплексных проектов.</div></article>'
         + '</div>';
       parent.insertBefore(hero, anchor || parent.firstChild);
     }
