@@ -1,13 +1,13 @@
 html,body{max-width:100%;overflow-x:hidden}
 img{max-width:100%;height:auto}
 
-/* Header logo: force visible size, including parent anchor constraints */
+/* Header logo: forced visible size, footer unchanged */
 .top .wrap .logo,
 header.top .wrap a.logo{
-  flex:0 0 clamp(420px, 31vw, 540px) !important;
-  width:clamp(420px, 31vw, 540px) !important;
+  flex:0 0 clamp(336px, 24.8vw, 432px) !important;
+  width:clamp(336px, 24.8vw, 432px) !important;
   max-width:none !important;
-  min-width:420px !important;
+  min-width:336px !important;
 }
 
 .top .wrap .logo img,
@@ -31,18 +31,18 @@ header.top .wrap a.logo img,
 @media(max-width:1180px){
   .top .wrap .logo,
   header.top .wrap a.logo{
-    flex-basis:420px !important;
-    width:420px !important;
-    min-width:360px !important;
+    flex-basis:336px !important;
+    width:336px !important;
+    min-width:288px !important;
   }
 }
 
 @media(max-width:980px){
   .top .wrap .logo,
   header.top .wrap a.logo{
-    flex-basis:360px !important;
-    width:360px !important;
-    min-width:300px !important;
+    flex-basis:288px !important;
+    width:288px !important;
+    min-width:240px !important;
     max-width:70vw !important;
   }
 
@@ -54,9 +54,9 @@ header.top .wrap a.logo img,
 @media(max-width:640px){
   .top .wrap .logo,
   header.top .wrap a.logo{
-    flex-basis:300px !important;
-    width:300px !important;
-    min-width:260px !important;
+    flex-basis:240px !important;
+    width:240px !important;
+    min-width:208px !important;
     max-width:84vw !important;
   }
 
@@ -69,9 +69,9 @@ header.top .wrap a.logo img,
 @media(max-width:420px){
   .top .wrap .logo,
   header.top .wrap a.logo{
-    flex-basis:270px !important;
-    width:270px !important;
-    min-width:240px !important;
+    flex-basis:216px !important;
+    width:216px !important;
+    min-width:192px !important;
     max-width:82vw !important;
   }
 
