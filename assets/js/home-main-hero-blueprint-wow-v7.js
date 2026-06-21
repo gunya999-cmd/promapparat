@@ -12,6 +12,18 @@
     document.head.appendChild(style);
   }
 
+  function injectIconRowShift(){
+    if(document.getElementById('proma-main-hero-v7-icon-row-shift')) return;
+    var style=document.createElement('style');
+    style.id='proma-main-hero-v7-icon-row-shift';
+    style.textContent=''
+      + '.proma-main-hero-v7__features{top:59.7%!important;}'
+      + '@media(max-width:1200px){.proma-main-hero-v7__features{top:56.8%!important;}}'
+      + '@media(max-width:900px){.proma-main-hero-v7__features{top:422px!important;}}'
+      + '@media(max-width:520px){.proma-main-hero-v7__features{top:410px!important;}}';
+    document.head.appendChild(style);
+  }
+
   function findAnchor(){
     var nodes=[].slice.call(document.querySelectorAll('section, h1, h2'));
     for(var i=0;i<nodes.length;i++){
@@ -72,6 +84,7 @@
 
   function insertHero(){
     if(!isHomepage()) return;
+    injectIconRowShift();
     var anchor=findAnchor();
     var parent=(anchor && anchor.parentNode) ? anchor.parentNode : (document.querySelector('main') || document.body);
     if(!parent) return;
