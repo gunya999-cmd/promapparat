@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Hero designer icons sandbox — ПО Промаппарат</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#eef4fb;color:#07172c}
+    .sandbox-top{height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 28px;background:rgba(255,255,255,.92);border-bottom:1px solid #dbe7f6;box-shadow:0 8px 28px rgba(20,44,78,.06);position:relative;z-index:10}
+    .sandbox-logo{font-weight:800;letter-spacing:.02em;color:#0b1b34}
+    .sandbox-note{font-size:13px;color:#5f6f84}
+    .hero{position:relative;width:100%;aspect-ratio:3/2;min-height:720px;max-height:900px;overflow:hidden;background:#f6f9fd;isolation:isolate}
+    .hero__frame{position:absolute;inset:0;background-repeat:no-repeat;background-position:center top;background-size:cover;pointer-events:none;transition:opacity .38s cubic-bezier(.2,.7,.2,1)}
+    .hero__frame--normal{z-index:1;background-image:url('/assets/hero/fullframe/hero-fullframe-normal-v7-1920-20260619.webp?v=designer-icons-sandbox-1')}
+    .hero__frame--hover{z-index:2;background-image:url('/assets/hero/fullframe/hero-fullframe-hover-blueprint-v7-1920-20260619.webp?v=designer-icons-sandbox-1');opacity:0}
+    .hero__trigger{position:absolute;left:50.5%;top:14.2%;width:15.5%;height:25%;z-index:4;pointer-events:auto;cursor:pointer;border-radius:48%;background:transparent}
+    @media(hover:hover){.hero__trigger:hover~.hero__frame--hover{opacity:1}}
+    .hero__copy{position:absolute;z-index:5;left:7.2%;top:8.8%;width:43%;max-width:690px;pointer-events:auto;animation:textIn .9s cubic-bezier(.2,.72,.18,1) both;filter:drop-shadow(0 12px 28px rgba(16,43,86,.08))}
+    .hero__kicker{position:relative;display:inline-block;margin:0 0 14px;font-size:13px;line-height:1.25;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#2b6fb8}
+    .hero__kicker:after{content:"";position:absolute;left:0;bottom:-7px;width:64px;height:1px;background:linear-gradient(90deg,rgba(43,111,184,.75),rgba(43,111,184,0));transform-origin:left center;animation:linePulse 3.6s ease-in-out infinite}
+    .hero h1{margin:0;font-size:clamp(34px,3.2vw,58px);line-height:1.04;letter-spacing:-.03em;color:#07172c;font-weight:700;text-shadow:0 1px 0 rgba(255,255,255,.38)}
+    .hero h1 span{display:block;color:#1b96ee;background:linear-gradient(90deg,#177fdb 0%,#1b96ee 34%,#42c1ff 52%,#1b96ee 72%,#177fdb 100%);background-size:240% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:textSheen 5.4s ease-in-out infinite}
+    .hero__actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px;pointer-events:auto}
+    .hero__btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:8px;border:1px solid transparent;text-decoration:none;font-size:15px;line-height:1;font-weight:600;letter-spacing:.01em;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background-color .25s ease;isolation:isolate;backdrop-filter:blur(6px)}
+    .hero__btn:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.08) 36%,rgba(255,255,255,.28) 50%,rgba(255,255,255,.08) 64%,rgba(255,255,255,.18) 100%);background-size:220% 100%;opacity:.7;animation:btnSheen 4.6s ease-in-out infinite}
+    .hero__btn:after{content:"";position:absolute;left:10px;right:10px;bottom:7px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);opacity:.55}
+    .hero__btn:hover{transform:translateY(-1px)}
+    .hero__btn--primary{color:#fff;background:linear-gradient(180deg,#2e7fe4 0%,#1f6fd6 100%);border-color:rgba(26,111,214,.85);box-shadow:0 14px 28px rgba(31,111,214,.22),0 0 0 1px rgba(255,255,255,.08) inset}
+    .hero__btn--secondary{color:#245f9d;background:rgba(255,255,255,.74);border-color:rgba(156,190,230,.9);box-shadow:0 10px 24px rgba(30,64,100,.10),0 0 0 1px rgba(255,255,255,.55) inset}
+    .features{position:absolute;z-index:6;left:6.4%;right:6.4%;bottom:34px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .feature{position:relative;min-height:250px;padding:14px 14px 16px;border-radius:22px;background:rgba(255,255,255,.58);border:1px solid rgba(177,205,236,.88);box-shadow:0 12px 28px rgba(22,48,84,.08),0 0 0 1px rgba(255,255,255,.34) inset;backdrop-filter:blur(8px);transition:transform .24s cubic-bezier(.2,.72,.18,1),box-shadow .24s ease,border-color .24s ease,background .24s ease;transform-origin:center center;will-change:transform;overflow:hidden}
+    .feature:before{content:"";position:absolute;inset:0;border-radius:22px;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.22),rgba(255,255,255,0) 42%),linear-gradient(90deg,rgba(59,155,239,.10),rgba(59,155,239,0));opacity:.88}
+    .feature:after{content:"";position:absolute;left:-40%;top:0;width:38%;height:100%;transform:skewX(-18deg);background:linear-gradient(90deg,transparent,rgba(66,193,255,.16),transparent);opacity:0;transition:opacity .22s ease}
+    .feature:hover{transform:translateY(-4px) scale(1.025);border-color:rgba(112,174,236,.95);background:rgba(255,255,255,.68);box-shadow:0 20px 40px rgba(22,48,84,.14),0 0 22px rgba(66,193,255,.13),0 0 0 1px rgba(255,255,255,.44) inset}
+    .feature:hover:after{opacity:1;animation:featureScan 1.15s ease-out both}
+    .feature__icon{position:relative;z-index:1;width:100%;aspect-ratio:1/1;border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center;transition:transform .24s cubic-bezier(.2,.72,.18,1),filter .24s ease;will-change:transform;filter:drop-shadow(0 10px 18px rgba(41,87,136,.10))}
+    .feature:hover .feature__icon{transform:translateY(-3px) scale(1.045);filter:drop-shadow(0 16px 26px rgba(57,183,255,.18))}
+    .feature__icon img{display:block;width:100%;height:100%;object-fit:cover;border-radius:18px}
+    .feature__title{position:relative;z-index:1;margin-top:10px;font-size:15px;line-height:1.2;font-weight:700;color:#0b1b34}
+    .feature__text{position:relative;z-index:1;margin-top:6px;font-size:12.5px;line-height:1.38;font-weight:400;color:#41536c}
+    @keyframes textIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes textSheen{0%,62%,100%{background-position:0% 50%}78%{background-position:100% 50%}}
+    @keyframes linePulse{0%,100%{opacity:.42;transform:scaleX(.72)}50%{opacity:.95;transform:scaleX(1)}}
+    @keyframes btnSheen{0%,100%{background-position:0% 50%}55%{background-position:100% 50%}}
+    @keyframes featureScan{from{left:-40%;opacity:0}35%{opacity:1}to{left:112%;opacity:0}}
+    @media(max-width:1180px){.hero{min-height:820px}.hero__copy{top:7.8%;width:50%}.features{grid-template-columns:repeat(2,minmax(0,1fr));bottom:28px}.feature{min-height:210px;display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center}.feature__title{margin-top:0}}
+    @media(max-width:900px){.sandbox-top{height:auto;min-height:58px;padding:12px 18px;align-items:flex-start;flex-direction:column;gap:4px}.hero{aspect-ratio:auto;min-height:1180px}.hero__copy{left:24px;right:24px;top:24px;width:auto;max-width:560px}.hero h1{font-size:30px;line-height:1.05}.hero__actions{margin-top:18px;gap:10px}.hero__btn{min-height:46px;padding:0 18px;font-size:14px}.features{left:24px;right:24px;bottom:28px;grid-template-columns:1fr}.feature{grid-template-columns:116px 1fr;min-height:150px}.hero__trigger{left:49%;top:13%;width:20%;height:28%}}
+    @media(max-width:520px){.hero{min-height:1240px}.hero__copy{top:18px;left:18px;right:18px}.hero h1{font-size:26px;max-width:360px}.hero__actions{flex-direction:column;align-items:flex-start}.hero__btn{width:100%;max-width:260px}.features{left:18px;right:18px}.feature{grid-template-columns:96px 1fr;padding:12px}}
+    @media(prefers-reduced-motion:reduce){.hero__copy,.hero__kicker:after,.hero h1 span,.hero__btn:before,.feature,.feature__icon,.feature:after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="sandbox-top"><div class="sandbox-logo">ПО «Промаппарат»</div><div class="sandbox-note">Песочница: дизайнерские иконки + hover, основной сайт не изменён</div></header>
+  <section class="hero" aria-label="Песочница hero с дизайнерскими иконками">
+    <div class="hero__trigger" aria-hidden="true"></div><div class="hero__frame hero__frame--normal"></div><div class="hero__frame hero__frame--hover"></div>
+    <div class="hero__copy"><div class="hero__kicker">Производство • комплектация • поставка</div><h1>Промышленная арматура, КИПиА <span>и инженерное оборудование</span></h1><div class="hero__actions"><a class="hero__btn hero__btn--primary" href="mailto:info@promapparat.ru?subject=Заявка%20на%20подбор%20оборудования">Подобрать оборудование</a><a class="hero__btn hero__btn--secondary" href="mailto:info@promapparat.ru?subject=ТЗ%20для%20ПО%20Промаппарат">Отправить ТЗ</a></div></div>
+    <div class="features">
+      <article class="feature"><div class="feature__icon"><img src="DATAURI_PICK" alt=""></div><div><div class="feature__title">Подбор по ТЗ</div><div class="feature__text">Технический анализ требований проекта.</div></div></article>
+      <article class="feature"><div class="feature__icon"><img src="DATAURI_DOCS" alt=""></div><div><div class="feature__title">Конструкторская документация</div><div class="feature__text">Паспорта • Сертификаты • Декларации ЕАЭС • Протоколы испытаний.</div></div></article>
+      <article class="feature"><div class="feature__icon"><img src="DATAURI_PROD" alt=""></div><div><div class="feature__title">Согласование КД и Производство</div><div class="feature__text">Поставки точно в срок.</div></div></article>
+      <article class="feature"><div class="feature__icon"><img src="DATAURI_SHIP" alt=""></div><div><div class="feature__title">Поставка</div><div class="feature__text">От единичных позиций до комплексных проектов.</div></div></article>
+    </div>
+  </section>
+</body>
+</html>
