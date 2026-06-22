@@ -2,7 +2,8 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
-  Cache-Control: no-cache, must-revalidate
+  Cache-Control: no-cache, no-store, must-revalidate
+  Clear-Site-Data: "cache"
 
 /assets/*
   Cache-Control: no-cache, must-revalidate
