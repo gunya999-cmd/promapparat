@@ -24,6 +24,18 @@
     document.head.appendChild(style);
   }
 
+  function injectTextSafety(){
+    if(document.getElementById('proma-main-hero-v7-text-safety')) return;
+    var style=document.createElement('style');
+    style.id='proma-main-hero-v7-text-safety';
+    style.textContent=''
+      + '.proma-main-hero-v7__copy{display:block!important;visibility:visible!important;opacity:1!important;color:#051A6E!important;}'
+      + '.proma-main-hero-v7__copy h1{visibility:visible!important;opacity:1!important;color:#051A6E!important;}'
+      + '.proma-main-hero-v7__copy h1 span{color:#155EDE;}'
+      + '@supports (-webkit-touch-callout:none){.proma-main-hero-v7__copy h1 span{background-image:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;-webkit-text-fill-color:#155EDE!important;color:#155EDE!important;text-shadow:none!important;animation:none!important;}}';
+    document.head.appendChild(style);
+  }
+
   function findAnchor(){
     var nodes=[].slice.call(document.querySelectorAll('section, h1, h2'));
     for(var i=0;i<nodes.length;i++){
@@ -85,6 +97,7 @@
   function insertHero(){
     if(!isHomepage()) return;
     injectIconRowShift();
+    injectTextSafety();
     var anchor=findAnchor();
     var parent=(anchor && anchor.parentNode) ? anchor.parentNode : (document.querySelector('main') || document.body);
     if(!parent) return;
